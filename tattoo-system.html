@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sacred Tattoo System &mdash; MahaHulmane</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Responsive overrides for tattoo page */
+    @media (max-width: 768px) {
+      .stage-panel {
+        flex-direction: column !important;
+        text-align: center;
+      }
+      .stage-panel[data-reverse] {
+        flex-direction: column !important;
+      }
+      .tattoo-demo-area {
+        flex-direction: column !important;
+      }
+      #animalGallery {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav class="maha-nav">
+    <a href="index.html" class="nav-logo">MahaHulmane</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="characters.html">Heroes</a>
+      <a href="state-stories.html">Kingdoms</a>
+      <a href="regions.html">Regions</a>
+      <a href="council.html">Council</a>
+      <a href="story.html">Story</a>
+      <a href="tattoo-system.html" class="active">Tattoos</a>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')">&#9776;</button>
+  </nav>
+
+  <!-- ===== 1. HERO HEADER ===== -->
+  <section class="section" style="text-align:center; padding-top:80px;">
+    <h1>The Sacred Tattoo System</h1>
+    <p class="subtitle">From Footprint to Full Beast &mdash; The Mark of a Warrior</p>
+    <p style="max-width:700px; margin:20px auto; color:var(--text-dim); line-height:1.7;">
+      In the world of MahaHulmane, every child born in a kingdom receives the footprint of their sacred beast
+      at birth &mdash; a small mark on their skin that pulses with the energy of their land. As they grow and prove
+      their worth through trials of courage, wisdom, and strength, the tattoo expands. Only the greatest
+      warriors bear the full majesty of their spirit animal across their body.
+    </p>
+  </section>
+
+  <!-- ===== 2. THE FOUR STAGES OF ASCENSION ===== -->
+  <section class="section">
+    <h2 class="section-title">The Four Stages of Ascension</h2>
+
+    <div style="display:flex; flex-direction:column; gap:40px; max-width:900px; margin:0 auto;">
+
+      <!-- Stage 1: Footprint -->
+      <div class="card animate-on-scroll stage-panel" style="display:flex; gap:30px; align-items:center; padding:30px;">
+        <div style="flex-shrink:0; width:150px; height:150px; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 150 150" width="150" height="150">
+            <circle cx="75" cy="75" r="70" fill="none" stroke="#5a3e10" stroke-width="1" stroke-dasharray="4,4"/>
+            <!-- Simple footprint/paw SVG -->
+            <ellipse cx="75" cy="85" rx="20" ry="25" fill="#ffd700" opacity="0.6"/>
+            <circle cx="58" cy="60" r="8" fill="#ffd700" opacity="0.6"/>
+            <circle cx="75" cy="55" r="8" fill="#ffd700" opacity="0.6"/>
+            <circle cx="92" cy="60" r="8" fill="#ffd700" opacity="0.6"/>
+            <text x="75" y="135" fill="#ffd700" text-anchor="middle" font-size="11" font-family="Georgia">Stage I</text>
+          </svg>
+        </div>
+        <div>
+          <h3 style="color:#ffd700; margin-bottom:8px;">The Footprint &mdash; Birth Mark</h3>
+          <p style="color:var(--text); line-height:1.7; margin-bottom:10px;">
+            At the moment of birth, as the child draws its first breath, a small mark appears on their right shoulder &mdash;
+            the footprint of the kingdom's sacred beast. It glows faintly for three days before settling into the skin
+            like an ancient script written in golden ink.
+          </p>
+          <p style="color:var(--text-dim); font-size:0.85em; font-style:italic;">
+            "The land claims its children before they can even open their eyes." &mdash; Elder Proverb
+          </p>
+        </div>
+      </div>
+
+      <!-- Stage 2: The Leg -->
+      <div class="card animate-on-scroll stage-panel" data-reverse style="display:flex; gap:30px; align-items:center; padding:30px; flex-direction:row-reverse;">
+        <div style="flex-shrink:0; width:150px; height:150px; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 150 150" width="150" height="150">
+            <circle cx="75" cy="75" r="70" fill="none" stroke="#5a3e10" stroke-width="1" stroke-dasharray="4,4"/>
+            <!-- Leg silhouette - more of the animal revealed -->
+            <path d="M60,110 L55,80 L50,60 L55,45 L65,40 L75,38 L85,40 L95,45 L100,60 L95,80 L90,110 Z"
+                  fill="#ffd700" opacity="0.5"/>
+            <ellipse cx="55" cy="115" rx="12" ry="6" fill="#ffd700" opacity="0.6"/>
+            <ellipse cx="90" cy="115" rx="12" ry="6" fill="#ffd700" opacity="0.6"/>
+            <text x="75" y="140" fill="#ffd700" text-anchor="middle" font-size="11" font-family="Georgia">Stage II</text>
+          </svg>
+        </div>
+        <div>
+          <h3 style="color:#ffd700; margin-bottom:8px;">The Leg &mdash; First Trial</h3>
+          <p style="color:var(--text); line-height:1.7; margin-bottom:10px;">
+            When a young warrior completes their first trial &mdash; be it defending the village, winning a sanctioned combat,
+            or solving an ancient riddle of their clan &mdash; the footprint stirs. Over the course of a night, it extends
+            downward, forming the legs of the beast. The pain is said to be like liquid fire flowing through the veins.
+          </p>
+          <p style="color:var(--text-dim); font-size:0.85em; font-style:italic;">
+            "The beast begins to walk with you. You feel its steps in your own stride." &mdash; Simhavikrama of Gujarat
+          </p>
+        </div>
+      </div>
+
+      <!-- Stage 3: Half Body -->
+      <div class="card animate-on-scroll stage-panel" style="display:flex; gap:30px; align-items:center; padding:30px;">
+        <div style="flex-shrink:0; width:150px; height:150px; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 150 150" width="150" height="150">
+            <circle cx="75" cy="75" r="70" fill="none" stroke="#5a3e10" stroke-width="1" stroke-dasharray="4,4"/>
+            <!-- Half body - torso and legs visible -->
+            <path d="M45,120 L40,90 L38,70 L40,55 L50,42 L60,36 L75,33 L90,36 L100,42 L110,55 L112,70 L110,90 L105,120 Z"
+                  fill="#ffd700" opacity="0.5"/>
+            <ellipse cx="48" cy="124" rx="14" ry="7" fill="#ffd700" opacity="0.6"/>
+            <ellipse cx="102" cy="124" rx="14" ry="7" fill="#ffd700" opacity="0.6"/>
+            <circle cx="62" cy="50" r="4" fill="#1a0a00"/>
+            <circle cx="88" cy="50" r="4" fill="#1a0a00"/>
+            <text x="75" y="145" fill="#ffd700" text-anchor="middle" font-size="11" font-family="Georgia">Stage III</text>
+          </svg>
+        </div>
+        <div>
+          <h3 style="color:#ffd700; margin-bottom:8px;">The Half Body &mdash; Regional Champion</h3>
+          <p style="color:var(--text); line-height:1.7; margin-bottom:10px;">
+            Achieving recognition beyond one's own village &mdash; defeating champions from neighboring clans,
+            leading a campaign, or uncovering a lost artifact &mdash; triggers the third awakening. The beast's torso
+            materializes across the warrior's back and chest. At this stage, the warrior can commune with
+            their spirit animal in dreams and channel traces of its power.
+          </p>
+          <p style="color:var(--text-dim); font-size:0.85em; font-style:italic;">
+            "I heard its heartbeat for the first time. Or perhaps it was always my own." &mdash; Meghanadi of Meghalaya
+          </p>
+        </div>
+      </div>
+
+      <!-- Stage 4: Full Body -->
+      <div class="card animate-on-scroll stage-panel" data-reverse style="display:flex; gap:30px; align-items:center; padding:30px; flex-direction:row-reverse;">
+        <div style="flex-shrink:0; width:150px; height:180px; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 150 180" width="150" height="180">
+            <circle cx="75" cy="90" r="70" fill="none" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="4,4">
+              <animate attributeName="stroke-dashoffset" from="0" to="50" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Full beast silhouette (generic quadruped) -->
+            <path d="M25,130 L20,105 L22,85 L30,70 L35,55 L45,42 L55,35 L65,30 L80,28 L95,30 L105,35 L115,42 L122,55 L128,70 L130,85 L128,105 L125,130 Z"
+                  fill="#ffd700" opacity="0.7"/>
+            <!-- Head suggestion -->
+            <ellipse cx="75" cy="25" rx="22" ry="16" fill="#ffd700" opacity="0.7"/>
+            <!-- Ears -->
+            <path d="M58,14 L55,5 L63,12 Z" fill="#ffd700" opacity="0.7"/>
+            <path d="M92,14 L95,5 L87,12 Z" fill="#ffd700" opacity="0.7"/>
+            <!-- Legs -->
+            <rect x="32" y="128" width="10" height="25" rx="3" fill="#ffd700" opacity="0.7"/>
+            <rect x="56" y="128" width="10" height="22" rx="3" fill="#ffd700" opacity="0.7"/>
+            <rect x="84" y="128" width="10" height="22" rx="3" fill="#ffd700" opacity="0.7"/>
+            <rect x="108" y="128" width="10" height="25" rx="3" fill="#ffd700" opacity="0.7"/>
+            <!-- Eyes -->
+            <circle cx="65" cy="22" r="3" fill="#1a0a00"/>
+            <circle cx="85" cy="22" r="3" fill="#1a0a00"/>
+            <!-- Glow effect -->
+            <ellipse cx="75" cy="80" rx="50" ry="45" fill="#ffd700" opacity="0.1">
+              <animate attributeName="opacity" values="0.05;0.15;0.05" dur="2s" repeatCount="indefinite"/>
+            </ellipse>
+            <text x="75" y="170" fill="#ffd700" text-anchor="middle" font-size="11" font-family="Georgia" font-weight="bold">Stage IV &mdash; LEADER</text>
+          </svg>
+        </div>
+        <div>
+          <h3 style="color:#ffd700; margin-bottom:8px;">The Full Body &mdash; Kingdom Leader</h3>
+          <p style="color:var(--text); line-height:1.7; margin-bottom:10px;">
+            The rarest and most sacred transformation. When a warrior has proven beyond all doubt that they
+            are the strongest, wisest, or most cunning in their entire kingdom, the beast completes itself.
+            Head, tail, and spirit merge with the warrior's soul. The tattoo now covers their entire torso
+            and glows in moments of great emotion or danger. They become the State Hero &mdash; the living embodiment
+            of their kingdom's spirit animal.
+          </p>
+          <p style="color:var(--text-dim); font-size:0.85em; font-style:italic;">
+            "I am no longer just Simhavikrama. I am Gujarat. I am the Lion." &mdash; Simhavikrama, upon receiving the Full Mark
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. INTERACTIVE TATTOO DEMO ===== -->
+  <section class="section">
+    <h2 class="section-title">Interactive Tattoo Progression</h2>
+    <p style="text-align:center; color:var(--text-dim); margin-bottom:30px;">
+      Select a kingdom's sacred beast and watch the tattoo grow through its four stages.
+    </p>
+
+    <div style="max-width:800px; margin:0 auto;">
+      <!-- Animal selector -->
+      <div id="animalSelector" style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-bottom:30px;">
+        <!-- JS will populate this with buttons for each animal -->
+      </div>
+
+      <!-- Demo area -->
+      <div class="tattoo-demo-area" style="display:flex; justify-content:center; align-items:center; gap:40px; flex-wrap:wrap;">
+        <!-- The tattoo visualization -->
+        <div id="tattooDemo" style="width:250px; height:300px; border:1px solid var(--border-dim); border-radius:12px; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.3); position:relative; overflow:hidden;">
+          <p style="color:var(--text-dim); font-size:0.9em;">Select a beast above</p>
+        </div>
+
+        <!-- Stage controls -->
+        <div style="display:flex; flex-direction:column; gap:15px;">
+          <button class="filter-btn" onclick="setTattooStage(1)" id="stageBtn1">Stage I &mdash; Footprint</button>
+          <button class="filter-btn" onclick="setTattooStage(2)" id="stageBtn2">Stage II &mdash; Leg</button>
+          <button class="filter-btn" onclick="setTattooStage(3)" id="stageBtn3">Stage III &mdash; Half Body</button>
+          <button class="filter-btn" onclick="setTattooStage(4)" id="stageBtn4">Stage IV &mdash; Full Body</button>
+          <button class="filter-btn" onclick="animateAllStages()" style="border-color:var(--gold); color:var(--gold);">&#9654; Animate All</button>
+        </div>
+      </div>
+
+      <!-- Stage description -->
+      <div id="stageDescription" style="text-align:center; margin-top:20px; color:var(--text-dim); font-style:italic; min-height:40px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. COMBINATION TATTOOS ===== -->
+  <section class="section">
+    <h2 class="section-title">The Combination Tattoo &mdash; Regional Leaders</h2>
+    <p style="text-align:center; color:var(--text-dim); max-width:700px; margin:0 auto 30px; line-height:1.7;">
+      When a State Hero rises to lead an entire region, something extraordinary happens.
+      The tattoos of every kingdom in that region merge with their own, creating a chimeric beast
+      never before seen &mdash; a living testament to unified power.
+    </p>
+
+    <div class="grid-3" id="combinationTattoos">
+      <!-- JS will populate, or use static fallback -->
+    </div>
+  </section>
+
+  <!-- ===== 5. RULES AND LORE ===== -->
+  <section class="section">
+    <h2 class="section-title">The Laws of the Tattoo</h2>
+    <div style="max-width:800px; margin:0 auto;">
+      <div class="card" style="padding:30px;">
+        <div style="display:grid; gap:20px;">
+          <div class="animate-on-scroll">
+            <h3 style="color:var(--gold); font-size:1em; margin-bottom:5px;">The Tattoo Cannot Be Forced</h3>
+            <p style="color:var(--text-dim); line-height:1.6;">No sorcery, no ritual, no amount of political power can accelerate the tattoo's growth. It responds only to genuine achievement recognized by the spiritual bond between warrior and beast. Frauds have tried &mdash; all have failed, often fatally.</p>
+          </div>
+          <div class="divider"></div>
+          <div class="animate-on-scroll">
+            <h3 style="color:var(--gold); font-size:1em; margin-bottom:5px;">Good and Evil Alike May Ascend</h3>
+            <p style="color:var(--text-dim); line-height:1.6;">The tattoo does not judge morality. A tyrant who conquers through fear earns their mark just as a benevolent leader who unites through love. The beast recognizes power, not virtue. This is why some of the most dangerous villains in MahaHulmane bear the Full Body mark.</p>
+          </div>
+          <div class="divider"></div>
+          <div class="animate-on-scroll">
+            <h3 style="color:var(--gold); font-size:1em; margin-bottom:5px;">Death Frees the Mark</h3>
+            <p style="color:var(--text-dim); line-height:1.6;">When a State Hero falls, their tattoo dissolves into light and returns to the land. Within a generation, a new child is born with an unusually bright footprint &mdash; the next potential champion. The cycle never breaks.</p>
+          </div>
+          <div class="divider"></div>
+          <div class="animate-on-scroll">
+            <h3 style="color:var(--gold); font-size:1em; margin-bottom:5px;">The Beast Speaks</h3>
+            <p style="color:var(--text-dim); line-height:1.6;">From Stage III onward, warriors report hearing their beast's voice in moments of extreme emotion. By Stage IV, the bond is so deep that the warrior can temporarily manifest aspects of their animal &mdash; the lion's roar that shatters stone, the elephant's charge that levels walls, the leopard's stealth that bends light.</p>
+          </div>
+          <div class="divider"></div>
+          <div class="animate-on-scroll">
+            <h3 style="color:var(--gold); font-size:1em; margin-bottom:5px;">The Combination Paradox</h3>
+            <p style="color:var(--text-dim); line-height:1.6;">Regional leaders who bear the combination tattoo gain immense power but also carry the burden of multiple beast-spirits. The voices of five or more animals can drive a lesser mind to madness. Only the strongest wills survive the merger, which is why regional leadership is so rare &mdash; and so feared.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. GALLERY OF ALL 28 ANIMALS ===== -->
+  <section class="section">
+    <h2 class="section-title">The Sacred Beasts of Bharata</h2>
+    <div class="grid-4" id="animalGallery">
+      <!-- JS populates, or static fallback -->
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="text-align:center; padding:40px 20px; border-top:1px solid var(--border-dim); color:var(--text-dim); font-size:0.85em;">
+    <p style="color:var(--gold); margin-bottom:10px;">MahaHulmane &mdash; The Great Assembly of Warriors</p>
+    <p>Inspired by the Mahabharata &bull; A World of Twenty-Eight Kingdoms</p>
+    <p style="margin-top:15px;">
+      Reference: <a href="mahabharata_family_tree.html" style="color:var(--gold-dim);">Mahabharata Family Tree</a> &bull;
+      <a href="mahabharata_family_tree_kannada.html" style="color:var(--gold-dim);">&#x0C8E;&#x0CA8;&#x0CCD;&#x0CA8; &#x0CAE;&#x0CB9;&#x0CBE;&#x0CAD;&#x0CBE;&#x0CB0;&#x0CA4; &#x0CB5;&#x0C82;&#x0CB6;&#x0CB5;&#x0CC3;&#x0C95;&#x0CCD;&#x0CB7; (Kannada)</a>
+    </p>
+  </footer>
+
+  <!-- ===== EXTERNAL SCRIPTS ===== -->
+  <script src="js/characters-data.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- ===== TATTOO PAGE SCRIPTS ===== -->
+  <script>
+    var currentAnimal = null;
+    var currentStage = 0;
+    var animating = false;
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // ---- Interactive Tattoo Demo: Animal Selector ----
+      var selector = document.getElementById('animalSelector');
+      if (selector && window.HEROES) {
+        var seen = {};
+        window.HEROES.forEach(function(hero) {
+          if (!seen[hero.animal.name]) {
+            seen[hero.animal.name] = true;
+            var btn = document.createElement('button');
+            btn.className = 'filter-btn';
+            btn.textContent = hero.animal.name;
+            btn.style.fontSize = '0.75em';
+            btn.style.padding = '5px 12px';
+            btn.setAttribute('data-animal', hero.animal.name);
+            btn.onclick = function(e) { selectAnimal(hero, e); };
+            selector.appendChild(btn);
+          }
+        });
+      }
+
+      // ---- Combination Tattoos ----
+      var comboContainer = document.getElementById('combinationTattoos');
+      if (comboContainer && window.REGIONAL_LEADERS) {
+        window.REGIONAL_LEADERS.forEach(function(region) {
+          var card = document.createElement('div');
+          card.className = 'card hero-' + region.id + ' animate-on-scroll';
+          card.style.padding = '25px';
+          card.style.textAlign = 'center';
+          card.innerHTML =
+            '<h3 style="margin-bottom:5px;">' + region.name + '</h3>' +
+            '<p style="font-size:0.8em; margin-bottom:12px; opacity:0.8;">' + region.leader.title + '</p>' +
+            '<div style="margin:15px 0; padding:15px; background:rgba(0,0,0,0.3); border-radius:8px;">' +
+              '<p style="font-size:0.85em; line-height:1.6;">' + region.combinationTattoo.description + '</p>' +
+            '</div>' +
+            '<p style="font-size:0.75em; opacity:0.7; margin-top:10px;">' +
+              'Combined beasts: ' + region.combinationTattoo.animals.join(' + ') +
+            '</p>';
+          comboContainer.appendChild(card);
+        });
+      }
+
+      // ---- Animal Gallery ----
+      var gallery = document.getElementById('animalGallery');
+      if (gallery && window.HEROES) {
+        window.HEROES.forEach(function(hero) {
+          var div = document.createElement('div');
+          div.className = 'card hero-' + hero.region + ' animate-on-scroll';
+          div.style.padding = '15px';
+          div.style.textAlign = 'center';
+          div.style.cursor = 'pointer';
+          div.onclick = function(e) { selectAnimal(hero, e); };
+          div.innerHTML =
+            '<div style="height:80px; display:flex; align-items:center; justify-content:center; margin-bottom:8px;">' +
+              (window.generateAnimalSVG ? window.generateAnimalSVG(hero.animal.name, 70, hero.colors.primary) : '<span style="font-size:40px;">&#128062;</span>') +
+            '</div>' +
+            '<div style="font-weight:bold; font-size:0.85em;">' + hero.animal.name + '</div>' +
+            '<div style="font-size:0.75em; opacity:0.7; margin-top:3px;">' + hero.state + '</div>' +
+            '<div style="font-size:0.7em; opacity:0.6; margin-top:2px;">' + hero.animal.symbolism + '</div>';
+          gallery.appendChild(div);
+        });
+      }
+    });
+
+    function selectAnimal(hero, e) {
+      currentAnimal = hero;
+      currentStage = 0;
+
+      // Highlight selected button in the animal selector
+      var selectorBtns = document.querySelectorAll('#animalSelector .filter-btn');
+      selectorBtns.forEach(function(b) { b.classList.remove('active'); });
+      // Find the matching button in the selector and highlight it
+      selectorBtns.forEach(function(b) {
+        if (b.getAttribute('data-animal') === hero.animal.name) {
+          b.classList.add('active');
+        }
+      });
+
+      // Show the animal name in the demo area
+      var demo = document.getElementById('tattooDemo');
+      demo.innerHTML =
+        '<div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; position:relative;">' +
+          '<div id="tattooAnimalSVG" style="transition: clip-path 1.5s cubic-bezier(0.4, 0, 0.2, 1); clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);">' +
+            (window.generateAnimalSVG ? window.generateAnimalSVG(hero.animal.name, 200, hero.colors.primary) : '<div style="font-size:60px;">&#128062;</div>') +
+          '</div>' +
+          '<div style="position:absolute; bottom:10px; color:var(--gold); font-size:0.8em; font-family:Georgia;">' + hero.animal.name + '</div>' +
+        '</div>';
+
+      document.getElementById('stageDescription').textContent = 'Click a stage or press Animate All';
+
+      // Clear stage button highlights
+      for (var i = 1; i <= 4; i++) {
+        document.getElementById('stageBtn' + i).classList.remove('active');
+      }
+
+      // Scroll to the demo area
+      document.getElementById('tattooDemo').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function setTattooStage(stage) {
+      if (!currentAnimal) return;
+      currentStage = stage;
+
+      var svgEl = document.getElementById('tattooAnimalSVG');
+      if (!svgEl) return;
+
+      // Progressive clip-path reveal
+      var clips = {
+        1: 'polygon(30% 100%, 70% 100%, 70% 80%, 30% 80%)',
+        2: 'polygon(25% 100%, 75% 100%, 75% 55%, 25% 55%)',
+        3: 'polygon(15% 100%, 85% 100%, 85% 25%, 15% 25%)',
+        4: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)'
+      };
+
+      svgEl.style.clipPath = clips[stage];
+
+      // Update stage buttons
+      for (var i = 1; i <= 4; i++) {
+        if (i === stage) {
+          document.getElementById('stageBtn' + i).classList.add('active');
+        } else {
+          document.getElementById('stageBtn' + i).classList.remove('active');
+        }
+      }
+
+      // Update description
+      var descriptions = {
+        1: 'The footprint appears at birth \u2014 the land claims its child.',
+        2: 'After the first trial, the legs take form. The beast walks with the warrior.',
+        3: 'Regional glory earned \u2014 the beast\'s body emerges across the warrior\'s skin.',
+        4: 'Full mastery achieved. Warrior and beast are one. The kingdom has its champion.'
+      };
+      document.getElementById('stageDescription').textContent = descriptions[stage];
+    }
+
+    function animateAllStages() {
+      if (!currentAnimal || animating) return;
+      animating = true;
+
+      // Reset first
+      var svgEl = document.getElementById('tattooAnimalSVG');
+      if (svgEl) svgEl.style.clipPath = 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)';
+
+      var stageIndex = 0;
+      setTimeout(function runNext() {
+        stageIndex++;
+        if (stageIndex <= 4) {
+          setTattooStage(stageIndex);
+          setTimeout(runNext, 1800);
+        } else {
+          animating = false;
+        }
+      }, 500);
+    }
+  </script>
+
+</body>
+</html>

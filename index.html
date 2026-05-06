@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAHAHULMANE &mdash; The Great Assembly of Warriors</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== 1. INTRO OVERLAY ===== -->
+  <div class="intro-overlay" id="introOverlay">
+    <div class="intro-text">
+      <div class="intro-line" style="animation-delay: 0.5s">When courage and faith speak louder than swords.</div>
+      <div class="intro-line" style="animation-delay: 2s">When every kingdom holds its secrets close.</div>
+      <div class="intro-line" style="animation-delay: 3.5s">And the darkness gathers behind the stars.</div>
+      <div class="intro-line gold" style="animation-delay: 5s">The great MahaHulmane stands &mdash; gathering all the arts of the world to guard its people and its kingdom.</div>
+      <div class="intro-line intro-subtitle" style="animation-delay: 6.5s">Here, Dharma is the wind. Courage is the path. And the trust of the people will always triumph over the sword.</div>
+    </div>
+    <button class="intro-skip" onclick="skipIntro()">Skip &#9654;</button>
+  </div>
+
+  <script>
+    function skipIntro() {
+      document.getElementById('introOverlay').style.opacity = '0';
+      setTimeout(function() { document.getElementById('introOverlay').style.display = 'none'; }, 500);
+    }
+    setTimeout(skipIntro, 8500);
+  </script>
+
+  <!-- ===== 2. NAVIGATION BAR ===== -->
+  <nav class="maha-nav">
+    <a href="index.html" class="nav-logo">MAHAHULMANE</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="characters.html">Heroes</a>
+      <a href="character-gallery.html">Gallery</a>
+      <a href="state-stories.html">Kingdoms</a>
+      <a href="regions.html">Regions</a>
+      <a href="council.html">Council</a>
+      <a href="story.html">Story</a>
+      <a href="tattoo-system.html">Tattoos</a>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')">&#9776;</button>
+  </nav>
+
+  <!-- ===== 3. HERO BANNER SECTION ===== -->
+  <section class="section hero-banner" style="text-align:center; padding-top:80px;">
+    <div class="hero-graphic">
+      <svg viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <defs>
+          <linearGradient id="heroGlow" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ffd700" stop-opacity="0.25" />
+            <stop offset="100%" stop-color="#ff8c00" stop-opacity="0.05" />
+          </linearGradient>
+        </defs>
+        <rect width="1000" height="400" fill="transparent" />
+        <path d="M150 340 Q220 120 320 110 Q410 90 500 120 Q580 142 640 160 Q760 200 820 340 Z" fill="rgba(255,215,0,0.09)" />
+        <path d="M520 60 C 520 60, 520 20, 560 20 C 600 20, 620 50, 620 80 C 620 110, 580 140, 540 135 C 500 130, 480 100, 520 60Z" fill="rgba(255,255,255,0.18)" />
+        <path d="M430 130 C 240 150, 160 380, 320 340 C 390 320, 530 300, 660 320 C 770 340, 760 160, 660 130 C 620 120, 560 100, 500 110 C 450 118, 430 130, 430 130Z" fill="#1f0b00" opacity="0.32" />
+        <path d="M360 170 C 300 140, 300 100, 360 90 C 420 80, 540 100, 560 150 C 570 180, 520 210, 470 210 C 410 218, 385 190, 360 170Z" fill="#ffd700" opacity="0.28" />
+        <path d="M500 100 L480 145 L520 158 L560 140 L580 112" stroke="#ffd700" stroke-width="6" fill="none" opacity="0.6" />
+        <circle cx="540" cy="170" r="8" fill="#ffd700" />
+        <circle cx="430" cy="220" r="10" fill="#ffd700" />
+        <path d="M320 240 Q330 180 380 160 Q420 150 440 170 Q460 190 430 230" stroke="#ffd700" stroke-width="4" fill="none" opacity="0.6" />
+      </svg>
+    </div>
+    <h1>MAHAHULMANE</h1>
+    <p class="subtitle">The Great Assembly of Warriors</p>
+    <p style="max-width:760px; margin:20px auto; color: var(--text-dim); line-height:1.8;">
+      Inspired by the Mahabharata, MahaHulmane is a tale where courage and faith
+      speak louder than swords. Even when darkness gathers behind the stars &mdash;
+      or rises from within the kingdom itself &mdash; the people, their trust,
+      and their Dharma will stand against it all. Dharma is the wind that carries
+      every hero forward. All the art of this world begins and ends with courage.
+    </p>
+  </section>
+
+  <!-- ===== 3.5. HERO COLLAGE SECTION ===== -->
+  <section class="section">
+    <h2 class="section-title">The Heroes of MahaHulmane</h2>
+    <div class="collage-block card">
+      <p style="max-width:760px; margin:0 auto 1.4rem; color:var(--text-dim); line-height:1.8;">
+        Twenty-eight kingdoms. Twenty-eight heroes. Each carries their own sacred symbol,
+        their own tattoo, their own story &mdash; so when you see them, you know exactly
+        who they are and where they come from. This is the world at a glance: warriors,
+        guardians, legends, all rising together against the gathering dark.
+      </p>
+      <div class="character-collage" aria-label="A cinematic collage of heroes from every kingdom of MahaHulmane">
+        <svg viewBox="0 0 900 440" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <radialGradient id="collageGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ffd700" stop-opacity="0.3"/>
+              <stop offset="60%" stop-color="#ff8c00" stop-opacity="0.12"/>
+              <stop offset="100%" stop-color="transparent"/>
+            </radialGradient>
+            <radialGradient id="blueGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#7b9eff" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="transparent"/>
+            </radialGradient>
+            <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#44ff88" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="transparent"/>
+            </radialGradient>
+          </defs>
+          <rect x="0" y="0" width="900" height="440" rx="18" fill="#160900"/>
+          <circle cx="450" cy="220" r="200" fill="url(#collageGlow)"/>
+
+          <!-- Central hero — the grand warrior, full body tattoo, golden aura -->
+          <g transform="translate(400,40)">
+            <ellipse cx="50" cy="180" rx="55" ry="160" fill="#ffd700" opacity="0.08"/>
+            <rect x="30" y="50" width="40" height="100" rx="6" fill="#2b1a00" stroke="#ffd700" stroke-width="2"/>
+            <circle cx="50" cy="35" r="22" fill="#2b1a00" stroke="#ffd700" stroke-width="2"/>
+            <circle cx="50" cy="35" r="14" fill="#ffd700" opacity="0.25"/>
+            <path d="M38 150 L30 220 L42 220 L50 180 L58 220 L70 220 L62 150" fill="#2b1a00" stroke="#ffd700" stroke-width="1.5"/>
+            <path d="M25 70 L10 120 M75 70 L90 120" stroke="#ffd700" stroke-width="2" fill="none"/>
+            <path d="M35 60 L35 140" stroke="#ffd700" stroke-width="1" opacity="0.4"/>
+            <path d="M65 60 L65 140" stroke="#ffd700" stroke-width="1" opacity="0.4"/>
+            <path d="M40 80 L60 80 M40 100 L60 100 M40 120 L60 120" stroke="#ffd700" stroke-width="0.8" opacity="0.3"/>
+            <text x="50" y="250" fill="#ffd700" text-anchor="middle" font-size="10" font-family="Georgia" font-weight="bold">Grand Warrior</text>
+            <text x="50" y="262" fill="#d4a855" text-anchor="middle" font-size="7" font-family="Georgia">Full Body Tattoo</text>
+          </g>
+
+          <!-- Left hero group — northern warriors (blue tones) -->
+          <g transform="translate(80,80)">
+            <circle cx="60" cy="130" r="70" fill="url(#blueGlow)"/>
+            <rect x="42" y="80" width="36" height="80" rx="5" fill="#0a0a2e" stroke="#7b9eff" stroke-width="1.5"/>
+            <circle cx="60" cy="65" r="18" fill="#0a0a2e" stroke="#7b9eff" stroke-width="1.5"/>
+            <path d="M50 160 L44 210 L56 210 L60 180 L64 210 L76 210 L70 160" fill="#0a0a2e" stroke="#7b9eff" stroke-width="1"/>
+            <path d="M35 95 L15 130 M85 95 L100 125" stroke="#7b9eff" stroke-width="1.5" fill="none"/>
+            <path d="M48 95 L72 95 M48 110 L72 110" stroke="#7b9eff" stroke-width="0.8" opacity="0.5"/>
+            <path d="M15 130 L5 128 L8 138 Z" fill="#7b9eff" opacity="0.8"/>
+            <text x="60" y="232" fill="#7b9eff" text-anchor="middle" font-size="9" font-family="Georgia">Northern Warrior</text>
+            <text x="60" y="243" fill="#5a7acc" text-anchor="middle" font-size="7" font-family="Georgia">Half Body Mark</text>
+          </g>
+
+          <!-- Right hero group — southern warriors (green tones) -->
+          <g transform="translate(680,80)">
+            <circle cx="60" cy="130" r="70" fill="url(#greenGlow)"/>
+            <rect x="42" y="80" width="36" height="80" rx="5" fill="#0a1f0c" stroke="#44ff88" stroke-width="1.5"/>
+            <circle cx="60" cy="65" r="18" fill="#0a1f0c" stroke="#44ff88" stroke-width="1.5"/>
+            <path d="M50 160 L44 210 L56 210 L60 180 L64 210 L76 210 L70 160" fill="#0a1f0c" stroke="#44ff88" stroke-width="1"/>
+            <path d="M35 95 L18 135 M85 95 L105 120" stroke="#44ff88" stroke-width="1.5" fill="none"/>
+            <path d="M48 90 L72 90" stroke="#44ff88" stroke-width="0.8" opacity="0.5"/>
+            <path d="M105 120 L112 116 L108 126 Z" fill="#44ff88" opacity="0.8"/>
+            <text x="60" y="232" fill="#44ff88" text-anchor="middle" font-size="9" font-family="Georgia">Southern Warrior</text>
+            <text x="60" y="243" fill="#2ecc71" text-anchor="middle" font-size="7" font-family="Georgia">Leg Mark</text>
+          </g>
+
+          <!-- Left-far hero — western warrior (orange tones) -->
+          <g transform="translate(220,130)">
+            <rect x="20" y="50" width="30" height="65" rx="4" fill="#1a0200" stroke="#ff8c00" stroke-width="1.2"/>
+            <circle cx="35" cy="38" r="15" fill="#1a0200" stroke="#ff8c00" stroke-width="1.2"/>
+            <path d="M28 115 L24 165 L34 165 L35 140 L36 165 L46 165 L42 115" fill="#1a0200" stroke="#ff8c00" stroke-width="1"/>
+            <path d="M15 62 L5 90 M55 62 L65 90" stroke="#ff8c00" stroke-width="1.2" fill="none"/>
+            <circle cx="35" cy="75" r="6" fill="none" stroke="#ff8c00" stroke-width="0.8" opacity="0.6"/>
+            <text x="35" y="185" fill="#ff8c00" text-anchor="middle" font-size="8" font-family="Georgia">Western</text>
+          </g>
+
+          <!-- Right-far hero — eastern warrior (red tones) -->
+          <g transform="translate(610,130)">
+            <rect x="20" y="50" width="30" height="65" rx="4" fill="#1a0000" stroke="#ff4444" stroke-width="1.2"/>
+            <circle cx="35" cy="38" r="15" fill="#1a0000" stroke="#ff4444" stroke-width="1.2"/>
+            <path d="M28 115 L24 165 L34 165 L35 140 L36 165 L46 165 L42 115" fill="#1a0000" stroke="#ff4444" stroke-width="1"/>
+            <path d="M15 62 L5 90 M55 62 L65 90" stroke="#ff4444" stroke-width="1.2" fill="none"/>
+            <path d="M28 60 L42 60 M28 75 L42 75 M28 90 L42 90" stroke="#ff4444" stroke-width="0.6" opacity="0.5"/>
+            <text x="35" y="185" fill="#ff4444" text-anchor="middle" font-size="8" font-family="Georgia">Eastern</text>
+          </g>
+
+          <!-- Kingdom symbols scattered — tattoo icons -->
+          <g opacity="0.7">
+            <circle cx="170" cy="380" r="14" fill="none" stroke="#ffd700" stroke-width="1.5"/>
+            <path d="M164 380 L170 370 L176 380 L170 390 Z" fill="#ffd700" opacity="0.4"/>
+            <text x="170" y="405" fill="#d4a855" text-anchor="middle" font-size="7" font-family="Georgia">Lion</text>
+          </g>
+          <g opacity="0.7">
+            <circle cx="330" cy="400" r="14" fill="none" stroke="#7b9eff" stroke-width="1.5"/>
+            <path d="M324 400 C 327 392, 333 392, 336 400 C 333 408, 327 408, 324 400Z" fill="#7b9eff" opacity="0.4"/>
+            <text x="330" y="425" fill="#5a7acc" text-anchor="middle" font-size="7" font-family="Georgia">Eagle</text>
+          </g>
+          <g opacity="0.7">
+            <circle cx="450" cy="390" r="14" fill="none" stroke="#ffd700" stroke-width="1.5"/>
+            <path d="M444 390 L450 380 L456 390 L453 395 L447 395 Z" fill="#ffd700" opacity="0.4"/>
+            <text x="450" y="415" fill="#d4a855" text-anchor="middle" font-size="7" font-family="Georgia">Tiger</text>
+          </g>
+          <g opacity="0.7">
+            <circle cx="570" cy="400" r="14" fill="none" stroke="#44ff88" stroke-width="1.5"/>
+            <path d="M564 400 L570 392 L576 400 L570 408 Z" fill="#44ff88" opacity="0.4"/>
+            <text x="570" y="425" fill="#2ecc71" text-anchor="middle" font-size="7" font-family="Georgia">Serpent</text>
+          </g>
+          <g opacity="0.7">
+            <circle cx="720" cy="380" r="14" fill="none" stroke="#ff8c00" stroke-width="1.5"/>
+            <path d="M714 380 L720 372 L726 380 L720 388 Z" fill="#ff8c00" opacity="0.4"/>
+            <text x="720" y="405" fill="#cc7000" text-anchor="middle" font-size="7" font-family="Georgia">Bull</text>
+          </g>
+
+          <!-- Tagline across bottom -->
+          <text x="450" y="435" fill="#ffd700" text-anchor="middle" font-size="11" font-family="Georgia" font-style="italic" opacity="0.8">
+            Every symbol tells a story. Every tattoo marks the journey.
+          </text>
+        </svg>
+      </div>
+      <p style="text-align:center; margin-top:1rem; color:var(--gold-dim); font-size:0.95em;">
+        Heroes from every kingdom, each carrying the mark of their sacred beast &mdash; united against the darkness.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 4. WORLD OVERVIEW — THREE COLUMNS ===== -->
+  <section class="section">
+    <h2 class="section-title">The World of MAHAHULMANE</h2>
+    <div class="grid-3">
+
+      <!-- Column 1: Tattoo System -->
+      <div class="card animate-on-scroll">
+        <h3 style="color:var(--gold);">The Sacred Tattoo</h3>
+        <div style="text-align:center; margin:20px 0;">
+          <svg viewBox="0 0 400 100" style="max-width:100%;">
+            <g>
+              <rect x="10" y="60" width="60" height="30" rx="5" fill="#2b1a00" stroke="#ffd700" stroke-width="1"/>
+              <text x="40" y="80" fill="#ffd700" text-anchor="middle" font-size="9" font-family="Georgia">Footprint</text>
+            </g>
+            <line x1="75" y1="75" x2="105" y2="75" stroke="#5a3e10" stroke-width="1"/>
+            <g>
+              <rect x="110" y="50" width="60" height="40" rx="5" fill="#2b1a00" stroke="#ffd700" stroke-width="1"/>
+              <text x="140" y="75" fill="#ffd700" text-anchor="middle" font-size="9" font-family="Georgia">Leg</text>
+            </g>
+            <line x1="175" y1="70" x2="205" y2="70" stroke="#5a3e10" stroke-width="1"/>
+            <g>
+              <rect x="210" y="35" width="70" height="55" rx="5" fill="#2b1a00" stroke="#ffd700" stroke-width="1"/>
+              <text x="245" y="67" fill="#ffd700" text-anchor="middle" font-size="9" font-family="Georgia">Half Body</text>
+            </g>
+            <line x1="285" y1="62" x2="315" y2="62" stroke="#5a3e10" stroke-width="1"/>
+            <g>
+              <rect x="320" y="15" width="70" height="75" rx="5" fill="#2b1a00" stroke="#ffd700" stroke-width="2"/>
+              <text x="355" y="55" fill="#ffd700" text-anchor="middle" font-size="9" font-family="Georgia" font-weight="bold">Full Body</text>
+              <text x="355" y="68" fill="#d4a855" text-anchor="middle" font-size="7" font-family="Georgia">LEADER</text>
+            </g>
+          </svg>
+        </div>
+        <p style="color:var(--text-dim); font-size:0.9em; line-height:1.6;">
+          The tattoo is how the audience follows the journey. When you watch a hero rise
+          from nothing to legend, their tattoo grows with them &mdash; from a small footprint
+          to a full-body mark. Each kingdom has its own sacred symbol, so you always know
+          who belongs where, what they fight for, and how far they have come.
+        </p>
+        <a href="tattoo-system.html" style="display:block; margin-top:15px; color:var(--gold); text-decoration:none;">Explore the Tattoo System &rarr;</a>
+      </div>
+
+      <!-- Column 2: Hierarchy -->
+      <div class="card animate-on-scroll" style="animation-delay:0.2s;">
+        <h3 style="color:var(--gold);">The Power Hierarchy</h3>
+        <div class="pyramid" style="margin:20px 0;">
+          <div class="pyramid-level" style="width:50%; background: linear-gradient(90deg, #3a0000, #1a0000); border:1px solid #ff4444; padding:8px; text-align:center; border-radius:5px;">
+            <span style="color:#ff4444; font-size:0.8em; font-weight:bold;">MAHAHULMANE</span><br>
+            <span style="color:#ffaaaa; font-size:0.7em;">Grand Kingdom</span>
+          </div>
+          <div class="pyramid-level" style="width:65%; background: linear-gradient(90deg, #2b1a00, #1a0a00); border:1px solid #ffd700; padding:6px; text-align:center; border-radius:5px;">
+            <span style="color:#ffd700; font-size:0.75em; font-weight:bold;">Council of Warriors</span>
+          </div>
+          <div class="pyramid-level" style="width:80%; background: linear-gradient(90deg, #1a1a4e, #0a0a2e); border:1px solid #7b9eff; padding:6px; text-align:center; border-radius:5px;">
+            <span style="color:#7b9eff; font-size:0.75em;">6 Regional Leaders</span>
+          </div>
+          <div class="pyramid-level" style="width:100%; background: linear-gradient(90deg, #003a1a, #001a0a); border:1px solid #44ff88; padding:6px; text-align:center; border-radius:5px;">
+            <span style="color:#44ff88; font-size:0.75em;">28 State Heroes</span>
+          </div>
+        </div>
+        <p style="color:var(--text-dim); font-size:0.9em; line-height:1.6;">
+          From village champion to Grand Warrior &mdash; the path ascends through
+          state trials, regional championships, and finally the Council's arena.
+          Both heroes and villains climb this ladder.
+        </p>
+        <a href="regions.html" style="display:block; margin-top:15px; color:var(--gold); text-decoration:none;">View the Regions &rarr;</a>
+      </div>
+
+      <!-- Column 3: The Threat -->
+      <div class="card animate-on-scroll" style="animation-delay:0.4s;">
+        <h3 style="color:var(--gold);">The Galactic Threat</h3>
+        <div style="text-align:center; margin:20px 0;">
+          <svg viewBox="0 0 200 200" style="max-width:180px;">
+            <defs>
+              <radialGradient id="threatGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ff0000" stop-opacity="0.6"/>
+                <stop offset="40%" stop-color="#660000" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="transparent"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="100" r="90" fill="url(#threatGlow)" class="pulse-glow"/>
+            <circle cx="100" cy="100" r="25" fill="#1a0000" stroke="#ff0000" stroke-width="2"/>
+            <circle cx="100" cy="100" r="12" fill="#ff0000" opacity="0.8"/>
+            <text x="100" y="155" fill="#ff4444" text-anchor="middle" font-size="11" font-family="Georgia" font-style="italic">The Void Maw</text>
+            <text x="100" y="170" fill="#ff888888" text-anchor="middle" font-size="8" font-family="Georgia">approaches...</text>
+          </svg>
+        </div>
+        <p style="color:var(--text-dim); font-size:0.9em; line-height:1.6;">
+          Beyond the stars, an ancient cosmic devourer stirs.
+          Star systems go dark in its wake. The signs have been read &mdash;
+          only a united front of every kingdom on Earth, and beyond, can withstand what comes.
+        </p>
+        <a href="story.html" style="display:block; margin-top:15px; color:var(--gold); text-decoration:none;">Read the Story &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 5. INTERACTIVE INDIA MAP ===== -->
+  <section class="section">
+    <h2 class="section-title">The Twenty-Eight Kingdoms</h2>
+    <p style="text-align:center; color:var(--text-dim); max-width:600px; margin:0 auto 30px; line-height:1.6;">
+      Each state of Bharata is protected by a hero bonded to their sacred beast.
+      Hover over any kingdom to see its champion. Click to explore their story.
+    </p>
+    <div id="indiaMapContainer" class="india-map"></div>
+  </section>
+
+  <!-- ===== 6. FEATURED HEROES ===== -->
+  <section class="section">
+    <h2 class="section-title">Champions of the Regions</h2>
+    <div class="grid-3" id="featuredHeroes"></div>
+  </section>
+
+  <!-- ===== 7. QUICK LINKS ===== -->
+  <section class="section">
+    <h2 class="section-title">Explore the World</h2>
+    <div class="grid-3">
+      <a href="characters.html" class="card" style="text-decoration:none;">
+        <h3 style="color:var(--gold);">All 28 Heroes</h3>
+        <p style="color:var(--text-dim);">Meet every champion, their sacred beast, and their story of triumph and betrayal.</p>
+      </a>
+      <a href="character-gallery.html" class="card" style="text-decoration:none; border-color:var(--gold-dim);">
+        <h3 style="color:var(--gold);">Character Gallery</h3>
+        <p style="color:var(--text-dim);">See every hero &amp; villain portrait &mdash; animal art, Hindu god inspiration, traditional and modern weapons side by side.</p>
+      </a>
+      <a href="karnataka-portrait.html" class="card" style="text-decoration:none; border-color:#2a5a20;">
+        <h3 style="color:#44ff88;">Karnataka — Elephant Kingdom</h3>
+        <p style="color:var(--text-dim);">Detailed portrait: Tungabhadra the hero, Bhoomi-Takshaka the villain, and the sacred Indian Elephant — with Vijayanagara art.</p>
+      </a>
+      <a href="council.html" class="card" style="text-decoration:none;">
+        <h3 style="color:var(--gold);">The Grand Council</h3>
+        <p style="color:var(--text-dim);">India, the World, Space, and Hybrid kingdoms &mdash; united at the round table.</p>
+      </a>
+      <a href="story.html" class="card" style="text-decoration:none;">
+        <h3 style="color:var(--gold);">The Full Story</h3>
+        <p style="color:var(--text-dim);">From the Age of Animals to the final stand against the Void Maw.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== 8. FOOTER ===== -->
+  <footer style="text-align:center; padding:40px 20px; border-top:1px solid var(--border-dim); color:var(--text-dim); font-size:0.85em;">
+    <p style="color:var(--gold); margin-bottom:10px;">MAHAHULMANE &mdash; The Great Assembly of Warriors</p>
+    <p>Inspired by the Mahabharata &bull; A World of Twenty-Eight Kingdoms</p>
+    <p style="margin-top:15px;">
+      Reference: <a href="mahabharata_family_tree.html" style="color:var(--gold-dim);">Mahabharata Family Tree</a> &bull;
+      <a href="mahabharata_family_tree_kannada.html" style="color:var(--gold-dim);">ಮಹಾಭಾರತ ವಂಶವೃಕ್ಷ (Kannada)</a>
+    </p>
+  </footer>
+
+  <!-- ===== EXTERNAL SCRIPTS ===== -->
+  <script src="js/characters-data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/india-map.js"></script>
+
+  <!-- ===== PAGE INITIALIZATION ===== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize India Map
+      if (window.createIndiaMap) {
+        window.createIndiaMap('indiaMapContainer');
+      }
+
+      // Populate Featured Heroes
+      var featured = ['gujarat', 'tamil-nadu', 'west-bengal', 'uttar-pradesh', 'assam', 'madhya-pradesh'];
+      var container = document.getElementById('featuredHeroes');
+      if (container && window.HEROES && window.renderHeroCard) {
+        featured.forEach(function(id) {
+          var hero = window.HEROES.find(function(h) { return h.id === id; });
+          if (hero) {
+            container.innerHTML += window.renderHeroCard(hero);
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

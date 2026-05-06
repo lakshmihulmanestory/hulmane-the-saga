@@ -1,0 +1,678 @@
+<svg viewBox="0 0 1000 680" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+<defs>
+  <radialGradient id="heroAura" cx="50%" cy="60%" r="50%">
+    <stop offset="0%" stop-color="#44ff88" stop-opacity="0.22"/>
+    <stop offset="100%" stop-color="#003a1a" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="villainAura" cx="50%" cy="60%" r="50%">
+    <stop offset="0%" stop-color="#cc0000" stop-opacity="0.22"/>
+    <stop offset="100%" stop-color="#0a0002" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="elephantGlow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#ffd700" stop-opacity="0.18"/>
+    <stop offset="100%" stop-color="#003a1a" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="darkElephantGlow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#880000" stop-opacity="0.18"/>
+    <stop offset="100%" stop-color="#0a0002" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="heroBg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#001a0a"/>
+    <stop offset="100%" stop-color="#003a1a"/>
+  </linearGradient>
+  <linearGradient id="villainBg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#050000"/>
+    <stop offset="100%" stop-color="#110002"/>
+  </linearGradient>
+  <linearGradient id="skinHero" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#7a4a22"/>
+    <stop offset="100%" stop-color="#5a3015"/>
+  </linearGradient>
+  <linearGradient id="skinVillain" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#1a0808"/>
+    <stop offset="100%" stop-color="#0a0004"/>
+  </linearGradient>
+  <linearGradient id="elephantSkin" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#6b5040"/>
+    <stop offset="100%" stop-color="#4a3528"/>
+  </linearGradient>
+  <linearGradient id="darkElephantSkin" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#220a0a"/>
+    <stop offset="100%" stop-color="#110005"/>
+  </linearGradient>
+  <filter id="glow">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softShadow">
+    <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+  </filter>
+</defs>
+
+<!-- ═══════════════════════════════════════════════
+     BACKGROUNDS
+═══════════════════════════════════════════════ -->
+<!-- Hero bg -->
+<rect x="0" y="0" width="500" height="680" fill="url(#heroBg)"/>
+<!-- Villain bg -->
+<rect x="500" y="0" width="500" height="680" fill="url(#villainBg)"/>
+
+<!-- Hero atmosphere glow -->
+<ellipse cx="200" cy="350" rx="220" ry="280" fill="url(#heroAura)"/>
+<!-- Villain atmosphere glow -->
+<ellipse cx="800" cy="350" rx="220" ry="280" fill="url(#villainAura)"/>
+
+<!-- ── Vijayanagara stone pillars (hero side) ── -->
+<rect x="20" y="120" width="28" height="520" rx="5" fill="#1a3010" stroke="#2a4a18" stroke-width="1"/>
+<rect x="25" y="110" width="18" height="20" rx="2" fill="#2a4020"/>
+<!-- Pillar carvings -->
+<rect x="24" y="170" width="16" height="3" rx="1" fill="#2a4018" opacity="0.6"/>
+<rect x="24" y="220" width="16" height="3" rx="1" fill="#2a4018" opacity="0.6"/>
+<rect x="24" y="270" width="16" height="3" rx="1" fill="#2a4018" opacity="0.6"/>
+<rect x="24" y="320" width="16" height="3" rx="1" fill="#2a4018" opacity="0.6"/>
+<rect x="24" y="370" width="16" height="3" rx="1" fill="#2a4018" opacity="0.6"/>
+
+<rect x="72" y="180" width="20" height="460" rx="4" fill="#162810" stroke="#243a15" stroke-width="1"/>
+<rect x="75" y="168" width="14" height="18" rx="2" fill="#243818"/>
+
+<!-- Vine/creeper on pillar -->
+<path d="M68,200 C75,220 65,250 72,280 C78,310 68,340 74,370 C80,400 70,430 75,460" stroke="#1a4810" stroke-width="3" fill="none" opacity="0.5"/>
+<!-- Leaves -->
+<ellipse cx="72" cy="240" rx="8" ry="5" fill="#2a5820" opacity="0.6" transform="rotate(-20,72,240)"/>
+<ellipse cx="70" cy="310" rx="7" ry="4" fill="#2a5820" opacity="0.6" transform="rotate(15,70,310)"/>
+<ellipse cx="74" cy="390" rx="8" ry="5" fill="#2a5820" opacity="0.6" transform="rotate(-10,74,390)"/>
+
+<!-- Right pillar hero side -->
+<rect x="420" y="150" width="22" height="490" rx="4" fill="#1a3010" stroke="#2a4a18" stroke-width="1"/>
+<rect x="421" y="140" width="20" height="18" rx="2" fill="#2a4020"/>
+
+<!-- ── Dark crumbling pillars (villain side) ── -->
+<rect x="560" y="140" width="22" height="500" rx="4" fill="#1a0808" stroke="#330a0a" stroke-width="1"/>
+<rect x="562" y="130" width="18" height="18" rx="2" fill="#220808"/>
+<!-- Crack on villain pillar -->
+<path d="M570,200 C568,230 573,250 569,280 C565,310 571,330 567,360" stroke="#440a0a" stroke-width="2" fill="none" opacity="0.5"/>
+
+<rect x="950" y="120" width="26" height="520" rx="5" fill="#1a0808" stroke="#330a0a" stroke-width="1"/>
+<rect x="952" y="110" width="22" height="20" rx="2" fill="#220808"/>
+
+<!-- Ground floor -->
+<rect x="0" y="600" width="500" height="80" fill="#0d2a0a" opacity="0.8"/>
+<rect x="500" y="600" width="500" height="80" fill="#110004" opacity="0.8"/>
+<!-- Stone tiles hero -->
+<line x1="0" y1="615" x2="500" y2="615" stroke="#1a3a10" stroke-width="1" opacity="0.4"/>
+<line x1="80" y1="600" x2="80" y2="680" stroke="#1a3a10" stroke-width="1" opacity="0.3"/>
+<line x1="175" y1="600" x2="175" y2="680" stroke="#1a3a10" stroke-width="1" opacity="0.3"/>
+<line x1="275" y1="600" x2="275" y2="680" stroke="#1a3a10" stroke-width="1" opacity="0.3"/>
+<line x1="375" y1="600" x2="375" y2="680" stroke="#1a3a10" stroke-width="1" opacity="0.3"/>
+<!-- Stone tiles villain -->
+<line x1="500" y1="615" x2="1000" y2="615" stroke="#330808" stroke-width="1" opacity="0.3"/>
+<line x1="600" y1="600" x2="600" y2="680" stroke="#330808" stroke-width="1" opacity="0.2"/>
+<line x1="720" y1="600" x2="720" y2="680" stroke="#330808" stroke-width="1" opacity="0.2"/>
+<line x1="840" y1="600" x2="840" y2="680" stroke="#330808" stroke-width="1" opacity="0.2"/>
+<line x1="940" y1="600" x2="940" y2="680" stroke="#330808" stroke-width="1" opacity="0.2"/>
+
+<!-- Firefly particles (hero side) -->
+<circle cx="120" cy="180" r="2" fill="#44ff88" opacity="0.5"/>
+<circle cx="80"  cy="300" r="1.5" fill="#44ff88" opacity="0.4"/>
+<circle cx="150" cy="450" r="2" fill="#44ff88" opacity="0.3"/>
+<circle cx="55"  cy="520" r="1.5" fill="#44ff88" opacity="0.4"/>
+<circle cx="340" cy="200" r="2" fill="#ffd700" opacity="0.3"/>
+<circle cx="400" cy="480" r="1.5" fill="#ffd700" opacity="0.4"/>
+<!-- Red embers (villain side) -->
+<circle cx="630" cy="190" r="2" fill="#ff4400" opacity="0.4"/>
+<circle cx="700" cy="350" r="1.5" fill="#cc0000" opacity="0.3"/>
+<circle cx="880" cy="220" r="2" fill="#ff4400" opacity="0.4"/>
+<circle cx="950" cy="480" r="1.5" fill="#cc0000" opacity="0.35"/>
+
+<!-- ═══════════════════════════════════════════════
+     SACRED ELEPHANT — CENTER HERO SIDE
+═══════════════════════════════════════════════ -->
+<!-- Sacred glow -->
+<ellipse cx="280" cy="390" rx="175" ry="165" fill="url(#elephantGlow)"/>
+
+<!-- Elephant body -->
+<ellipse cx="280" cy="420" rx="155" ry="125" fill="url(#elephantSkin)" filter="url(#softShadow)"/>
+<!-- Elephant underbelly (lighter) -->
+<ellipse cx="280" cy="460" rx="110" ry="70" fill="#7a6050" opacity="0.5"/>
+
+<!-- Elephant left ear (large fan shape) -->
+<path d="M148,310 C90,270 60,300 65,370 C70,430 110,460 148,440" fill="#5a4030" stroke="#4a3025" stroke-width="2"/>
+<!-- Ear inner pink -->
+<path d="M148,320 C108,290 88,315 92,368 C96,415 125,440 148,428" fill="#8B5040" opacity="0.5"/>
+<!-- Ear vein lines -->
+<path d="M130,330 C115,350 110,380 118,405" stroke="#4a2a18" stroke-width="1.5" fill="none" opacity="0.4"/>
+<path d="M140,340 C128,360 124,390 130,415" stroke="#4a2a18" stroke-width="1" fill="none" opacity="0.3"/>
+
+<!-- Elephant right ear -->
+<path d="M412,310 C460,275 490,305 488,375 C484,440 445,460 412,445" fill="#5a4030" stroke="#4a3025" stroke-width="2"/>
+<!-- Right ear inner -->
+<path d="M412,320 C445,290 465,315 463,368 C460,415 435,440 412,432" fill="#8B5040" opacity="0.5"/>
+<!-- Right ear veins -->
+<path d="M430,330 C445,352 448,382 440,408" stroke="#4a2a18" stroke-width="1.5" fill="none" opacity="0.4"/>
+
+<!-- Elephant head (large rounded, Indian forehead hump) -->
+<ellipse cx="280" cy="305" rx="110" ry="115" fill="url(#elephantSkin)"/>
+<!-- Forehead dome (characteristic Indian elephant two-dome shape) -->
+<ellipse cx="256" cy="265" rx="52" ry="45" fill="#7a6050"/>
+<ellipse cx="304" cy="265" rx="52" ry="45" fill="#7a6050"/>
+<!-- Center crease -->
+<path d="M280,225 C280,250 280,275 280,310" stroke="#4a3025" stroke-width="3" fill="none" opacity="0.35"/>
+
+<!-- Temple tilak (sacred forehead mark - three lines) -->
+<line x1="267" y1="255" x2="267" y2="285" stroke="#ffd700" stroke-width="4" opacity="0.85"/>
+<line x1="280" y1="250" x2="280" y2="283" stroke="#ffd700" stroke-width="5" opacity="0.9"/>
+<line x1="293" y1="255" x2="293" y2="285" stroke="#ffd700" stroke-width="4" opacity="0.85"/>
+<!-- Tilak center red dot -->
+<circle cx="280" cy="292" r="7" fill="#cc0000" opacity="0.8"/>
+<circle cx="280" cy="292" r="3.5" fill="#ff4400" opacity="0.9"/>
+
+<!-- ── Elephant tusks ── -->
+<!-- Left tusk -->
+<path d="M228,360 C210,375 195,395 190,420 C187,435 192,445 200,442" stroke="#fffff0" stroke-width="14" fill="none" stroke-linecap="round"/>
+<path d="M228,360 C210,375 195,395 190,420 C187,435 192,445 200,442" stroke="#e8e0c0" stroke-width="10" fill="none" stroke-linecap="round"/>
+<!-- Right tusk -->
+<path d="M332,360 C350,375 365,395 370,420 C373,435 368,445 360,442" stroke="#fffff0" stroke-width="14" fill="none" stroke-linecap="round"/>
+<path d="M332,360 C350,375 365,395 370,420 C373,435 368,445 360,442" stroke="#e8e0c0" stroke-width="10" fill="none" stroke-linecap="round"/>
+
+<!-- ── Elephant trunk ── -->
+<path d="M265,375 C260,405 252,440 245,470 C238,500 235,520 242,535 C248,548 255,545 258,530" stroke="url(#elephantSkin)" stroke-width="38" fill="none" stroke-linecap="round"/>
+<!-- Trunk inner line (wrinkles) -->
+<path d="M263,385 C258,415 251,448 244,478 C238,505 236,522 243,534" stroke="#4a3025" stroke-width="2" fill="none" opacity="0.4"/>
+<path d="M268,380 C264,410 257,445 252,475 C246,502 244,520 249,532" stroke="#4a3025" stroke-width="1.5" fill="none" opacity="0.3"/>
+<!-- Trunk tip (rounded, distinctive) -->
+<ellipse cx="254" cy="538" rx="16" ry="10" fill="#5a4030" transform="rotate(20,254,538)"/>
+
+<!-- Elephant eyes -->
+<!-- Left eye -->
+<ellipse cx="228" cy="305" rx="16" ry="13" fill="#1a0a00"/>
+<ellipse cx="234" cy="302" rx="7" ry="6" fill="#4a2808"/>
+<circle cx="236" cy="300" r="3" fill="white" opacity="0.6"/>
+<!-- Right eye -->
+<ellipse cx="332" cy="305" rx="16" ry="13" fill="#1a0a00"/>
+<ellipse cx="326" cy="302" rx="7" ry="6" fill="#4a2808"/>
+<circle cx="328" cy="300" r="3" fill="white" opacity="0.6"/>
+<!-- Eye lashes -->
+<line x1="218" y1="296" x2="214" y2="291" stroke="#2a1808" stroke-width="1.5"/>
+<line x1="228" y1="292" x2="228" y2="287" stroke="#2a1808" stroke-width="1.5"/>
+<line x1="238" y1="294" x2="241" y2="289" stroke="#2a1808" stroke-width="1.5"/>
+
+<!-- ── Temple decorations on elephant ── -->
+<!-- Gold cloth/jhool on back -->
+<path d="M148,350 C175,320 280,312 412,338 L430,430 C390,460 175,470 148,435 Z" fill="#8B6900" opacity="0.55"/>
+<path d="M148,350 C175,320 280,312 412,338" stroke="#ffd700" stroke-width="2.5" fill="none" opacity="0.7"/>
+<!-- Jhool decorative border -->
+<path d="M155,430 L165,450 L178,435 L192,455 L208,438 L224,458 L240,440 L256,460 L272,442 L288,462 L305,442 L322,460 L338,440 L354,458 L370,440 L384,455 L398,438 L415,452" stroke="#ffd700" stroke-width="2" fill="none" opacity="0.6"/>
+
+<!-- Gold necklace/chain on elephant neck -->
+<path d="M192,370 C220,355 240,350 280,348 C320,350 340,355 368,370" stroke="#ffd700" stroke-width="4" fill="none" opacity="0.7"/>
+<!-- Neck medallion -->
+<circle cx="280" cy="348" r="14" fill="#8B6900" stroke="#ffd700" stroke-width="2" opacity="0.8"/>
+<circle cx="280" cy="348" r="8" fill="#ffd700" opacity="0.7"/>
+<!-- Flower pattern on medallion -->
+<path d="M280,340 L282,347 L280,354 M274,342 L279,347 L286,348 M274,354 L279,349 L286,348" stroke="#8B6900" stroke-width="1.5" fill="none"/>
+
+<!-- Gold anklets on front feet -->
+<rect x="188" y="571" width="50" height="9" rx="4" fill="#8B6900" stroke="#ffd700" stroke-width="1.5"/>
+<rect x="262" y="571" width="50" height="9" rx="4" fill="#8B6900" stroke="#ffd700" stroke-width="1.5"/>
+
+<!-- ── Elephant legs ── -->
+<!-- Front left leg -->
+<path d="M208,480 L200,575" stroke="#4a3528" stroke-width="44" stroke-linecap="round" fill="none"/>
+<!-- Front right leg -->
+<path d="M280,490 L278,580" stroke="#4a3528" stroke-width="44" stroke-linecap="round" fill="none"/>
+<!-- Back left (partially visible) -->
+<path d="M180,500 L174,580" stroke="#3a2a20" stroke-width="38" stroke-linecap="round" fill="none"/>
+<!-- Back right (partially visible) -->
+<path d="M360,490 L362,578" stroke="#3a2a20" stroke-width="38" stroke-linecap="round" fill="none"/>
+
+<!-- Feet wrinkles / toenails -->
+<!-- Left front foot -->
+<ellipse cx="200" cy="577" rx="22" ry="10" fill="#3a2a20"/>
+<ellipse cx="189" cy="580" rx="5" ry="4" fill="#2a1a15"/>
+<ellipse cx="200" cy="582" rx="5" ry="4" fill="#2a1a15"/>
+<ellipse cx="211" cy="580" rx="5" ry="4" fill="#2a1a15"/>
+<!-- Right front foot -->
+<ellipse cx="278" cy="582" rx="22" ry="10" fill="#3a2a20"/>
+<ellipse cx="267" cy="585" rx="5" ry="4" fill="#2a1a15"/>
+<ellipse cx="278" cy="587" rx="5" ry="4" fill="#2a1a15"/>
+<ellipse cx="289" cy="585" rx="5" ry="4" fill="#2a1a15"/>
+
+<!-- Tail -->
+<path d="M430,410 C448,420 458,445 452,468 C446,485 435,490 432,480" stroke="#5a4030" stroke-width="10" fill="none" stroke-linecap="round"/>
+<!-- Tail tuft -->
+<path d="M432,480 C435,490 430,498 426,492 M432,480 C436,491 440,496 438,488 M432,480 C428,492 424,495 422,487" stroke="#4a3025" stroke-width="4" fill="none"/>
+
+<!-- ═══════════════════════════════════════════════
+     TUNGABHADRA — HERO FIGURE (left of elephant)
+═══════════════════════════════════════════════ -->
+<!-- Hero sacred aura -->
+<ellipse cx="108" cy="430" rx="78" ry="160" fill="#44ff88" opacity="0.10"/>
+
+<!-- ── Saree lower body ── -->
+<path d="M82,395 C78,420 74,470 76,530 C78,570 84,598 108,602 C132,598 138,570 140,530 C142,470 138,420 134,395 Z" fill="#1a3fbf" stroke="#ffd700" stroke-width="1.5"/>
+<!-- Saree front pleats -->
+<path d="M108,420 L105,602" stroke="#2a4fd0" stroke-width="2" opacity="0.5"/>
+<path d="M108,420 L112,602" stroke="#2a4fd0" stroke-width="2" opacity="0.5"/>
+<path d="M108,420 L100,600" stroke="#2a4fd0" stroke-width="1.5" opacity="0.4"/>
+<path d="M108,420 L116,600" stroke="#2a4fd0" stroke-width="1.5" opacity="0.4"/>
+<!-- Saree gold border bottom -->
+<path d="M80,590 C90,604 126,606 136,590" stroke="#ffd700" stroke-width="4" fill="none"/>
+<!-- Saree gold border right side (pallu) -->
+<path d="M134,398 C142,380 148,350 150,310" stroke="#ffd700" stroke-width="3" fill="none" opacity="0.7"/>
+<!-- Pallu drape detail -->
+<path d="M136,400 C148,390 158,375 160,355" stroke="#ffd700" stroke-width="2" fill="none" opacity="0.5"/>
+<!-- Saree Kalamkari decorative motifs -->
+<circle cx="96" cy="450" r="5" fill="none" stroke="#ffd700" stroke-width="1.5" opacity="0.5"/>
+<circle cx="120" cy="450" r="5" fill="none" stroke="#ffd700" stroke-width="1.5" opacity="0.5"/>
+<circle cx="96" cy="490" r="5" fill="none" stroke="#ffd700" stroke-width="1.5" opacity="0.5"/>
+<circle cx="120" cy="490" r="5" fill="none" stroke="#ffd700" stroke-width="1.5" opacity="0.5"/>
+
+<!-- ── Torso / armor ── -->
+<path d="M82,295 L82,400 C85,408 131,408 134,400 L134,295 Z" fill="#1a3fbf" stroke="#ffd700" stroke-width="1.5" rx="5"/>
+<!-- Armor chest plate (bronze) -->
+<path d="M88,298 C88,340 130,340 128,298 Z" fill="#0a1a6e" opacity="0.4"/>
+<ellipse cx="108" cy="310" rx="26" ry="22" fill="#8B6900" opacity="0.7"/>
+<!-- Chest plate center jewel -->
+<circle cx="108" cy="310" r="14" fill="#cc8800" stroke="#ffd700" stroke-width="2"/>
+<circle cx="108" cy="310" r="8" fill="#ff8800"/>
+<circle cx="108" cy="310" r="4" fill="#ffd700"/>
+<!-- Armor decorative lines -->
+<path d="M88,320 C95,325 121,325 128,320" stroke="#ffd700" stroke-width="1.5" fill="none" opacity="0.5"/>
+<path d="M88,340 C95,345 121,345 128,340" stroke="#ffd700" stroke-width="1.5" fill="none" opacity="0.5"/>
+<path d="M90,360 C96,363 120,363 126,360" stroke="#ffd700" stroke-width="1" fill="none" opacity="0.4"/>
+<!-- Armor shoulder guards -->
+<ellipse cx="82" cy="295" rx="16" ry="12" fill="#8B6900" stroke="#ffd700" stroke-width="1.5"/>
+<ellipse cx="134" cy="295" rx="16" ry="12" fill="#8B6900" stroke="#ffd700" stroke-width="1.5"/>
+<!-- Shoulder guard stud -->
+<circle cx="82" cy="295" r="5" fill="#ffd700"/>
+<circle cx="134" cy="295" r="5" fill="#ffd700"/>
+
+<!-- ── Arms ── -->
+<!-- Left arm (reaching forward toward elephant) -->
+<path d="M82,298 C68,315 58,345 62,375" stroke="url(#skinHero)" stroke-width="20" fill="none" stroke-linecap="round"/>
+<!-- Left hand -->
+<ellipse cx="65" cy="380" rx="12" ry="9" fill="#6a4a22" transform="rotate(-10,65,380)"/>
+<!-- Left arm bangles -->
+<rect x="55" y="352" width="18" height="6" rx="3" fill="#8B6900" stroke="#ffd700" stroke-width="1"/>
+
+<!-- Right arm (holding mace, raised) -->
+<path d="M134,298 C150,315 162,340 158,370 C156,385 152,390 148,395" stroke="url(#skinHero)" stroke-width="20" fill="none" stroke-linecap="round"/>
+<!-- Right hand -->
+<ellipse cx="146" cy="400" rx="12" ry="9" fill="#6a4a22" transform="rotate(15,146,400)"/>
+<!-- Right arm bangles -->
+<rect x="153" y="352" width="18" height="6" rx="3" fill="#8B6900" stroke="#ffd700" stroke-width="1"/>
+
+<!-- ── Gajadanda (War Mace) ── -->
+<!-- Handle -->
+<line x1="146" y1="402" x2="155" y2="488" stroke="#6a4a22" stroke-width="10"/>
+<line x1="146" y1="402" x2="155" y2="488" stroke="#8B6900" stroke-width="6" opacity="0.5"/>
+<!-- Mace head shaft -->
+<ellipse cx="158" cy="497" rx="24" ry="18" fill="#8B6900" filter="url(#glow)"/>
+<!-- Bronze elephant head on mace -->
+<ellipse cx="158" cy="486" rx="18" ry="16" fill="#8B5a00"/>
+<!-- Elephant head detail on mace -->
+<ellipse cx="155" cy="482" rx="8" ry="10" fill="#7a5000"/>
+<circle cx="155" cy="476" r="6" fill="#7a5000"/>
+<path d="M152,487 C149,493 148,499 150,502" stroke="#6a4000" stroke-width="4" fill="none" stroke-linecap="round"/>
+<!-- Mace spikes -->
+<line x1="140" y1="490" x2="128" y2="485" stroke="#8B6900" stroke-width="4"/>
+<line x1="143" y1="500" x2="130" y2="503" stroke="#8B6900" stroke-width="4"/>
+<line x1="175" y1="490" x2="186" y2="484" stroke="#8B6900" stroke-width="4"/>
+<line x1="174" y1="502" x2="184" y2="507" stroke="#8B6900" stroke-width="4"/>
+<line x1="158" y1="478" x2="158" y2="466" stroke="#8B6900" stroke-width="4"/>
+<!-- Mace glow -->
+<ellipse cx="158" cy="492" rx="28" ry="22" fill="#ffd700" opacity="0.08"/>
+
+<!-- ── Hero face & head ── -->
+<!-- Neck -->
+<rect x="98" y="255" width="20" height="30" rx="6" fill="url(#skinHero)"/>
+<!-- Necklace (pearl chain) -->
+<path d="M84,278 C92,290 124,290 132,278" stroke="#fff5d0" stroke-width="3" fill="none"/>
+<!-- Pearl dots -->
+<circle cx="90" cy="284" r="3" fill="#fff5d0"/>
+<circle cx="98" cy="288" r="3" fill="#fff5d0"/>
+<circle cx="108" cy="290" r="3" fill="#fff5d0"/>
+<circle cx="118" cy="288" r="3" fill="#fff5d0"/>
+<circle cx="126" cy="284" r="3" fill="#fff5d0"/>
+<!-- Central necklace pendant -->
+<ellipse cx="108" cy="292" rx="8" ry="6" fill="#8B6900" stroke="#ffd700" stroke-width="1"/>
+<circle cx="108" cy="292" r="3.5" fill="#ffd700"/>
+
+<!-- Head (oval face) -->
+<ellipse cx="108" cy="220" rx="35" ry="40" fill="url(#skinHero)"/>
+
+<!-- ── Hair ── -->
+<!-- Back hair volume -->
+<ellipse cx="108" cy="215" rx="42" ry="45" fill="#0a0500"/>
+<!-- Top of hair bun -->
+<ellipse cx="108" cy="183" rx="25" ry="16" fill="#0a0500"/>
+<!-- Braid going left -->
+<path d="M73,218 C62,225 54,242 52,265 C50,285 55,296 62,292" stroke="#0a0500" stroke-width="14" fill="none" stroke-linecap="round"/>
+<!-- Braid zig-zag pattern -->
+<path d="M71,222 C60,230 56,245 55,260 C54,272 57,283 60,290" stroke="#1a0a00" stroke-width="4" fill="none" opacity="0.5"/>
+<!-- Hair gold ornaments -->
+<circle cx="90" cy="192" r="5" fill="#8B6900" stroke="#ffd700" stroke-width="1"/>
+<circle cx="108" cy="185" r="6" fill="#8B6900" stroke="#ffd700" stroke-width="1.5"/>
+<circle cx="126" cy="192" r="5" fill="#8B6900" stroke="#ffd700" stroke-width="1"/>
+<!-- Pearl chain in hair -->
+<path d="M85,192 C95,186 122,186 131,192" stroke="#fff5d0" stroke-width="2" fill="none"/>
+
+<!-- ── Vijayanagara tiara/crown ── -->
+<path d="M74,218 L80,196 L88,210 L96,188 L108,200 L120,188 L128,210 L136,196 L142,218" fill="#8B6900" stroke="#ffd700" stroke-width="1.5"/>
+<!-- Crown top jewels -->
+<circle cx="80" cy="196" r="5" fill="#cc8800" stroke="#ffd700" stroke-width="1"/>
+<circle cx="96" cy="188" r="5" fill="#cc0000" stroke="#ffd700" stroke-width="1"/>
+<circle cx="108" cy="200" r="7" fill="#ffd700" stroke="#8B6900" stroke-width="1.5" filter="url(#glow)"/>
+<!-- Central crown deity symbol (Ganesha trunk curl) -->
+<path d="M108,194 C108,190 112,187 112,184 C112,181 108,180 106,183 C104,186 107,190 108,194" fill="#ffd700" opacity="0.8"/>
+<circle cx="96" cy="188" r="3" fill="#ffd700"/>
+<circle cx="120" cy="188" r="5" fill="#00cc44" stroke="#ffd700" stroke-width="1"/>
+<circle cx="136" cy="196" r="5" fill="#cc8800" stroke="#ffd700" stroke-width="1"/>
+
+<!-- ── Face features ── -->
+<!-- Eyebrows (defined, arched) -->
+<path d="M88,208 C94,204 102,203 108,204" stroke="#0a0500" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M108,204 C114,203 122,204 128,208" stroke="#0a0500" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+<!-- Eyes (almond-shaped, with kajal) -->
+<!-- Left eye -->
+<path d="M87,215 C91,210 100,210 104,215 C100,220 91,220 87,215" fill="#0a0500"/>
+<ellipse cx="96" cy="215" rx="5" ry="5" fill="#3a1a08"/>
+<circle cx="98" cy="214" r="2.5" fill="white" opacity="0.7"/>
+<!-- Kajal line left -->
+<path d="M87,215 C85,215 83,213 82,215" stroke="#0a0500" stroke-width="1.5" fill="none"/>
+<path d="M104,215 C106,215 108,213 109,215" stroke="#0a0500" stroke-width="1" fill="none"/>
+<!-- Right eye -->
+<path d="M112,215 C116,210 125,210 129,215 C125,220 116,220 112,215" fill="#0a0500"/>
+<ellipse cx="120" cy="215" rx="5" ry="5" fill="#3a1a08"/>
+<circle cx="122" cy="214" r="2.5" fill="white" opacity="0.7"/>
+<path d="M112,215 C110,215 108,213 107,215" stroke="#0a0500" stroke-width="1" fill="none"/>
+<path d="M129,215 C131,215 133,213 134,215" stroke="#0a0500" stroke-width="1.5" fill="none"/>
+
+<!-- Nose (subtle) -->
+<path d="M104,228 C106,232 110,233 112,232 C114,231 116,228 118,228" stroke="#5a3015" stroke-width="1.5" fill="none" opacity="0.6"/>
+<circle cx="104" cy="228" r="2" fill="#5a3015" opacity="0.5"/>
+<circle cx="112" cy="228" r="2" fill="#5a3015" opacity="0.5"/>
+
+<!-- Lips (full, warrior-firm) -->
+<path d="M96,238 C100,235 107,234 112,234 C117,234 122,235 122,238" fill="#8B2020"/>
+<path d="M96,238 C100,241 107,243 112,243 C117,243 122,241 122,238" fill="#cc3030"/>
+<!-- Lip line -->
+<path d="M96,238 C100,235 107,234 112,234 C117,234 122,235 122,238" stroke="#6a1818" stroke-width="1" fill="none"/>
+
+<!-- Forehead bindi (sacred red dot) -->
+<circle cx="108" cy="209" r="5" fill="#cc0000"/>
+<circle cx="108" cy="209" r="2.5" fill="#ff4400"/>
+
+<!-- Earrings (jhumka style) -->
+<!-- Left earring -->
+<circle cx="73" cy="222" r="9" fill="#8B6900" stroke="#ffd700" stroke-width="1.5"/>
+<ellipse cx="73" cy="233" rx="6" ry="12" fill="#8B6900" stroke="#ffd700" stroke-width="1"/>
+<!-- Earring bells at bottom -->
+<circle cx="68" cy="245" r="3" fill="#ffd700"/>
+<circle cx="73" cy="247" r="3" fill="#ffd700"/>
+<circle cx="78" cy="245" r="3" fill="#ffd700"/>
+<!-- Right earring -->
+<circle cx="143" cy="222" r="9" fill="#8B6900" stroke="#ffd700" stroke-width="1.5"/>
+<ellipse cx="143" cy="233" rx="6" ry="12" fill="#8B6900" stroke="#ffd700" stroke-width="1"/>
+<circle cx="138" cy="245" r="3" fill="#ffd700"/>
+<circle cx="143" cy="247" r="3" fill="#ffd700"/>
+<circle cx="148" cy="245" r="3" fill="#ffd700"/>
+
+<!-- Hero anklets (visible at bottom of saree) -->
+<path d="M82,596 C88,600 128,600 134,596" stroke="#8B6900" stroke-width="5" fill="none"/>
+<path d="M84,596 C90,602 126,602 132,596" stroke="#ffd700" stroke-width="1.5" fill="none" opacity="0.6"/>
+<!-- Anklet bells -->
+<circle cx="88" cy="600" r="3" fill="#ffd700" opacity="0.7"/>
+<circle cx="96" cy="602" r="3" fill="#ffd700" opacity="0.7"/>
+<circle cx="108" cy="603" r="3" fill="#ffd700" opacity="0.7"/>
+<circle cx="120" cy="602" r="3" fill="#ffd700" opacity="0.7"/>
+<circle cx="128" cy="600" r="3" fill="#ffd700" opacity="0.7"/>
+
+<!-- ═══════════════════════════════════════════════
+     DARK ELEPHANT — VILLAIN SIDE
+═══════════════════════════════════════════════ -->
+<!-- Dark glow -->
+<ellipse cx="720" cy="390" rx="175" ry="165" fill="url(#darkElephantGlow)"/>
+
+<!-- Dark elephant body -->
+<ellipse cx="720" cy="420" rx="155" ry="125" fill="url(#darkElephantSkin)" filter="url(#softShadow)"/>
+<ellipse cx="720" cy="460" rx="110" ry="70" fill="#1a0808" opacity="0.5"/>
+
+<!-- Dark elephant left ear -->
+<path d="M588,310 C530,270 500,300 505,370 C510,430 548,460 588,440" fill="#1a0808" stroke="#440000" stroke-width="2"/>
+<path d="M588,320 C548,290 528,315 532,368 C536,415 565,440 588,428" fill="#330808" opacity="0.5"/>
+
+<!-- Dark elephant right ear -->
+<path d="M852,310 C900,275 928,305 926,375 C922,440 882,460 852,445" fill="#1a0808" stroke="#440000" stroke-width="2"/>
+<path d="M852,320 C883,290 903,315 901,368 C898,415 872,440 852,432" fill="#330808" opacity="0.5"/>
+
+<!-- Dark elephant head -->
+<ellipse cx="720" cy="305" rx="110" ry="115" fill="url(#darkElephantSkin)"/>
+<ellipse cx="696" cy="265" rx="52" ry="45" fill="#220a08"/>
+<ellipse cx="744" cy="265" rx="52" ry="45" fill="#220a08"/>
+<path d="M720,225 C720,250 720,275 720,310" stroke="#440000" stroke-width="3" fill="none" opacity="0.35"/>
+
+<!-- Evil eye marks on forehead (red cracks) -->
+<path d="M707,265 C710,258 713,260 716,265" stroke="#cc0000" stroke-width="3" fill="none" opacity="0.7"/>
+<path d="M724,265 C727,258 730,260 733,265" stroke="#cc0000" stroke-width="3" fill="none" opacity="0.7"/>
+<!-- Evil symbol (inverted tilak) -->
+<line x1="707" y1="255" x2="707" y2="285" stroke="#880000" stroke-width="4" opacity="0.7"/>
+<line x1="720" y1="250" x2="720" y2="283" stroke="#cc0000" stroke-width="5" opacity="0.8"/>
+<line x1="733" y1="255" x2="733" y2="285" stroke="#880000" stroke-width="4" opacity="0.7"/>
+<circle cx="720" cy="292" r="7" fill="#440000" opacity="0.8"/>
+<circle cx="720" cy="292" r="3.5" fill="#880000" opacity="0.9"/>
+
+<!-- Dark tusks (cracked, darker) -->
+<path d="M668,360 C650,375 635,395 630,420 C627,435 632,445 640,442" stroke="#c8c0a0" stroke-width="12" fill="none" stroke-linecap="round"/>
+<!-- Crack in tusk -->
+<path d="M658,375 C656,382 658,390 654,396" stroke="#550000" stroke-width="2" fill="none" opacity="0.6"/>
+<path d="M772,360 C790,375 805,395 810,420 C813,435 808,445 800,442" stroke="#c8c0a0" stroke-width="12" fill="none" stroke-linecap="round"/>
+
+<!-- Dark trunk -->
+<path d="M705,375 C700,405 692,440 685,470 C678,500 675,520 682,535 C688,548 695,545 698,530" stroke="url(#darkElephantSkin)" stroke-width="38" fill="none" stroke-linecap="round"/>
+<path d="M703,385 C698,415 691,448 684,478 C678,505 676,522 683,534" stroke="#440000" stroke-width="2" fill="none" opacity="0.4"/>
+<ellipse cx="694" cy="538" rx="16" ry="10" fill="#1a0808" transform="rotate(20,694,538)"/>
+
+<!-- Dark elephant eyes (glowing red) -->
+<ellipse cx="668" cy="305" rx="16" ry="13" fill="#0a0000"/>
+<ellipse cx="674" cy="302" rx="7" ry="6" fill="#880000"/>
+<circle cx="676" cy="300" r="4" fill="#ff0000" opacity="0.8" filter="url(#glow)"/>
+<circle cx="678" cy="299" r="2" fill="#ff6600" opacity="0.9"/>
+
+<ellipse cx="772" cy="305" rx="16" ry="13" fill="#0a0000"/>
+<ellipse cx="766" cy="302" rx="7" ry="6" fill="#880000"/>
+<circle cx="764" cy="300" r="4" fill="#ff0000" opacity="0.8" filter="url(#glow)"/>
+<circle cx="762" cy="299" r="2" fill="#ff6600" opacity="0.9"/>
+
+<!-- Dark cloth (torn, sinister) -->
+<path d="M588,350 C615,320 720,312 852,338 L870,430 C830,460 615,470 588,435 Z" fill="#440000" opacity="0.4"/>
+<path d="M588,350 C615,320 720,312 852,338" stroke="#cc0000" stroke-width="1.5" fill="none" opacity="0.5"/>
+<!-- Torn edge -->
+<path d="M610,430 L618,452 L628,435 L640,455 L655,438" stroke="#cc0000" stroke-width="1.5" fill="none" opacity="0.4"/>
+
+<!-- Dark anklets (chains) -->
+<rect x="628" y="571" width="50" height="9" rx="4" fill="#440000" stroke="#880000" stroke-width="1.5"/>
+<rect x="702" y="571" width="50" height="9" rx="4" fill="#440000" stroke="#880000" stroke-width="1.5"/>
+
+<!-- Dark elephant legs -->
+<path d="M648,480 L640,575" stroke="#1a0808" stroke-width="44" stroke-linecap="round" fill="none"/>
+<path d="M720,490 L718,580" stroke="#1a0808" stroke-width="44" stroke-linecap="round" fill="none"/>
+<path d="M620,500 L614,580" stroke="#110006" stroke-width="38" stroke-linecap="round" fill="none"/>
+<path d="M800,490 L802,578" stroke="#110006" stroke-width="38" stroke-linecap="round" fill="none"/>
+
+<!-- Dark feet -->
+<ellipse cx="640" cy="577" rx="22" ry="10" fill="#0a0005"/>
+<ellipse cx="718" cy="582" rx="22" ry="10" fill="#0a0005"/>
+
+<!-- Dark tail -->
+<path d="M870,410 C888,420 898,445 892,468 C886,485 875,490 872,480" stroke="#1a0808" stroke-width="10" fill="none" stroke-linecap="round"/>
+
+<!-- ═══════════════════════════════════════════════
+     BHOOMI-TAKSHAKA — VILLAIN FIGURE
+═══════════════════════════════════════════════ -->
+<!-- Villain aura (red) -->
+<ellipse cx="892" cy="430" rx="78" ry="160" fill="#cc0000" opacity="0.08"/>
+
+<!-- Lower body dark armor -->
+<path d="M862,395 C858,420 854,470 856,530 C858,570 864,598 888,602 C912,598 918,570 920,530 C922,470 918,420 914,395 Z" fill="#1a0008" stroke="#880000" stroke-width="1.5"/>
+<!-- Serpent scale pattern -->
+<path d="M862,420 C870,414 906,414 914,420" stroke="#440000" stroke-width="1.5" fill="none" opacity="0.5"/>
+<path d="M860,440 C868,434 908,434 916,440" stroke="#440000" stroke-width="1.5" fill="none" opacity="0.5"/>
+<path d="M859,460 C867,454 909,454 917,460" stroke="#440000" stroke-width="1.5" fill="none" opacity="0.5"/>
+<path d="M858,480 C866,474 910,474 918,480" stroke="#440000" stroke-width="1.5" fill="none" opacity="0.4"/>
+<path d="M858,500 C866,494 910,494 918,500" stroke="#440000" stroke-width="1.5" fill="none" opacity="0.4"/>
+
+<!-- Dark torso armor -->
+<path d="M862,295 L862,400 C865,408 911,408 914,400 L914,295 Z" fill="#1a0008" stroke="#880000" stroke-width="1.5"/>
+<!-- Cracked chest plate -->
+<ellipse cx="888" cy="310" rx="26" ry="22" fill="#440000" opacity="0.7"/>
+<circle cx="888" cy="310" r="14" fill="#330000" stroke="#880000" stroke-width="2"/>
+<!-- Cracks in chest -->
+<path d="M882,302 C885,308 888,312 891,318" stroke="#ff2200" stroke-width="2" fill="none" opacity="0.7"/>
+<path d="M895,305 C892,310 891,314 894,320" stroke="#ff2200" stroke-width="1.5" fill="none" opacity="0.6"/>
+<!-- Dark shoulder spikes -->
+<path d="M860,285 C850,272 840,265 845,275 C848,282 855,287 862,290" fill="#550000" stroke="#880000" stroke-width="1"/>
+<path d="M916,285 C926,272 936,265 931,275 C928,282 921,287 914,290" fill="#550000" stroke="#880000" stroke-width="1"/>
+
+<!-- Villain arms -->
+<path d="M862,298 C848,315 838,345 842,375" stroke="url(#skinVillain)" stroke-width="20" fill="none" stroke-linecap="round"/>
+<ellipse cx="845" cy="380" rx="12" ry="9" fill="#1a0808" transform="rotate(-10,845,380)"/>
+
+<path d="M914,298 C930,315 942,340 938,370 C936,385 932,390 928,395" stroke="url(#skinVillain)" stroke-width="20" fill="none" stroke-linecap="round"/>
+<ellipse cx="926" cy="400" rx="12" ry="9" fill="#1a0808" transform="rotate(15,926,400)"/>
+
+<!-- ── Visha-Danda (Serpent Mace) ── -->
+<line x1="926" y1="402" x2="935" y2="488" stroke="#220008" stroke-width="10"/>
+<line x1="926" y1="402" x2="935" y2="488" stroke="#550000" stroke-width="5" opacity="0.6"/>
+<!-- Serpent coil on mace -->
+<path d="M935,488 C928,478 920,472 924,466 C928,460 938,462 940,470 C942,478 935,488 935,488" fill="#330000" stroke="#880000" stroke-width="2"/>
+<!-- Serpent head on mace top -->
+<path d="M940,455 C945,448 952,446 954,452 C956,458 950,464 944,462 C938,460 936,455 940,455" fill="#440000" stroke="#cc0000" stroke-width="1.5"/>
+<!-- Serpent forked tongue -->
+<path d="M953,449 C956,445 958,443 960,444 M953,449 C955,444 958,442 960,441" stroke="#cc0000" stroke-width="1.5" fill="none"/>
+<!-- Serpent eyes on mace -->
+<circle cx="948" cy="452" r="2.5" fill="#ff0000" opacity="0.9" filter="url(#glow)"/>
+<!-- Mace spikes (dark) -->
+<line x1="920" y1="490" x2="908" y2="485" stroke="#880000" stroke-width="3.5"/>
+<line x1="923" y1="500" x2="910" y2="503" stroke="#880000" stroke-width="3.5"/>
+<line x1="952" y1="490" x2="963" y2="484" stroke="#880000" stroke-width="3.5"/>
+<line x1="950" y1="502" x2="960" y2="507" stroke="#880000" stroke-width="3.5"/>
+<line x1="936" y1="478" x2="936" y2="466" stroke="#880000" stroke-width="3.5"/>
+<!-- Evil glow on mace -->
+<ellipse cx="936" cy="485" rx="28" ry="22" fill="#cc0000" opacity="0.06"/>
+
+<!-- ── Villain face & head ── -->
+<rect x="878" y="255" width="20" height="30" rx="6" fill="url(#skinVillain)"/>
+<!-- Dark collar with spikes -->
+<path d="M864,278 C872,285 904,285 912,278" stroke="#440000" stroke-width="3" fill="none"/>
+<circle cx="872" cy="282" r="3" fill="#880000"/>
+<circle cx="888" cy="285" r="3" fill="#880000"/>
+<circle cx="904" cy="282" r="3" fill="#880000"/>
+
+<!-- Villain head -->
+<ellipse cx="888" cy="220" rx="35" ry="40" fill="url(#skinVillain)"/>
+
+<!-- Villain wild dark hair (flowing, menacing) -->
+<ellipse cx="888" cy="215" rx="44" ry="48" fill="#0a0003"/>
+<!-- Hair flowing wild (like serpents) -->
+<path d="M845,215 C835,200 830,180 840,170 C848,162 858,168 855,178 C852,188 844,195 845,215" fill="#0a0003"/>
+<path d="M851,210 C840,192 835,175 842,167 C848,160 856,165 854,174 C852,183 848,195 851,210" fill="#110005" opacity="0.5"/>
+<path d="M931,218 C940,202 944,182 936,172 C928,163 918,168 920,178 C922,188 930,200 931,218" fill="#0a0003"/>
+<!-- Hair tendrils -->
+<path d="M843,230 C832,240 828,255 834,262 C838,267 843,263 842,255 C840,246 843,237 843,230" fill="#0a0003"/>
+<path d="M933,232 C942,242 946,256 940,263 C936,268 931,264 932,256 C933,247 930,240 933,232" fill="#0a0003"/>
+<!-- Crown of thorns / dark crown -->
+<path d="M853,218 L860,196 L868,208 L875,186 L888,200 L901,186 L908,208 L916,196 L923,218" fill="#330000" stroke="#880000" stroke-width="1.5"/>
+<!-- Dark crown spikes -->
+<line x1="860" y1="196" x2="858" y2="180" stroke="#cc0000" stroke-width="2" opacity="0.7"/>
+<line x1="875" y1="186" x2="873" y2="168" stroke="#cc0000" stroke-width="2.5" opacity="0.8"/>
+<line x1="888" y1="200" x2="888" y2="180" stroke="#ff2200" stroke-width="3" opacity="0.9" filter="url(#glow)"/>
+<line x1="901" y1="186" x2="903" y2="168" stroke="#cc0000" stroke-width="2.5" opacity="0.8"/>
+<line x1="916" y1="196" x2="918" y2="180" stroke="#cc0000" stroke-width="2" opacity="0.7"/>
+<!-- Dark crown jewel (void / serpent eye) -->
+<circle cx="888" cy="185" r="7" fill="#220000" stroke="#880000" stroke-width="1.5"/>
+<circle cx="888" cy="185" r="3.5" fill="#ff0000" opacity="0.8" filter="url(#glow)"/>
+
+<!-- Villain eyebrows (sharp, angled) -->
+<path d="M869,206 C875,200 882,200 888,203" stroke="#330000" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+<path d="M888,203 C894,200 901,200 907,206" stroke="#330000" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+<!-- Villain eyes (glowing red) -->
+<path d="M868,215 C872,210 880,210 884,215 C880,220 872,220 868,215" fill="#0a0000"/>
+<circle cx="876" cy="215" r="5" fill="#880000"/>
+<circle cx="876" cy="215" r="3" fill="#ff0000" filter="url(#glow)"/>
+<circle cx="878" cy="213" r="1.5" fill="#ff8800" opacity="0.9"/>
+
+<path d="M892,215 C896,210 904,210 908,215 C904,220 896,220 892,215" fill="#0a0000"/>
+<circle cx="900" cy="215" r="5" fill="#880000"/>
+<circle cx="900" cy="215" r="3" fill="#ff0000" filter="url(#glow)"/>
+<circle cx="902" cy="213" r="1.5" fill="#ff8800" opacity="0.9"/>
+
+<!-- Villain nose (sharp) -->
+<path d="M884,228 C886,232 890,233 892,232 C894,231 896,228 898,228" stroke="#220000" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+<!-- Villain lips (dark, sinister smile) -->
+<path d="M876,238 C880,234 887,233 892,233 C897,233 902,234 902,238" fill="#330000"/>
+<path d="M876,238 C880,242 887,244 892,244 C897,244 902,242 902,238" fill="#550000"/>
+<path d="M876,238 C880,234 887,233 892,233 C897,233 902,234 902,238" stroke="#220000" stroke-width="1" fill="none"/>
+<!-- Sinister curl at corners -->
+<path d="M876,238 C873,240 871,244 873,246" stroke="#440000" stroke-width="1.5" fill="none"/>
+<path d="M902,238 C905,240 907,244 905,246" stroke="#440000" stroke-width="1.5" fill="none"/>
+
+<!-- Evil bindi (dark void eye) -->
+<circle cx="888" cy="209" r="5" fill="#330000"/>
+<circle cx="888" cy="209" r="2.5" fill="#880000" opacity="0.8"/>
+
+<!-- Villain dark earrings (thorns) -->
+<path d="M853,219 C847,222 843,230 845,236 C847,242 853,238 853,232 C853,226 853,219 853,219" fill="#330000" stroke="#880000" stroke-width="1"/>
+<path d="M923,219 C929,222 933,230 931,236 C929,242 923,238 923,232 C923,226 923,219 923,219" fill="#330000" stroke="#880000" stroke-width="1"/>
+
+<!-- ═══════════════════════════════════════════════
+     CENTRE DIVIDER
+═══════════════════════════════════════════════ -->
+<line x1="500" y1="0" x2="500" y2="680" stroke="#44ff88" stroke-width="1.5" opacity="0.25"/>
+<line x1="500" y1="0" x2="500" y2="680" stroke="#cc0000" stroke-width="1.5" opacity="0.12"/>
+
+<!-- ═══════════════════════════════════════════════
+     HEADER BANNERS
+═══════════════════════════════════════════════ -->
+<!-- Hero header -->
+<rect x="0" y="0" width="500" height="52" fill="#001a0a" opacity="0.92"/>
+<text x="20" y="22" fill="#44ff88" font-size="17" font-weight="bold" letter-spacing="1">Tungabhadra</text>
+<text x="20" y="40" fill="#44ff88" font-size="11" opacity="0.75" font-style="italic">The River Queen &bull; Mother of the Southern Fortress</text>
+
+<!-- Villain header -->
+<rect x="500" y="0" width="500" height="52" fill="#050000" opacity="0.92"/>
+<text x="980" y="22" text-anchor="end" fill="#cc4444" font-size="17" font-weight="bold" letter-spacing="1">Bhoomi-Takshaka</text>
+<text x="980" y="40" text-anchor="end" fill="#cc4444" font-size="11" opacity="0.75" font-style="italic">The Earth Serpent &bull; Guardian of Dark Depths</text>
+
+<!-- Kingdom centre banner -->
+<rect x="370" y="0" width="260" height="52" rx="3" fill="#001a0a" stroke="#44ff88" stroke-width="1.5"/>
+<text x="500" y="20" text-anchor="middle" fill="#ffd700" font-size="14" font-weight="bold" letter-spacing="3">KARNATAKA</text>
+<text x="500" y="36" text-anchor="middle" fill="#44ff88" font-size="10" opacity="0.85">Indian Elephant  &bull;  Indrani + Gajasena</text>
+<text x="500" y="48" text-anchor="middle" fill="#ffd700" font-size="8.5" opacity="0.6" font-style="italic">Nurture · Strength · Community</text>
+
+<!-- ═══════════════════════════════════════════════
+     BOTTOM INFO STRIP
+═══════════════════════════════════════════════ -->
+<rect x="0" y="622" width="500" height="58" fill="#001a0a" opacity="0.9"/>
+<rect x="500" y="622" width="500" height="58" fill="#060000" opacity="0.9"/>
+
+<!-- Hero weapon info -->
+<text x="16" y="640" fill="#44ff88" font-size="9" font-weight="bold">TRADITIONAL WEAPON</text>
+<text x="16" y="653" fill="#b0d8b8" font-size="8.5" opacity="0.85">Gajadanda — The Elephant's Trunk (war mace)</text>
+<text x="16" y="665" fill="#88aaff" font-size="8" font-style="italic">&#9889; Modern: Cybernetic seismic mace with underground sensor array</text>
+
+<!-- Villain weapon info -->
+<text x="984" y="640" text-anchor="end" fill="#cc4444" font-size="9" font-weight="bold">VILLAIN WEAPON</text>
+<text x="984" y="653" text-anchor="end" fill="#d08888" font-size="8.5" opacity="0.85">Visha-Danda — Serpent-tipped war mace</text>
+<text x="984" y="665" text-anchor="end" fill="#cc4444" font-size="8" font-style="italic" opacity="0.7">&#9760; Dark: Seismic mace with underground tremor tech</text>
+
+<!-- Centre bottom: animal symbolism -->
+<rect x="360" y="628" width="280" height="46" rx="4" fill="#001a0a" stroke="#44ff88" stroke-width="1" opacity="0.85"/>
+<text x="500" y="644" text-anchor="middle" fill="#ffd700" font-size="9" font-weight="bold">SACRED ANIMAL: INDIAN ELEPHANT</text>
+<text x="500" y="658" text-anchor="middle" fill="#44ff88" font-size="8.5" opacity="0.75">Wisdom · Memory · Unstoppable Force</text>
+<text x="500" y="670" text-anchor="middle" fill="#44ff88" font-size="7.5" opacity="0.55" font-style="italic">Elephas maximus indicus</text>
+
+</svg>

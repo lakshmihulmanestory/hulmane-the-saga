@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"require\\('./js/state-stories-data.js'\\)\")",
+      "Bash(node -c js/state-stories-data.js)",
+      "Bash(node *)",
+      "Bash(\n# ── Move Karnataka SVGs from images/ root to images/south/karnataka/ ──\nmv /Users/smk/repos/MahaHulmane/images/karnataka-portrait.svg \\\\\n   /Users/smk/repos/MahaHulmane/images/south/karnataka/karnataka-portrait.svg\n\nmv /Users/smk/repos/MahaHulmane/images/karnataka-scene.svg \\\\\n   /Users/smk/repos/MahaHulmane/images/south/karnataka/karnataka-scene.svg\n\n# ── Move the misplaced SVGs from samples/images/ root ──\nmv \"/Users/smk/repos/MahaHulmane/samples/images/karnataka-portrait.svg\" \\\\\n   \"/Users/smk/repos/MahaHulmane/samples/images/Karnataka/Vijayanagara Reborn/karnataka-portrait.svg\" 2>/dev/null || true\n\nmv \"/Users/smk/repos/MahaHulmane/samples/images/karnataka-scene.svg\" \\\\\n   \"/Users/smk/repos/MahaHulmane/samples/images/Karnataka/Vijayanagara Reborn/karnataka-scene.svg\" 2>/dev/null || true\n\n# ── Remove the duplicate Gemini PNGs sitting loose in images/ root ──\n# \\(they live in samples/images/Karnataka/Vijayanagara Reborn/ already\\)\nrm -f /Users/smk/repos/MahaHulmane/images/Gemini_Generated_Image_*.png\nrm -f \"/Users/smk/repos/MahaHulmane/images/Gemini_Generated_Image_sx15fqsx15fqsx15 \\(1\\).png\" 2>/dev/null || true\n\necho \"Files moved and cleaned\"\nls /Users/smk/repos/MahaHulmane/images/)",
+      "Bash(sed -i '' 's|media/images/south/karnataka/karnataka-scene\\\\.svg|media/states/south/karnataka/stories/vijayanagara-reborn/images/karnataka-scene.svg|g' /Users/smk/repos/MahaHulmane/karnataka-portrait.html)",
+      "Bash(sed -i '' 's|media/images/south/karnataka/karnataka-scene\\\\.svg|media/states/south/karnataka/stories/vijayanagara-reborn/images/karnataka-scene.svg|g' /Users/smk/repos/MahaHulmane/character-gallery.html)",
+      "Bash(python3 -c ' *)",
+      "Bash(python3)",
+      "Bash(python3 -c \"from PIL import Image; print\\('Pillow OK'\\)\")",
+      "Bash(python3 -c \"import subprocess; r = subprocess.run\\(['python3','-m','pip','show','Pillow'],capture_output=True,text=True\\); print\\(r.stdout[:80] or 'not found'\\)\")",
+      "Bash(pip3 install *)",
+      "Bash(python3 -c \"from PIL import Image; print\\('Pillow installed OK'\\)\")",
+      "Bash(\nIMAGES=\"/Users/smk/repos/MahaHulmane/media/states/south/karnataka/stories/vijayanagara-reborn/images\"\nrm -f \"$IMAGES\"/allied-*.png\necho \"Removed allied images. Remaining count: $\\(ls \"$IMAGES\"/*.png | wc -l | tr -d ' '\\)\")"
+    ],
+    "additionalDirectories": [
+      "/Users/smk/repos/MahaHulmane/images",
+      "/Users/smk/repos/MahaHulmane/media/states/south/karnataka/stories/vijayanagara-reborn/images"
+    ]
+  }
+}

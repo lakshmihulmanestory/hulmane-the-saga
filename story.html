@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Saga &mdash; MahaHulmane</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav class="maha-nav">
+    <a href="index.html" class="nav-logo">MahaHulmane</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="characters.html">Heroes</a>
+      <a href="state-stories.html">Kingdoms</a>
+      <a href="regions.html">Regions</a>
+      <a href="council.html">Council</a>
+      <a href="story.html" class="active">Story</a>
+      <a href="tattoo-system.html">Tattoos</a>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')">&#9776;</button>
+  </nav>
+
+  <!-- ===== 1. PAGE HEADER ===== -->
+  <section class="section" style="text-align:center; padding-top:80px;">
+    <h1>The MahaHulmane Saga</h1>
+    <p class="subtitle">From the Age of Animals to the Final Stand</p>
+    <p style="max-width:750px; margin:20px auto; color:var(--text-dim); line-height:1.7;">
+      This is the story of how twenty-eight kingdoms, six regions, seven continents,
+      five alien civilizations, and five ancient hybrid bloodlines came together to face
+      the greatest threat the universe has ever known. It begins, as all great stories do,
+      with a bond between human and beast.
+    </p>
+  </section>
+
+  <!-- ===== 2. HORIZONTAL SCROLLING TIMELINE ===== -->
+  <section class="section">
+    <h2 class="section-title">Timeline of Events</h2>
+    <div class="timeline" style="padding:40px 20px;">
+      <div class="timeline-track">
+        <!-- Timeline events positioned along the track -->
+        <div class="timeline-event" style="left:2%;">
+          <div class="timeline-dot"></div>
+          <div class="timeline-label top">
+            <div class="timeline-date">~3000 years ago</div>
+            <div class="timeline-text">The First Bond</div>
+          </div>
+        </div>
+        <div class="timeline-event" style="left:12%;">
+          <div class="timeline-dot"></div>
+          <div class="timeline-label bottom">
+            <div class="timeline-date">~2500 years ago</div>
+            <div class="timeline-text">The Tattoo Covenant</div>
+          </div>
+        </div>
+        <div class="timeline-event" style="left:22%;">
+          <div class="timeline-dot"></div>
+          <div class="timeline-label top">
+            <div class="timeline-date">~2000 years ago</div>
+            <div class="timeline-text">The 28 Kingdoms Form</div>
+          </div>
+        </div>
+        <div class="timeline-event" style="left:32%;">
+          <div class="timeline-dot"></div>
+          <div class="timeline-label bottom">
+            <div class="timeline-date">~1500 years ago</div>
+            <div class="timeline-text">First Regional Wars</div>
+          </div>
+        </div>
+        <div class="timeline-event" style="left:42%;">
+          <div class="timeline-dot"></div>
+          <div class="timeline-label top">
+            <div class="timeline-date">~1000 years ago</div>
+            <div class="timeline-text">Six Regions Established</div>
+          </div>
+        </div>
+        <div class="timeline-event" style="left:52%;">
+          <div class="timeline-dot"></div>
+          <div class="timeline-label bottom">
+            <div class="timeline-date">~500 years ago</div>
+            <div class="timeline-text">Contact with Hybrid Kingdoms</div>
+          </div>
+        </div>
+        <div class="timeline-event" style="left:62%;">
+          <div class="timeline-dot"></div>
+          <div class="timeline-label top">
+            <div class="timeline-date">~100 years ago</div>
+            <div class="timeline-text">First Alien Contact</div>
+          </div>
+        </div>
+        <div class="timeline-event" style="left:72%;">
+          <div class="timeline-dot"></div>
+          <div class="timeline-label bottom">
+            <div class="timeline-date">12 years ago</div>
+            <div class="timeline-text">Stars Begin to Disappear</div>
+          </div>
+        </div>
+        <div class="timeline-event" style="left:82%;">
+          <div class="timeline-dot"></div>
+          <div class="timeline-label top">
+            <div class="timeline-date">3 years ago</div>
+            <div class="timeline-text">Grand Council Formed</div>
+          </div>
+        </div>
+        <div class="timeline-event" style="left:92%;">
+          <div class="timeline-dot" style="background:#ff4444; box-shadow:0 0 10px #ff4444;"></div>
+          <div class="timeline-label bottom">
+            <div class="timeline-date" style="color:#ff4444;">NOW</div>
+            <div class="timeline-text" style="color:#ff4444;">The Void Maw Approaches</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. CHAPTER NAVIGATION + CONTENT ===== -->
+  <section class="section">
+    <h2 class="section-title">The Seven Chapters</h2>
+    <div style="display:flex; gap:30px; max-width:1200px; margin:0 auto; flex-wrap:wrap;">
+
+      <!-- Chapter Navigation (Sidebar) -->
+      <div style="width:250px; flex-shrink:0;">
+        <div style="position:sticky; top:80px;">
+          <div class="chapter-nav" style="display:flex; flex-direction:column; gap:5px;">
+            <a href="#chapter1" class="card chapter-link active" style="padding:12px 15px; text-decoration:none; border-left:3px solid var(--gold); cursor:pointer;" onclick="showChapter(1)">
+              <div style="font-size:0.7em; text-transform:uppercase; letter-spacing:1px; color:var(--gold-dim);">Chapter I</div>
+              <div style="font-size:0.9em; color:var(--gold);">The Age of Animals</div>
+            </a>
+            <a href="#chapter2" class="card chapter-link" style="padding:12px 15px; text-decoration:none; border-left:3px solid transparent; cursor:pointer;" onclick="showChapter(2)">
+              <div style="font-size:0.7em; text-transform:uppercase; letter-spacing:1px; color:var(--gold-dim);">Chapter II</div>
+              <div style="font-size:0.9em; color:var(--text);">The Tattoo Covenant</div>
+            </a>
+            <a href="#chapter3" class="card chapter-link" style="padding:12px 15px; text-decoration:none; border-left:3px solid transparent; cursor:pointer;" onclick="showChapter(3)">
+              <div style="font-size:0.7em; text-transform:uppercase; letter-spacing:1px; color:var(--gold-dim);">Chapter III</div>
+              <div style="font-size:0.9em; color:var(--text);">Rise of the Twenty-Eight</div>
+            </a>
+            <a href="#chapter4" class="card chapter-link" style="padding:12px 15px; text-decoration:none; border-left:3px solid transparent; cursor:pointer;" onclick="showChapter(4)">
+              <div style="font-size:0.7em; text-transform:uppercase; letter-spacing:1px; color:var(--gold-dim);">Chapter IV</div>
+              <div style="font-size:0.9em; color:var(--text);">The Regional Wars</div>
+            </a>
+            <a href="#chapter5" class="card chapter-link" style="padding:12px 15px; text-decoration:none; border-left:3px solid transparent; cursor:pointer;" onclick="showChapter(5)">
+              <div style="font-size:0.7em; text-transform:uppercase; letter-spacing:1px; color:var(--gold-dim);">Chapter V</div>
+              <div style="font-size:0.9em; color:var(--text);">The Sky Darkens</div>
+            </a>
+            <a href="#chapter6" class="card chapter-link" style="padding:12px 15px; text-decoration:none; border-left:3px solid transparent; cursor:pointer;" onclick="showChapter(6)">
+              <div style="font-size:0.7em; text-transform:uppercase; letter-spacing:1px; color:var(--gold-dim);">Chapter VI</div>
+              <div style="font-size:0.9em; color:var(--text);">The Grand Council</div>
+            </a>
+            <a href="#chapter7" class="card chapter-link" style="padding:12px 15px; text-decoration:none; border-left:3px solid transparent; cursor:pointer;" onclick="showChapter(7)">
+              <div style="font-size:0.7em; text-transform:uppercase; letter-spacing:1px; color:var(--gold-dim);">Chapter VII</div>
+              <div style="font-size:0.9em; color:var(--text);">The MahaHulmane</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chapter Content Area -->
+      <div style="flex:1; min-width:300px;" id="chapterContent">
+        <!-- All chapters are here, JS shows/hides them -->
+
+        <div id="chapter1" class="chapter-panel">
+          <div style="margin-bottom:20px;">
+            <svg viewBox="0 0 800 120" style="width:100%; border-radius:8px;">
+              <defs>
+                <linearGradient id="ch1bg" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#003a1a"/>
+                  <stop offset="50%" stop-color="#1a3a00"/>
+                  <stop offset="100%" stop-color="#003a1a"/>
+                </linearGradient>
+              </defs>
+              <rect width="800" height="120" fill="url(#ch1bg)"/>
+              <text x="400" y="55" fill="#44ff88" text-anchor="middle" font-size="28" font-family="Georgia" font-weight="bold">Chapter I</text>
+              <text x="400" y="85" fill="#aaffcc" text-anchor="middle" font-size="16" font-family="Georgia" font-style="italic">The Age of Animals</text>
+            </svg>
+          </div>
+
+          <div style="color:var(--text); line-height:1.9; font-size:0.95em;">
+            <p style="margin-bottom:15px;">
+              Before the kingdoms had names, before the borders were drawn in blood and treaty,
+              there was only the land and its creatures. The great subcontinent of Bharata teemed
+              with life &mdash; the Asiatic lions of the western grasslands, the one-horned rhinoceros
+              of the eastern marshes, the snow leopards that haunted the northern peaks, the elephants
+              that moved like living mountains through the southern forests.
+            </p>
+            <p style="margin-bottom:15px;">
+              The first humans who settled these lands did not conquer the animals. They learned from them.
+              The fishermen of the Sundarbans studied the fishing cat's patience. The hill tribes of Meghalaya
+              followed the clouded leopard through paths that no human eye could find. The desert clans
+              of Rajasthan survived only because they moved like the chinkara &mdash; swift, silent, and always
+              sensing danger before it arrived.
+            </p>
+            <p style="margin-bottom:15px;">
+              Over centuries, something extraordinary happened. The bond between human and beast deepened
+              beyond mere imitation. Shamans spoke of a &ldquo;spirit bridge&rdquo; &mdash; an invisible connection between
+              the people of a region and its dominant animal. When the lion of Gujarat roared,
+              the people of that land felt courage surge in their blood. When the elephant of Karnataka
+              mourned its dead, the people wept without knowing why.
+            </p>
+            <p style="margin-bottom:15px;">
+              This was not magic. It was something older and deeper &mdash; a covenant written in the shared DNA
+              of land, animal, and human. The animals were not pets or symbols. They were the other half
+              of a people's soul. And as the centuries turned, this bond would manifest in ways no one
+              could have predicted.
+            </p>
+            <p style="color:var(--gold-dim); font-style:italic; text-align:center; margin-top:25px;">
+              &ldquo;We did not tame the beasts. We grew together. Like roots of two trees intertwined beneath the earth.&rdquo;<br>
+              &mdash; From the Oral Histories of the First Peoples
+            </p>
+          </div>
+        </div>
+
+        <div id="chapter2" class="chapter-panel" style="display:none;">
+          <div style="margin-bottom:20px;">
+            <svg viewBox="0 0 800 120" style="width:100%; border-radius:8px;">
+              <defs>
+                <linearGradient id="ch2bg" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#2b1a00"/>
+                  <stop offset="50%" stop-color="#3a2a00"/>
+                  <stop offset="100%" stop-color="#2b1a00"/>
+                </linearGradient>
+              </defs>
+              <rect width="800" height="120" fill="url(#ch2bg)"/>
+              <text x="400" y="55" fill="#ffd700" text-anchor="middle" font-size="28" font-family="Georgia" font-weight="bold">Chapter II</text>
+              <text x="400" y="85" fill="#ffe680" text-anchor="middle" font-size="16" font-family="Georgia" font-style="italic">The Tattoo Covenant</text>
+            </svg>
+          </div>
+
+          <div style="color:var(--text); line-height:1.9; font-size:0.95em;">
+            <p style="margin-bottom:15px;">
+              The legend says it happened on the night of a blood moon, roughly 2,500 years ago.
+              A child was born in what would later be called Gujarat &mdash; and on its right shoulder,
+              glowing faintly in the darkness of the birth-hut, was the perfect imprint of a lion's paw.
+            </p>
+            <p style="margin-bottom:15px;">
+              The elders were terrified. The shamans were ecstatic. They had spoken of this for generations &mdash;
+              the prophecy of the &ldquo;Marked Ones.&rdquo; The spirit bridge, they said, had finally become visible.
+              The bond between human and beast was no longer invisible. It had written itself on human skin.
+            </p>
+            <p style="margin-bottom:15px;">
+              Within a single generation, children across the entire subcontinent began to be born with marks.
+              In Assam, the rhinoceros footprint. In Kerala, the elephant's broad pad. In Sikkim, the delicate
+              print of the red panda. Every region, every clan, every settlement &mdash; their children bore the mark
+              of the dominant animal of their land.
+            </p>
+            <p style="margin-bottom:15px;">
+              But it was the warrior-sage Dakshinamurthi who discovered the greater truth: the marks were alive.
+              When a young marked warrior performed an act of extraordinary courage, their footprint expanded.
+              It grew upward &mdash; from a paw print to a leg, from a leg to a torso, and in the rarest cases,
+              to the full body of the beast. The tattoo was not decoration. It was a measure of power,
+              a living record of achievement, and a direct channel to the spirit of the sacred animal.
+            </p>
+            <p style="margin-bottom:15px;">
+              Dakshinamurthi codified the system into four stages and called it the <em>Chihnachakra</em> &mdash;
+              the Wheel of Marks. The Tattoo Covenant was born. Every kingdom in Bharata adopted it.
+              And from that day forward, the path to leadership was not determined by birth or wealth,
+              but by the growth of one's mark.
+            </p>
+            <p style="color:var(--gold-dim); font-style:italic; text-align:center; margin-top:25px;">
+              &ldquo;The beast does not choose the worthy. It reveals them.&rdquo;<br>
+              &mdash; Dakshinamurthi, Codifier of the Tattoo Covenant
+            </p>
+          </div>
+        </div>
+
+        <div id="chapter3" class="chapter-panel" style="display:none;">
+          <div style="margin-bottom:20px;">
+            <svg viewBox="0 0 800 120" style="width:100%; border-radius:8px;">
+              <defs>
+                <linearGradient id="ch3bg" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#001a3a"/>
+                  <stop offset="50%" stop-color="#002a5a"/>
+                  <stop offset="100%" stop-color="#001a3a"/>
+                </linearGradient>
+              </defs>
+              <rect width="800" height="120" fill="url(#ch3bg)"/>
+              <text x="400" y="55" fill="#44aaff" text-anchor="middle" font-size="28" font-family="Georgia" font-weight="bold">Chapter III</text>
+              <text x="400" y="85" fill="#aaddff" text-anchor="middle" font-size="16" font-family="Georgia" font-style="italic">Rise of the Twenty-Eight</text>
+            </svg>
+          </div>
+
+          <div style="color:var(--text); line-height:1.9; font-size:0.95em;">
+            <p style="margin-bottom:15px;">
+              The Tattoo Covenant transformed Bharata. Gone were the old aristocracies of blood.
+              In their place rose a meritocracy of marks. A farmer's son with a full-body elephant tattoo
+              outranked a king's heir with merely a footprint. Power became earned, visible, undeniable.
+            </p>
+            <p style="margin-bottom:15px;">
+              Over the next five centuries, twenty-eight distinct kingdoms crystallized &mdash; each centered around
+              a specific sacred beast. The boundaries were not drawn by generals but by the animals themselves.
+              Where the Asiatic lion roamed, that was Gujarat. Where the one-horned rhino grazed, that was Assam.
+              The animals defined the land, and the land defined its people.
+            </p>
+            <p style="margin-bottom:15px;">
+              Each kingdom developed its own trials &mdash; the tests through which warriors could advance their tattoos.
+              In Tamil Nadu, the Nilgiri Tahr demanded that aspirants scale the sheer cliffs of the Western Ghats
+              blindfolded, trusting the mountain goat's instinct. In West Bengal, the Fishing Cat trials required
+              warriors to survive a month in the mangrove swamps with nothing but their wits. In Rajasthan,
+              the Chinkara test meant crossing the Thar Desert alone during the hottest month.
+            </p>
+            <p style="margin-bottom:15px;">
+              The current generation of twenty-eight State Heroes represents the finest warriors their kingdoms
+              have produced. Some are noble beyond measure &mdash; like Tungabhadra of Karnataka, whose gentle strength
+              mirrors her elephant companion. Others are terrifying &mdash; like Vajramukha of Bihar, the Diamond-Faced,
+              whose gaur-like rage has left a trail of broken challengers across the eastern plains.
+            </p>
+            <p style="margin-bottom:15px;">
+              And then there are the morally complex ones. Simhavikrama of Gujarat bears the lion's full mark
+              but rules with an iron fist, believing that only absolute strength can protect his people.
+              Mrigatrishna of Rajasthan &mdash; the Desert Mirage &mdash; earned her full mark through deception and cunning
+              rather than combat, proving that the tattoo rewards effectiveness, not virtue.
+            </p>
+            <p style="color:var(--gold-dim); font-style:italic; text-align:center; margin-top:25px;">
+              &ldquo;Twenty-eight beasts. Twenty-eight champions. Twenty-eight different definitions of strength.&rdquo;<br>
+              &mdash; Regional Historian Scroll, Year of the Convergence
+            </p>
+          </div>
+        </div>
+
+        <div id="chapter4" class="chapter-panel" style="display:none;">
+          <div style="margin-bottom:20px;">
+            <svg viewBox="0 0 800 120" style="width:100%; border-radius:8px;">
+              <defs>
+                <linearGradient id="ch4bg" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#3a0000"/>
+                  <stop offset="50%" stop-color="#5a0000"/>
+                  <stop offset="100%" stop-color="#3a0000"/>
+                </linearGradient>
+              </defs>
+              <rect width="800" height="120" fill="url(#ch4bg)"/>
+              <text x="400" y="55" fill="#ff4444" text-anchor="middle" font-size="28" font-family="Georgia" font-weight="bold">Chapter IV</text>
+              <text x="400" y="85" fill="#ffaaaa" text-anchor="middle" font-size="16" font-family="Georgia" font-style="italic">The Regional Wars</text>
+            </svg>
+          </div>
+
+          <div style="color:var(--text); line-height:1.9; font-size:0.95em;">
+            <p style="margin-bottom:15px;">
+              Peace, it turned out, was not the natural state of twenty-eight powerful kingdoms.
+              The Tattoo Covenant had created heroes &mdash; but heroes, by their nature, sought glory.
+              And glory, when twenty-eight champions all seek it simultaneously, inevitably leads to war.
+            </p>
+            <p style="margin-bottom:15px;">
+              The first regional conflicts erupted between neighboring kingdoms whose animals shared
+              territory. Gujarat and Rajasthan &mdash; lion and gazelle &mdash; clashed over the western borderlands.
+              The elephant kingdoms of the south (Karnataka, Kerala, and Jharkhand) formed and broke
+              alliances in a constantly shifting dance of power. In the northeast, the eight small but
+              fierce kingdoms fought a guerrilla war that lasted three generations.
+            </p>
+            <p style="margin-bottom:15px;">
+              It was during the chaos of the Regional Wars that the concept of Combination Tattoos emerged.
+              When a warrior so thoroughly dominated their region that every other State Hero submitted,
+              something unprecedented happened &mdash; the tattoos of the defeated merged into the victor's mark.
+              A Regional Leader was born, bearing a chimeric beast that combined elements of every animal
+              in their domain.
+            </p>
+            <p style="margin-bottom:15px;">
+              Six regions stabilized: South, West, East, North, Northeast, and Central. Each led by
+              a warrior bearing the terrible burden of the Combination Tattoo &mdash; the voices of multiple
+              beast-spirits whispering, arguing, and roaring in their mind. Many who achieved this power
+              were driven to madness. Those who survived became legends.
+            </p>
+            <p style="margin-bottom:15px;">
+              The wars consumed untold lives. The Battle of the Five Elephants alone &mdash; when Karnataka,
+              Kerala, and Jharkhand's elephant-bonded warriors met on the Deccan Plateau &mdash; reshaped
+              the landscape itself. Trees were uprooted in swathes. Rivers changed course. The ground
+              still trembles in that region on the anniversary, they say.
+            </p>
+            <p style="color:var(--gold-dim); font-style:italic; text-align:center; margin-top:25px;">
+              &ldquo;We fought each other with the fury of beasts. We did not know that something far worse
+              was watching us, measuring our strength, and deciding whether we were worth consuming.&rdquo;<br>
+              &mdash; Panchanada of Punjab, Reflections After the Northern Campaigns
+            </p>
+          </div>
+        </div>
+
+        <div id="chapter5" class="chapter-panel" style="display:none;">
+          <div style="margin-bottom:20px;">
+            <svg viewBox="0 0 800 120" style="width:100%; border-radius:8px;">
+              <defs>
+                <linearGradient id="ch5bg" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#1a1a4e"/>
+                  <stop offset="50%" stop-color="#2a2a6e"/>
+                  <stop offset="100%" stop-color="#1a1a4e"/>
+                </linearGradient>
+              </defs>
+              <rect width="800" height="120" fill="url(#ch5bg)"/>
+              <text x="400" y="55" fill="#7b9eff" text-anchor="middle" font-size="28" font-family="Georgia" font-weight="bold">Chapter V</text>
+              <text x="400" y="85" fill="#ccd9ff" text-anchor="middle" font-size="16" font-family="Georgia" font-style="italic">The Sky Darkens</text>
+            </svg>
+          </div>
+
+          <div style="color:var(--text); line-height:1.9; font-size:0.95em;">
+            <p style="margin-bottom:15px;">
+              The astronomers of Ujjain were the first to notice. Stars in the constellation of Sagittarius
+              were disappearing. Not dimming &mdash; disappearing. One night a star would be there, ancient and
+              reliable as a grandfather's heartbeat. The next night, blackness. As if something had swallowed it whole.
+            </p>
+            <p style="margin-bottom:15px;">
+              At first, only the stargazers worried. But then the gravitational anomalies began.
+              Tides surged without cause. Birds migrated out of season. The animals &mdash; the sacred beasts
+              themselves &mdash; grew restless. The lions of Gujarat paced and roared at the night sky.
+              The elephants of the south formed circles, their trunks pointing upward, trumpeting warnings
+              that no one could translate.
+            </p>
+            <p style="margin-bottom:15px;">
+              It was the alien civilizations who confirmed the worst. They had been watching Earth from a
+              distance &mdash; some for centuries, others for millennia. When their emissary, Xel'Vithara of
+              the Void Walkers, materialized before the Regional Leaders of Bharata, the message was brief
+              and devastating: <em>&ldquo;The Void Maw is coming. It has consumed twelve galaxies. Yours is next.
+              You have perhaps twenty years.&rdquo;</em>
+            </p>
+            <p style="margin-bottom:15px;">
+              The Void Maw. An entity so ancient it predated the formation of most stars. Not a creature,
+              exactly &mdash; more like a wound in spacetime that hungered. It moved through the cosmos consuming
+              everything &mdash; matter, energy, even light itself. In its wake, nothing remained. Not darkness.
+              Not void. Not even the absence of something. Simply... nothing.
+            </p>
+            <p style="margin-bottom:15px;">
+              The regional wars stopped overnight. For the first time in a thousand years, the six Regional
+              Leaders of Bharata sat at the same table. The hybrid kingdoms &mdash; the Naga-Manava, the Garuda-Kin,
+              the Vyaghra-Nara &mdash; emerged from hiding. Ambassadors from every continent on Earth received the
+              same message. And slowly, reluctantly, fearfully, the greatest alliance in the history of
+              all worlds began to take shape.
+            </p>
+            <p style="color:var(--gold-dim); font-style:italic; text-align:center; margin-top:25px;">
+              &ldquo;I have seen it consume a binary star system in seventeen minutes. Your sun would take three.&rdquo;<br>
+              &mdash; Xel'Vithara, Emissary of the Void Walkers
+            </p>
+          </div>
+        </div>
+
+        <div id="chapter6" class="chapter-panel" style="display:none;">
+          <div style="margin-bottom:20px;">
+            <svg viewBox="0 0 800 120" style="width:100%; border-radius:8px;">
+              <defs>
+                <linearGradient id="ch6bg" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#2a1a3a"/>
+                  <stop offset="50%" stop-color="#3a2a5a"/>
+                  <stop offset="100%" stop-color="#2a1a3a"/>
+                </linearGradient>
+              </defs>
+              <rect width="800" height="120" fill="url(#ch6bg)"/>
+              <text x="400" y="55" fill="#aa66ff" text-anchor="middle" font-size="28" font-family="Georgia" font-weight="bold">Chapter VI</text>
+              <text x="400" y="85" fill="#ddaaff" text-anchor="middle" font-size="16" font-family="Georgia" font-style="italic">The Grand Council</text>
+            </svg>
+          </div>
+
+          <div style="color:var(--text); line-height:1.9; font-size:0.95em;">
+            <p style="margin-bottom:15px;">
+              The Grand Chamber was built in neutral territory &mdash; a massive circular arena carved
+              into the bedrock of the Vindhya Mountains, where no kingdom held claim. It took a year
+              to construct and was designed to hold the most powerful beings on Earth, and beyond.
+            </p>
+            <p style="margin-bottom:15px;">
+              The inner ring seated Bharata's six Regional Leaders. They came armored in their
+              Combination Tattoos, the chimeric beasts writhing on their skin as if alive.
+              The tension was immediate &mdash; these warriors had been killing each other's people
+              for centuries. Old grudges do not die because a new threat arrives. They simmer.
+            </p>
+            <p style="margin-bottom:15px;">
+              The second ring held the World Representatives &mdash; seven warriors from the seven continents.
+              Ashokamara of Africa, whose bond with the African elephant dwarfed even the Indian
+              elephant champions in raw power. Fenrisulfr of Europe, the wolf-bonded berserker
+              whose presence made the room temperature drop. Tlaloc-Quetzal of South America,
+              who spoke to jaguars and moved like rain through the jungle.
+            </p>
+            <p style="margin-bottom:15px;">
+              The third ring belonged to the Space Kingdoms. Five alien civilizations, each more
+              incomprehensible than the last. The Void Walkers, who existed partially outside of time.
+              The Crystalline Hegemony, beings of living mineral who communicated through harmonic
+              vibrations. The Primal Swarm, a collective intelligence of billions of insectoid organisms
+              that spoke with a single voice.
+            </p>
+            <p style="margin-bottom:15px;">
+              And in the outer ring, the most unsettling presence of all &mdash; the Hybrid Kingdoms.
+              The Naga-Manava, half-serpent, half-human, who had lived beneath India's rivers since
+              before recorded history. The Garuda-Kin, who could soar above the clouds and see
+              the Void Maw's approach with their own eyes. They had been hiding among humanity
+              for millennia, and now, for the first time, they sat openly.
+            </p>
+            <p style="margin-bottom:15px;">
+              At the center of it all: an empty throne. The seat of the MahaHulmane &mdash; the Grand Champion
+              who would lead this impossible alliance into battle. The title would not be given.
+              It would be earned. And every being in that chamber wanted it.
+            </p>
+            <p style="color:var(--gold-dim); font-style:italic; text-align:center; margin-top:25px;">
+              &ldquo;Look around you. We are not allies. We are not friends. We are prey that has learned
+              to bare its teeth. That will have to be enough.&rdquo;<br>
+              &mdash; Dandakarni of Chhattisgarh, Opening Address to the Grand Council
+            </p>
+          </div>
+        </div>
+
+        <div id="chapter7" class="chapter-panel" style="display:none;">
+          <div style="margin-bottom:20px;">
+            <svg viewBox="0 0 800 120" style="width:100%; border-radius:8px;">
+              <defs>
+                <linearGradient id="ch7bg" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#3a0000"/>
+                  <stop offset="30%" stop-color="#2b1a00"/>
+                  <stop offset="70%" stop-color="#2b1a00"/>
+                  <stop offset="100%" stop-color="#3a0000"/>
+                </linearGradient>
+              </defs>
+              <rect width="800" height="120" fill="url(#ch7bg)"/>
+              <text x="400" y="55" fill="#ffd700" text-anchor="middle" font-size="28" font-family="Georgia" font-weight="bold">Chapter VII</text>
+              <text x="400" y="85" fill="#ffe680" text-anchor="middle" font-size="16" font-family="Georgia" font-style="italic">The MahaHulmane</text>
+            </svg>
+          </div>
+
+          <div style="color:var(--text); line-height:1.9; font-size:0.95em;">
+            <p style="margin-bottom:15px;">
+              The Grand Council is in session. The empty throne at its center burns with an eternal
+              golden flame, waiting for the one who will sit upon it. But no champion has yet emerged
+              who commands the respect of all four rings &mdash; India, World, Space, and Hybrid.
+            </p>
+            <p style="margin-bottom:15px;">
+              Meanwhile, the twenty-eight State Heroes of Bharata train like never before.
+              The regional rivalries have not ended &mdash; they have been channeled into the competition
+              for the MahaHulmane throne. Each hero knows that whoever leads this alliance will have
+              the power to reshape the world after the Void Maw is defeated. <em>If</em> it is defeated.
+            </p>
+            <p style="margin-bottom:15px;">
+              The Void Maw grows closer. Astronomers report that the blackout zone has reached the
+              outer edges of the Milky Way. They have perhaps twelve years before it arrives.
+              Twelve years to turn an alliance of bitter enemies into a fighting force capable of
+              challenging a cosmic god.
+            </p>
+            <p style="margin-bottom:15px;">
+              Alliances form and fracture daily. Simhavikrama of Gujarat courts the African representative,
+              seeing a kindred spirit in another beast-king. Himavati of Himachal Pradesh has forged an
+              unlikely bond with the Crystalline Hegemony, whose mineral forms remind her of her mountain home.
+              Sundarvani of West Bengal, the Fishing Cat's champion, has become the de facto diplomat &mdash;
+              her quiet patience and ability to read people makes her invaluable in negotiations.
+            </p>
+            <p style="margin-bottom:15px;">
+              But dark currents flow beneath the surface. Some council members secretly believe the
+              Void Maw cannot be stopped and are plotting escape routes &mdash; ways to save their own
+              people at the expense of others. The Naga-Manava speak of retreating to the Earth's
+              core. The Void Walkers hint that they can phase out of this dimension entirely.
+              And within Bharata itself, there are whispers of a faction that wants to <em>communicate</em>
+              with the Void Maw &mdash; to offer it Earth in exchange for their own survival.
+            </p>
+            <p style="margin-bottom:15px;">
+              The MahaHulmane is not just a title. It is a desperate hope. It is the belief that
+              somewhere, among all these warriors and monsters and aliens and gods, there exists
+              one being who can unite them all. One being whose strength, wisdom, or sheer force
+              of will can turn this fractured council into a weapon capable of facing the abyss.
+            </p>
+            <p style="margin-bottom:20px;">
+              The throne waits. The sky darkens. And somewhere, a tattoo is beginning to glow.
+            </p>
+            <div style="text-align:center; padding:30px; background:rgba(255,215,0,0.05); border:1px solid var(--border); border-radius:12px;">
+              <p style="color:var(--gold); font-size:1.2em; font-weight:bold; margin-bottom:10px;">To Be Continued...</p>
+              <p style="color:var(--gold-dim); font-style:italic;">
+                The saga of the MahaHulmane is still being written.
+                Every kingdom has its story. Every hero has their moment.
+                The Void Maw draws ever closer, and the throne remains empty.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. FEATURED CHARACTERS IN THE STORY ===== -->
+  <section class="section">
+    <h2 class="section-title">Key Characters in the Saga</h2>
+    <div class="grid-4" id="storyCharacters">
+      <!-- Populated by JS from window.HEROES -->
+    </div>
+  </section>
+
+  <!-- ===== 5. DEEP-DIVE STORIES ===== -->
+  <section class="section">
+    <h2 class="section-title">Kingdom Stories — Deep Dives</h2>
+    <p style="text-align:center; color:var(--text-dim); max-width:600px; margin:0 auto 30px; line-height:1.6;">
+      Each kingdom has its own epic tale. These are the stories too vast for a single chapter.
+    </p>
+    <div class="grid-3" style="max-width:900px; margin:0 auto;">
+      <a href="stories/asia/india/south/karnataka/buried-temple.html" class="card hero-south" style="text-decoration:none; padding:25px; text-align:center; transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.03)'" onmouseleave="this.style.transform='scale(1)'">
+        <div style="font-size:2em; margin-bottom:10px;">🐍</div>
+        <h3 style="color:var(--south); margin-bottom:5px;">The Buried Temple</h3>
+        <p style="font-size:0.85em; color:var(--text-dim); margin-bottom:8px;">Karnataka — Tungabhadra's Discovery</p>
+        <p style="font-size:0.8em; color:var(--text); line-height:1.5;">Deep in the Western Ghats, vanishing serpents lead to an ancient temple buried for centuries. What lies inside could change the world — or destroy it.</p>
+        <span style="display:block; margin-top:12px; color:var(--south); font-size:0.85em;">Read the full story &rarr;</span>
+      </a>
+      <a href="stories/asia/india/northeast/assam/rhino-knight.html" class="card hero-northeast" style="text-decoration:none; padding:25px; text-align:center; transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.03)'" onmouseleave="this.style.transform='scale(1)'">
+        <div style="font-size:2em; margin-bottom:10px;">🦏</div>
+        <h3 style="color:var(--northeast); margin-bottom:5px;">The Rhino Knight</h3>
+        <p style="font-size:0.85em; color:var(--text-dim); margin-bottom:8px;">Assam — Kamalavarna's Training</p>
+        <p style="font-size:0.8em; color:var(--text); line-height:1.5;">A girl bonds with a rhinoceros at age three. Years of brutal training forge them into one being. When poachers strike, her fury shakes the earth.</p>
+        <span style="display:block; margin-top:12px; color:var(--northeast); font-size:0.85em;">Read the full story &rarr;</span>
+      </a>
+      <div class="card" style="padding:25px; text-align:center; border-style:dashed; opacity:0.6;">
+        <div style="font-size:2em; margin-bottom:10px;">📜</div>
+        <h3 style="color:var(--gold-dim); margin-bottom:5px;">More Stories Coming</h3>
+        <p style="font-size:0.85em; color:var(--text-dim);">Each of the 28 kingdoms has a tale waiting to be told...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="text-align:center; padding:40px 20px; border-top:1px solid var(--border-dim); color:var(--text-dim); font-size:0.85em;">
+    <p style="color:var(--gold); margin-bottom:10px;">MahaHulmane &mdash; The Great Assembly of Warriors</p>
+    <p>Inspired by the Mahabharata &bull; A World of Twenty-Eight Kingdoms</p>
+    <p style="margin-top:15px;">
+      Reference: <a href="mahabharata_family_tree.html" style="color:var(--gold-dim);">Mahabharata Family Tree</a> &bull;
+      <a href="mahabharata_family_tree_kannada.html" style="color:var(--gold-dim);">&#x0C8E;&#x0CB9;&#x0CBE;&#x0CAD;&#x0CBE;&#x0CB0;&#x0CA4; &#x0CB5;&#x0C82;&#x0CB6;&#x0CB5;&#x0CC3;&#x0C95;&#x0CCD;&#x0CB7; (Kannada)</a>
+    </p>
+  </footer>
+
+  <!-- ===== EXTERNAL SCRIPTS ===== -->
+  <script src="js/characters-data.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- ===== PAGE SCRIPTS ===== -->
+  <script>
+    // ---- Chapter Switching ----
+    function showChapter(num) {
+      // Hide all chapters
+      document.querySelectorAll('.chapter-panel').forEach(function(p) { p.style.display = 'none'; });
+      // Show selected
+      document.getElementById('chapter' + num).style.display = 'block';
+
+      // Update sidebar links
+      document.querySelectorAll('.chapter-link').forEach(function(link, i) {
+        if (i + 1 === num) {
+          link.style.borderLeftColor = 'var(--gold)';
+          link.classList.add('active');
+        } else {
+          link.style.borderLeftColor = 'transparent';
+          link.classList.remove('active');
+        }
+      });
+
+      // Scroll to top of content on mobile
+      if (window.innerWidth < 600) {
+        document.getElementById('chapterContent').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // ---- Featured Characters ----
+    document.addEventListener('DOMContentLoaded', function() {
+      var container = document.getElementById('storyCharacters');
+      if (!container || !window.HEROES) return;
+
+      var featured = ['gujarat', 'himachal-pradesh', 'west-bengal', 'chhattisgarh', 'bihar', 'rajasthan', 'karnataka', 'punjab'];
+      featured.forEach(function(id) {
+        var hero = window.HEROES.find(function(h) { return h.id === id; });
+        if (hero) {
+          var card = document.createElement('div');
+          card.className = 'card hero-' + hero.region;
+          card.style.padding = '15px';
+          card.style.textAlign = 'center';
+          card.style.cursor = 'pointer';
+          card.onclick = function() { if (window.showHeroDetail) window.showHeroDetail(hero.id); };
+          card.innerHTML =
+            '<div style="font-weight:bold; font-size:0.9em; color:' + hero.colors.primary + ';">' + hero.hero.name + '</div>' +
+            '<div style="font-size:0.75em; font-style:italic; opacity:0.7; margin-top:3px;">' + hero.hero.title + '</div>' +
+            '<div style="font-size:0.7em; opacity:0.6; margin-top:3px;">' + hero.state + '</div>';
+          container.appendChild(card);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

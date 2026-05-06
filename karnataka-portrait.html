@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karnataka Kingdom — MahaHulmane</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { background: #000d05; }
+
+    /* ── Page header ── */
+    .k-hero-banner {
+      text-align: center;
+      padding: 82px 20px 36px;
+      background: linear-gradient(180deg, #000d05 0%, #001a0a 60%, #000d05 100%);
+      border-bottom: 1px solid #1a3a18;
+    }
+    .k-hero-banner h1 { color: var(--gold); font-size: 2.8rem; margin-bottom: 0.15em; }
+    .k-hero-banner .tagline {
+      color: #44ff88; font-size: 1.05em; font-style: italic; margin-bottom: 0.8em;
+    }
+    .k-hero-banner p { color: var(--text-dim); max-width: 720px; margin: 0 auto; line-height: 1.7; }
+
+    /* ── Section labels ── */
+    .k-section { max-width: 1200px; margin: 0 auto; padding: 0 20px 60px; }
+    .k-section-title {
+      text-align: center;
+      font-size: 1.35rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 50px 0 24px;
+      position: relative;
+    }
+    .k-section-title::before,
+    .k-section-title::after {
+      content: "";
+      display: inline-block;
+      width: 60px; height: 1px;
+      background: var(--gold-dim);
+      vertical-align: middle;
+      margin: 0 14px;
+      opacity: 0.5;
+    }
+
+    /* ── The Divine Echo SCENE (full-width hero image) ── */
+    .scene-block {
+      max-width: 1200px;
+      margin: 0 auto 8px;
+      padding: 0 20px;
+    }
+    .scene-block img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid #2a5a20;
+      box-shadow: 0 0 60px rgba(68,255,136,0.1), 0 0 120px rgba(0,0,0,0.7);
+      display: block;
+    }
+    .scene-caption {
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.82em;
+      font-style: italic;
+      padding: 10px 20px 0;
+    }
+
+    /* ── Character showcase ── */
+    .char-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 50px;
+    }
+    .char-showcase.three-col { grid-template-columns: 1fr 1fr 1fr; }
+    .char-showcase.one-col   { grid-template-columns: 1fr; }
+    .char-card-img {
+      background: var(--bg-card);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border-dim);
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      position: relative;
+    }
+    .char-card-img:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+    }
+    .char-card-img.hero-card  { border-color: #2a5a20; }
+    .char-card-img.villain-card { border-color: #5a0000; }
+    .char-card-img.villain-card:hover { box-shadow: 0 16px 48px rgba(180,0,0,0.18); }
+    .char-card-img.animal-card { border-color: #6a5a00; }
+    .char-card-img.animal-card:hover { box-shadow: 0 16px 48px rgba(255,215,0,0.12); }
+    .char-card-img.guru-card  { border-color: #304a8a; }
+    .char-card-img img {
+      width: 100%;
+      display: block;
+      border-radius: 14px 14px 0 0;
+    }
+    .char-card-body {
+      padding: 16px 18px 18px;
+    }
+    .char-card-body h2 { font-size: 1.15rem; margin: 0 0 3px; }
+    .char-card-body .role-tag {
+      font-size: 0.72em;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+    .hero-card  .char-card-body h2   { color: #44ff88; }
+    .hero-card  .role-tag { background: rgba(68,255,136,0.08); color: #44ff88; border: 1px solid #2a5a20; }
+    .villain-card .char-card-body h2 { color: #cc4444; }
+    .villain-card .role-tag { background: rgba(200,0,0,0.08); color: #cc4444; border: 1px solid #5a0000; }
+    .animal-card .char-card-body h2  { color: var(--gold); }
+    .animal-card .role-tag { background: rgba(255,215,0,0.06); color: var(--gold-dim); border: 1px solid #5a4800; }
+    .guru-card .char-card-body h2    { color: #7b9eff; }
+    .guru-card .role-tag { background: rgba(100,130,255,0.08); color: #7b9eff; border: 1px solid #304a8a; }
+    .char-card-body p { font-size: 0.84em; color: var(--text-dim); line-height: 1.65; margin: 0 0 8px; }
+    .char-card-body .stat-row {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;
+    }
+    .stat-chip {
+      font-size: 0.72em;
+      padding: 3px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--border-dim);
+      color: var(--text-dim);
+    }
+    .stat-chip.weapon { border-color: #5a4800; color: #d4a84a; }
+    .stat-chip.power  { border-color: #2a5a20; color: #44ff88; }
+    .stat-chip.dark   { border-color: #5a0000; color: #cc4444; }
+    .stat-chip.tech   { border-color: #304a8a; color: #7b9eff; }
+
+    /* Redesign note badge */
+    .redesign-note {
+      background: rgba(255,140,0,0.08);
+      border: 1px solid #6a4000;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.8em;
+      color: #ff8c00;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+    .redesign-note strong { color: #ffaa44; }
+
+    /* ── Full story collage images ── */
+    .collage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 50px;
+    }
+    .collage-item { border-radius: 14px; overflow: hidden; border: 1px solid var(--border-dim); }
+    .collage-item img { width: 100%; display: block; }
+    .collage-item .collage-caption {
+      background: var(--bg-card);
+      padding: 10px 14px;
+      font-size: 0.8em;
+      color: var(--text-dim);
+    }
+    .collage-item .collage-caption strong { color: var(--gold-dim); }
+
+    /* ── SVG scene section ── */
+    .svg-scene-block {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 50px;
+    }
+    .svg-scene-block img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid #1a2a8a;
+      box-shadow: 0 0 60px rgba(68,136,255,0.08);
+      display: block;
+    }
+
+    /* ── Weapon compare ── */
+    .weapon-table-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px 50px;
+    }
+    .weapon-table { width: 100%; border-collapse: collapse; }
+    .weapon-table th {
+      padding: 11px 16px;
+      background: var(--bg-card);
+      color: var(--gold);
+      font-size: 0.82em;
+      text-align: left;
+      border-bottom: 1px solid var(--border-dim);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .weapon-table td {
+      padding: 11px 16px;
+      font-size: 0.85em;
+      color: var(--text-dim);
+      border-bottom: 1px solid var(--border-dim);
+      line-height: 1.5;
+    }
+    .weapon-table td.g  { color: #44ff88; }
+    .weapon-table td.r  { color: #cc4444; }
+    .weapon-table td.b  { color: #7b9eff; }
+
+    /* ── Story timeline ── */
+    .story-timeline {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 50px;
+    }
+    .timeline-entry {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0 18px;
+      margin-bottom: 28px;
+      align-items: start;
+    }
+    .timeline-num {
+      text-align: center;
+      color: var(--gold);
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding-top: 2px;
+    }
+    .timeline-content h3 { color: var(--gold-dim); font-size: 1em; margin-bottom: 5px; }
+    .timeline-content p  { font-size: 0.85em; color: var(--text-dim); line-height: 1.65; margin: 0; }
+
+    /* ── Back links ── */
+    .back-nav { text-align: center; padding: 10px 0 60px; }
+    .back-nav a {
+      display: inline-block;
+      padding: 10px 24px;
+      border: 1px solid var(--gold-dim);
+      color: var(--gold);
+      border-radius: 8px;
+      margin: 6px;
+      font-size: 0.9em;
+      transition: all 0.2s;
+    }
+    .back-nav a:hover { background: var(--gold); color: #000; }
+    .back-nav a.green { border-color: #2a5a20; color: #44ff88; }
+    .back-nav a.green:hover { background: #44ff88; color: #000; }
+
+    @media (max-width: 720px) {
+      .char-showcase, .char-showcase.three-col, .collage-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="maha-nav">
+  <a href="index.html" class="nav-logo">MahaHulmane</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="characters.html">Heroes</a>
+    <a href="character-gallery.html">Gallery</a>
+    <a href="state-stories.html">Kingdoms</a>
+    <a href="story.html">Story</a>
+  </div>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')">&#9776;</button>
+</nav>
+
+<!-- ===== PAGE HEADER ===== -->
+<section class="k-hero-banner">
+  <h1>Karnataka Kingdom</h1>
+  <div class="tagline">The Divine Echo — Indrani &bull; Takshaka &bull; The Legacy</div>
+  <p>
+    The Karnataka kingdom is bound to the Indian Elephant — Gajasena — symbol of nurture, memory, and
+    unstoppable force. Its hero Tungabhadra and the dark mirror Bhoomi-Takshaka share the same
+    sacred beast, but stand on opposite banks of dharma. One builds the city. One brings it down.
+  </p>
+  <div style="display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:18px;font-size:0.82em;">
+    <span style="color:#44ff88;">&#9670; Hero: Tungabhadra</span>
+    <span style="color:var(--gold);">&#9670; Sacred Animal: Gajasena (Indian Elephant)</span>
+    <span style="color:#cc4444;">&#9670; Villain: Bhoomi-Takshaka + Ravana-Putra</span>
+    <span style="color:#7b9eff;">&#9670; Guru: Sage Vidyaranya</span>
+    <span style="color:#ff8c00;">&#9670; Deity Bond: Indrani + Narasimha</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     1. THE DIVINE ECHO — FINAL BATTLE SCENE
+════════════════════════════════════════ -->
+<div class="k-section-title" style="max-width:1200px;margin:40px auto 16px;">&#9670; The Divine Echo — Final Confrontation</div>
+<div class="scene-block">
+  <img src="media/states/south/karnataka/stories/vijayanagara-reborn/images/story-overview-divine-echo.png" alt="The Divine Echo — Karnataka story overview"/>
+</div>
+<p class="scene-caption">
+  Top row: Tungabhadra the Protector &bull; Gajasena the Sacred Elephant &bull; Bhoomi-Takshaka the Dark Mirror<br>
+  Bottom row: Weaponry comparison &bull; The Divine Echo — Indrani/Takshaka &amp; The Legacy (final battle scene)
+</p>
+
+<!-- ═══════════════════════════════════════
+     2. HERO — TUNGABHADRA
+════════════════════════════════════════ -->
+<div class="k-section-title" style="max-width:1200px;margin:48px auto 16px;">&#9670; The Hero — Tungabhadra, The River Queen</div>
+<div class="char-showcase" style="max-width:1200px;margin:0 auto;padding:0 20px 20px;">
+
+  <div class="char-card-img hero-card">
+    <img src="media/states/south/karnataka/stories/vijayanagara-reborn/images/hero-tungabhadra-modern.png" alt="Tungabhadra — The Protector of Karnataka"/>
+    <div class="char-card-body">
+      <h2>Tungabhadra</h2>
+      <span class="role-tag">The Protector &bull; Karnataka Kingdom Hero</span>
+      <p>
+        Born on the banks of the Tungabhadra River during the planetary alignment called "The Elephant's Eye."
+        She wears the mark of Indrani, Queen of Svarga — her armor channeling the divine elephant Airavata's
+        unstoppable force. Her mace Gajadanda is topped with a bronze elephant head,
+        and in the field she commands both ground combat and a cybernetic elephant battle companion.
+      </p>
+      <div class="stat-row">
+        <span class="stat-chip power">&#9670; Full Body Tattoo</span>
+        <span class="stat-chip weapon">Gajadanda Mace</span>
+        <span class="stat-chip tech">&#9889; Cyber-Armor + Seismic Sensor</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-chip">Age 35 &bull; Female Warrior</span>
+        <span class="stat-chip">Region: South India</span>
+        <span class="stat-chip">Bond: Indrani + Gajasena</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="char-card-img hero-card" style="border-color:#1a4a30;">
+    <img src="media/states/south/karnataka/stories/vijayanagara-reborn/images/story-action-scenes-collage.png" alt="Tungabhadra action scenes — with elephant and facing villain"/>
+    <div class="char-card-body">
+      <h2>Tungabhadra — In Battle</h2>
+      <span class="role-tag">Action Scenes &bull; Traditional &amp; Modern</span>
+      <p>
+        Top left: Traditional warrior form with Gajasena leading a charge.<br>
+        Bottom left: Bonding with the sacred elephant — the source of her Gaja-Trance power.<br>
+        Top right: Modern-day face-off on the Tungabhadra bridge with Bhoomi-Takshaka.<br>
+        Bottom right: The villain unleashing earth-shatter power in the city.
+      </p>
+      <div class="stat-row">
+        <span class="stat-chip power">Gaja-Trance — battlefield precognition</span>
+        <span class="stat-chip weapon">Seismic sensing through mace</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     3. SACRED ELEPHANT — GAJASENA
+════════════════════════════════════════ -->
+<div class="k-section-title" style="max-width:1200px;margin:0 auto 16px;">&#9670; The Sacred Elephant — Gajasena</div>
+<div class="char-showcase three-col" style="max-width:1200px;margin:0 auto;padding:0 20px 20px;">
+
+  <div class="char-card-img animal-card">
+    <img src="media/states/south/karnataka/stories/vijayanagara-reborn/images/animal-gajasena-cyber-elephant.png" alt="Gajasena — Cybernetic Sacred Elephant"/>
+    <div class="char-card-body">
+      <h2>Gajasena — Cyber Form</h2>
+      <span class="role-tag">Sacred Elephant &bull; Modern Bond</span>
+      <p>
+        The sacred Indian Elephant, equipped with cybernetic armor for the modern age of MahaHulmane.
+        Gajasena carries Holo-display panels, seismic sensors in his feet that relay battlefield
+        data to Tungabhadra, and armor plating layered like temple stone.
+        He is the living weapon and the sacred symbol of Karnataka.
+      </p>
+      <div class="stat-row">
+        <span class="stat-chip tech">&#9889; Seismic battle-net</span>
+        <span class="stat-chip tech">HoloArmor plating</span>
+        <span class="stat-chip">Elephas maximus indicus</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="char-card-img animal-card" style="border-color:#4a3800;grid-column:span 2;">
+    <img src="media/states/south/karnataka/stories/vijayanagara-reborn/images/cast-hero-villain-guru-lineup.png" alt="Karnataka full character lineup"/>
+    <div class="char-card-body">
+      <h2>Karnataka — Full Character Lineup</h2>
+      <span class="role-tag">All Characters &bull; Hero · Elephant · Villain · Demon · Guru</span>
+      <p>
+        Left to right: Tungabhadra (Heroine) — Sacred Elephant — Ravana-Putra (The Villain) —
+        The Sacred Elephant as Dark Spirit — Shila-Rakshasa (The Stone Demon) — Sage Vidyaranya (The Guru).
+        Each character represents a different facet of the Karnataka kingdom's conflict between
+        dharma (sacred bond with nature) and adharma (exploitation and conquest).
+      </p>
+      <div class="stat-row">
+        <span class="stat-chip power">6 Core Characters</span>
+        <span class="stat-chip weapon">Hero + Animal + 2 Villains + Demon + Guru</span>
+        <span class="stat-chip">Mahabharata-inspired arcs</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     4. VILLAINS
+════════════════════════════════════════ -->
+<div class="k-section-title" style="max-width:1200px;margin:0 auto 16px;">&#9760; The Dark Side — Villains of Karnataka</div>
+<div class="char-showcase three-col" style="max-width:1200px;margin:0 auto;padding:0 20px 20px;">
+
+  <!-- Bhoomi-Takshaka -->
+  <div class="char-card-img villain-card">
+    <!-- Using the SVG scene close-up for Bhoomi-Takshaka since she's being redesigned -->
+    <div style="background:#0a0005;padding:8px;border-radius:8px 8px 0 0;">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;border-radius:6px;">
+        <defs>
+          <radialGradient id="btAura" cx="50%" cy="40%" r="55%">
+            <stop offset="0%" stop-color="#cc0000" stop-opacity="0.22"/>
+            <stop offset="100%" stop-color="#050002" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="btSkin" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2a0e08"/>
+            <stop offset="100%" stop-color="#180608"/>
+          </linearGradient>
+          <filter id="btGlow"><feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <!-- Background -->
+        <rect width="400" height="400" fill="#050002"/>
+        <!-- Cracked earth floor -->
+        <rect x="0" y="300" width="400" height="100" fill="#0e0806"/>
+        <path d="M180,300 C182,320 190,340 186,370 C183,390 180,400 182,410" stroke="#ff4400" stroke-width="2" fill="none" opacity="0.7"/>
+        <path d="M200,300 C203,322 196,345 200,372 C203,390 202,400 204,410" stroke="#ff3300" stroke-width="1.5" fill="none" opacity="0.6"/>
+        <path d="M186,330 C175,336 168,342 165,350" stroke="#ff4400" stroke-width="1" fill="none" opacity="0.5"/>
+        <path d="M196,350 C208,358 215,366 214,372" stroke="#ff3300" stroke-width="1" fill="none" opacity="0.4"/>
+        <!-- Red earth glow at base -->
+        <ellipse cx="195" cy="305" rx="80" ry="14" fill="#ff3300" opacity="0.1" filter="url(#btGlow)"/>
+        <!-- Stone pillars -->
+        <rect x="0" y="0" width="40" height="380" fill="#0d0808"/>
+        <rect x="360" y="0" width="40" height="380" fill="#0d0808"/>
+        <!-- Red atmosphere -->
+        <rect width="400" height="400" fill="url(#btAura)"/>
+        <!-- Figure glow -->
+        <ellipse cx="195" cy="220" rx="85" ry="130" fill="#cc0000" opacity="0.08" filter="url(#btGlow)"/>
+        <!-- LOWER BODY -->
+        <path d="M162,220 C158,250 156,275 160,310 L230,310 C234,275 232,250 228,220 Z" fill="#1a0008" stroke="#660000" stroke-width="1.5"/>
+        <!-- Scale pattern on armor -->
+        <path d="M164,235 C172,230 188,228 196,231" stroke="#440000" stroke-width="1.5" fill="none" opacity="0.7"/>
+        <path d="M196,231 C204,227 220,226 228,230" stroke="#440000" stroke-width="1.5" fill="none" opacity="0.7"/>
+        <path d="M162,252 C170,247 186,245 195,248" stroke="#440000" stroke-width="1" fill="none" opacity="0.6"/>
+        <path d="M195,248 C204,244 220,244 229,248" stroke="#440000" stroke-width="1" fill="none" opacity="0.6"/>
+        <path d="M160,270 C168,265 185,263 195,266" stroke="#440000" stroke-width="1" fill="none" opacity="0.5"/>
+        <!-- Waist belt -->
+        <rect x="158" y="215" width="74" height="8" rx="3" fill="#330808" stroke="#880000" stroke-width="1.5"/>
+        <!-- Legs -->
+        <path d="M162,310 L158,380" stroke="#1a0808" stroke-width="26" stroke-linecap="round" fill="none"/>
+        <path d="M228,310 L232,378" stroke="#1a0808" stroke-width="26" stroke-linecap="round" fill="none"/>
+        <!-- TORSO -->
+        <path d="M158,140 C156,165 154,200 158,220 L232,220 C236,200 234,165 232,140 Z" fill="url(#btSkin)"/>
+        <!-- Chest armor with crack -->
+        <ellipse cx="195" cy="176" rx="28" ry="24" fill="#330808" stroke="#880000" stroke-width="1.5"/>
+        <path d="M188,165 C191,172 195,177 197,183" stroke="#ff2200" stroke-width="2" fill="none" opacity="0.8"/>
+        <!-- Shoulder spikes -->
+        <path d="M157,148 C145,136 138,130 142,140 C145,147 152,151 158,150" fill="#330808" stroke="#660000" stroke-width="1"/>
+        <path d="M233,148 C245,136 252,130 248,140 C245,147 238,151 232,150" fill="#330808" stroke="#660000" stroke-width="1"/>
+        <!-- LEFT ARM — reaching toward viewer -->
+        <path d="M156,148 C140,162 128,180 124,200 C122,210 124,218 129,220" stroke="url(#btSkin)" stroke-width="22" fill="none" stroke-linecap="round"/>
+        <ellipse cx="131" cy="224" rx="13" ry="9" fill="#1a0808" transform="rotate(10,131,224)"/>
+        <!-- RIGHT ARM — raising mace up -->
+        <path d="M234,148 C250,128 262,112 264,96 C266,84 263,76 258,74" stroke="url(#btSkin)" stroke-width="22" fill="none" stroke-linecap="round"/>
+        <!-- SERPENT MACE — raised -->
+        <line x1="258" y1="72" x2="250" y2="20" stroke="#220008" stroke-width="9"/>
+        <ellipse cx="247" cy="12" rx="22" ry="18" fill="#2a0808" stroke="#770000" stroke-width="2"/>
+        <!-- Mace carved serpent eye -->
+        <ellipse cx="247" cy="10" rx="6" ry="5" fill="#110004"/>
+        <circle cx="247" cy="10" r="3.5" fill="#cc0000" opacity="0.9" filter="url(#btGlow)"/>
+        <!-- Mace spikes -->
+        <line x1="228" y1="8" x2="215" y2="4" stroke="#770000" stroke-width="4" stroke-linecap="round"/>
+        <line x1="230" y1="18" x2="215" y2="22" stroke="#770000" stroke-width="4" stroke-linecap="round"/>
+        <line x1="266" y1="8" x2="278" y2="4" stroke="#770000" stroke-width="4" stroke-linecap="round"/>
+        <line x1="265" y1="20" x2="276" y2="25" stroke="#770000" stroke-width="4" stroke-linecap="round"/>
+        <!-- Mace glow -->
+        <ellipse cx="247" cy="12" rx="30" ry="24" fill="#cc0000" opacity="0.08" filter="url(#btGlow)"/>
+        <!-- NECK -->
+        <rect x="186" y="126" width="20" height="22" rx="6" fill="url(#btSkin)"/>
+        <!-- HEAD -->
+        <ellipse cx="196" cy="106" rx="30" ry="34" fill="url(#btSkin)"/>
+        <!-- NATURAL DARK HAIR (wind-blown, NO snakes — distinctive warrior look) -->
+        <ellipse cx="200" cy="100" rx="37" ry="40" fill="#0a0005"/>
+        <!-- Wind-swept hair flowing back -->
+        <path d="M220,90 C235,72 248,58 252,46 C256,36 253,28 247,28 C241,28 238,36 234,48 C230,60 226,76 222,90" fill="#0d0005"/>
+        <path d="M222,95 C238,78 250,64 255,52 C260,40 257,32 252,31" stroke="#0d0005" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M224,98 C242,82 254,68 258,56" stroke="#0a0004" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <!-- Front wisps -->
+        <path d="M172,100 C168,92 170,83 174,85" stroke="#0d0005" stroke-width="6" fill="none"/>
+        <path d="M168,106 C164,98 166,90 169,91" stroke="#0d0005" stroke-width="4" fill="none"/>
+        <!-- CROWN (dark iron, angular — serpent motif CARVED in metal only) -->
+        <path d="M168,92 L174,73 L182,84 L190,66 L196,78 L202,66 L210,84 L218,73 L224,92" fill="#220808" stroke="#660000" stroke-width="1.5"/>
+        <line x1="190" y1="66" x2="188" y2="50" stroke="#cc0000" stroke-width="3" opacity="0.9" filter="url(#btGlow)"/>
+        <line x1="196" y1="78" x2="196" y2="58" stroke="#ff2200" stroke-width="3.5" opacity="0.9" filter="url(#btGlow)"/>
+        <line x1="202" y1="66" x2="204" y2="50" stroke="#cc0000" stroke-width="3" opacity="0.9" filter="url(#btGlow)"/>
+        <!-- Crown center jewel -->
+        <circle cx="196" cy="62" r="7" fill="#1a0004" stroke="#880000" stroke-width="1.5"/>
+        <circle cx="196" cy="62" r="3.5" fill="#cc0000" opacity="0.85" filter="url(#btGlow)"/>
+        <!-- Carved serpent on crown band (heraldic motif, NOT alive) -->
+        <path d="M178,89 C180,85 183,83 186,85 C189,87 188,91 185,92" stroke="#880000" stroke-width="1.5" fill="none" opacity="0.7"/>
+        <path d="M206,89 C208,85 211,83 214,85 C217,87 216,91 213,92" stroke="#880000" stroke-width="1.5" fill="none" opacity="0.7"/>
+        <!-- EYEBROWS (fierce, angled) -->
+        <path d="M175,101 C180,95 187,94 193,96" stroke="#0d0005" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <path d="M199,96 C205,94 212,95 217,101" stroke="#0d0005" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <!-- EYES (red glowing) -->
+        <path d="M174,106 C178,101 185,101 189,106 C185,111 178,111 174,106" fill="#0d0004"/>
+        <circle cx="182" cy="106" r="5" fill="#770000"/>
+        <circle cx="182" cy="106" r="3.5" fill="#cc0000" filter="url(#btGlow)"/>
+        <circle cx="184" cy="104" r="1.5" fill="#ff5500" opacity="0.9"/>
+        <path d="M203,106 C207,101 214,101 218,106 C214,111 207,111 203,106" fill="#0d0004"/>
+        <circle cx="211" cy="106" r="5" fill="#770000"/>
+        <circle cx="211" cy="106" r="3.5" fill="#cc0000" filter="url(#btGlow)"/>
+        <circle cx="213" cy="104" r="1.5" fill="#ff5500" opacity="0.9"/>
+        <!-- NOSE -->
+        <path d="M190,118 C192,122 196,123 198,122 C200,121 202,118 204,118" stroke="#330808" stroke-width="1.5" fill="none"/>
+        <!-- LIPS (fierce warrior, determined) -->
+        <path d="M184,130 C188,127 195,126 200,126 C205,126 210,127 212,130" fill="#1a0808"/>
+        <path d="M184,130 C188,134 195,136 200,136 C205,136 210,134 212,130" fill="#280808"/>
+        <!-- DARK BINDI -->
+        <ellipse cx="196" cy="99" rx="5" ry="4" fill="#1a0004"/>
+        <circle cx="196" cy="99" r="2.5" fill="#880000" opacity="0.8"/>
+        <!-- EARRINGS (dark angular) -->
+        <path d="M167,106 C161,106 157,112 159,118 C161,124 167,124 169,119 C171,114 169,108 167,106" fill="#220808" stroke="#660000" stroke-width="1.5"/>
+        <path d="M225,106 C231,106 235,112 233,118 C231,124 225,124 223,119 C221,114 223,108 225,106" fill="#220808" stroke="#660000" stroke-width="1.5"/>
+        <!-- NAME -->
+        <rect x="30" y="352" width="340" height="44" rx="4" fill="#0a0004" opacity="0.88"/>
+        <text x="200" y="370" text-anchor="middle" fill="#cc4444" font-size="15" font-weight="bold" font-family="Georgia">Bhoomi-Takshaka</text>
+        <text x="200" y="386" text-anchor="middle" fill="#cc4444" font-size="9.5" opacity="0.75" font-family="Georgia" font-style="italic">The Dark Mirror · Guardian of the Deep Earth</text>
+        <text x="200" y="398" text-anchor="middle" fill="#ff8c00" font-size="8.5" opacity="0.8" font-family="Georgia">&#9650; Redesigned: Natural warrior hair — no snakes</text>
+      </svg>
+    </div>
+    <div class="char-card-body">
+      <h2>Bhoomi-Takshaka</h2>
+      <span class="role-tag">The Dark Mirror &bull; Guardian of the Depths</span>
+      <p>
+        The shadow version of Tungabhadra. She shares the same elephant bond — but where Tungabhadra
+        reads the earth to protect, Bhoomi-Takshaka weaponizes it to destroy.
+        Her power: she can crack open the ground beneath any city.
+        Inspired by the Naga King Takshaka from the Mahabharata — the serpent of inevitable doom.
+      </p>
+      <div class="redesign-note">
+        <strong>&#9650; Character Redesign Note:</strong> Villain's original design used snake-dreadlock hair.
+        Redesigned here with <strong>natural wind-blown dark warrior hair</strong> — serpent motif only on
+        her armor crown and weapon (Visha-Danda). Her earth-power now shows through <strong>red cracks
+        radiating from her feet</strong> instead. Distinct, original, no film references.
+      </div>
+      <div class="stat-row">
+        <span class="stat-chip dark">&#9760; Earth-shatter power</span>
+        <span class="stat-chip dark">Visha-Danda serpent mace</span>
+        <span class="stat-chip tech">&#9760; Seismic tremor tech</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ravana-Putra -->
+  <div class="char-card-img villain-card">
+    <img src="media/states/south/karnataka/stories/vijayanagara-reborn/images/villain-ravana-putra-and-demon.png" alt="Ravana-Putra — The Human Villain"/>
+    <div class="char-card-body">
+      <h2>Ravana-Putra</h2>
+      <span class="role-tag">The Villain &bull; Human Antagonist</span>
+      <p>
+        The human face of evil in Karnataka's story. A dark warrior who commands the Shila-Rakshasa
+        stone demon and leads the forces that seek to mine and exploit the Western Ghats.
+        His weapon glows with stolen dark energy. Inspired by the Mahabharata's Duryodhana —
+        powerful, intelligent, convinced of his own righteousness, yet consumed by corruption.
+      </p>
+      <div class="stat-row">
+        <span class="stat-chip dark">&#9760; Commands Shila-Rakshasa</span>
+        <span class="stat-chip dark">Dark energy staff</span>
+        <span class="stat-chip">Mahabharata: Duryodhana arc</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shila-Rakshasa -->
+  <div class="char-card-img villain-card" style="border-color:#440000;">
+    <img src="media/states/south/karnataka/stories/vijayanagara-reborn/images/villain-shila-rakshasa-stone-demon.png" alt="Shila-Rakshasa — The Stone Demon"/>
+    <div class="char-card-body">
+      <h2>Shila-Rakshasa</h2>
+      <span class="role-tag">The Stone Demon &bull; Ancient Destroyer</span>
+      <p>
+        An ancient golem-demon awakened from the buried temple beneath the Western Ghats.
+        The very creature the ancient civilization sealed the temple to contain.
+        Made of living stone and iron ore. Can only be stopped by the Gajadanda's elephant-memory —
+        because only an elephant's ancient wisdom knows how the Rakshasa was sealed the first time.
+      </p>
+      <div class="stat-row">
+        <span class="stat-chip dark">&#9760; Living stone body</span>
+        <span class="stat-chip dark">Immune to conventional weapons</span>
+        <span class="stat-chip">Ancient buried temple origin</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     5. SAGE VIDYARANYA — THE GURU
+════════════════════════════════════════ -->
+<div class="k-section-title" style="max-width:1200px;margin:0 auto 16px;">&#9670; The Guru — Sage Vidyaranya</div>
+<div class="char-showcase" style="max-width:1200px;margin:0 auto;padding:0 20px 20px;">
+
+  <div class="char-card-img guru-card">
+    <img src="media/states/south/karnataka/stories/vijayanagara-reborn/images/guru-sage-vidyaranya.png" alt="Sage Vidyaranya — The Glowing Guru of Hampi"/>
+    <div class="char-card-body">
+      <h2>Sage Vidyaranya</h2>
+      <span class="role-tag">The Guru &bull; Spirit of Vijayanagara</span>
+      <p>
+        The glowing spirit-guru of Karnataka — the historical founder of the Vijayanagara Empire appears
+        as a luminous spectral sage by the Tungabhadra River. He appears to Tungabhadra in her darkest
+        moments, showing her visions of the ancient buried temple, revealing the Shila-Rakshasa's
+        weakness, and channeling the wisdom of thirty thousand years of Hampi's sacred rock paintings.
+        Inspired by Vyasa from the Mahabharata — the unseen hand that guides without interfering.
+      </p>
+      <div class="stat-row">
+        <span class="stat-chip" style="border-color:#304a8a;color:#7b9eff;">&#9670; Spirit form</span>
+        <span class="stat-chip" style="border-color:#304a8a;color:#7b9eff;">Vijayanagara wisdom</span>
+        <span class="stat-chip" style="border-color:#304a8a;color:#7b9eff;">Mahabharata: Vyasa arc</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="char-card-img" style="border-color:#2a3a60;">
+    <img src="media/states/south/karnataka/stories/vijayanagara-reborn/images/cast-full-character-grid.png" alt="Karnataka supporting cast — all characters"/>
+    <div class="char-card-body">
+      <h2>The Supporting Cast</h2>
+      <span class="role-tag">All Named Characters &bull; Karnataka Kingdom</span>
+      <p>
+        The full world of Karnataka's story spans beyond hero and villain. Each character serves
+        a dharmic purpose: Neelakantha (tech scout), Hampi-Veera (parkour warrior), Mysuru-Dhanush
+        (archer specialist), The Mining Consortium Agent (corporate antagonist), Battle-Scarred Zealot
+        (corrupted soldier), Grandmother (keeper of village oral history), Chief Engineer of New Hampi,
+        and the Encrypted Mesh Network Operator — a hacker protecting the underground maps.
+      </p>
+      <div class="stat-row">
+        <span class="stat-chip">12+ Named Characters</span>
+        <span class="stat-chip">Modern + Traditional mix</span>
+        <span class="stat-chip">Each with Mahabharata parallel</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     6. DIVINE ECHO — SVG TEMPLE SCENE
+════════════════════════════════════════ -->
+<div class="k-section-title" style="max-width:1200px;margin:0 auto 16px;">&#9670; The Temple Confrontation — SVG Illustration</div>
+<div class="svg-scene-block">
+  <img src="media/states/south/karnataka/stories/vijayanagara-reborn/images/karnataka-scene.svg" alt="The Divine Echo temple confrontation — SVG illustration"/>
+</div>
+<p class="scene-caption" style="padding:10px 20px 0;max-width:1200px;margin:0 auto;">
+  SVG temple scene — Indrani on Airavata (divine guardian, left) · Two warriors facing off in the ancient temple ·
+  Takshaka carved in stone (right) · Villain redesigned with natural hair, serpent only on armor &amp; weapon
+</p>
+
+<!-- ═══════════════════════════════════════
+     7. WEAPONS TABLE
+════════════════════════════════════════ -->
+<div class="k-section-title" style="max-width:1000px;margin:40px auto 16px;">&#9876; Weapons of Karnataka</div>
+<div class="weapon-table-wrap">
+  <table class="weapon-table">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th style="color:#44ff88;">Tungabhadra (Hero)</th>
+        <th style="color:#cc4444;">Bhoomi-Takshaka (Villain)</th>
+        <th style="color:#cc8844;">Ravana-Putra</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="color:var(--gold);">Traditional</td>
+        <td class="g">Gajadanda — "Elephant's Trunk" war mace with bronze elephant head</td>
+        <td class="r">Visha-Danda — Serpent-tipped mace. Carved serpent eye on head. Causes earth cracks on impact</td>
+        <td style="color:#cc8844;">Dark energy staff with stolen sacred power from the buried temple</td>
+      </tr>
+      <tr>
+        <td style="color:var(--gold);">Modern Upgrade</td>
+        <td class="b">&#9889; Cybernetic Gajadanda with underground seismic sensor array — detects enemy positions through earth vibration</td>
+        <td class="r">&#9760; Seismic tremor mace — causes localized earthquakes, fires nano-toxin that dissolves building foundations</td>
+        <td style="color:#cc8844;">&#9760; Corrupted ancient tech weapon — amplifies dark energy stolen from the buried temple artifact</td>
+      </tr>
+      <tr>
+        <td style="color:var(--gold);">Animal Companion</td>
+        <td class="g">Gajasena — Indian Elephant with cyber-armor seismic battle net. Channels 1,000 years of elephant battle memory</td>
+        <td class="r">Dark Elephant Spirit — same Gajasena but corrupted. Memory becomes obsession. Strength becomes ruin</td>
+        <td style="color:#cc8844;">Commands Shila-Rakshasa — ancient stone golem from the buried temple</td>
+      </tr>
+      <tr>
+        <td style="color:var(--gold);">Special Power</td>
+        <td class="g">Gaja-Trance: enters timeless elephant memory — becomes immune to pain, can predict every move on the battlefield</td>
+        <td class="r">Earth Swallow: the ground opens beneath any target. The dark elephant drags them underground. No return</td>
+        <td style="color:#cc8844;">Temple Curse: absorbs power from the buried temple artifact, becoming progressively more unstoppable</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════
+     8. STORY TIMELINE
+════════════════════════════════════════ -->
+<div class="k-section-title" style="max-width:800px;margin:0 auto 20px;">&#9670; Story Arc — Karnataka Kingdom</div>
+<div class="story-timeline">
+  <div class="timeline-entry">
+    <div class="timeline-num">I</div>
+    <div class="timeline-content">
+      <h3>The Snake Trail Begins</h3>
+      <p>Tungabhadra's scouts notice the king cobras of the Western Ghats are vanishing — not dying, not migrating. They follow and discover a fissure in the ancient Bhimbetka rock. Below: a buried temple, perfectly preserved, guarded by hundreds of snakes. Inside: two artifacts of immense power.</p>
+    </div>
+  </div>
+  <div class="timeline-entry">
+    <div class="timeline-num">II</div>
+    <div class="timeline-content">
+      <h3>The Seal — and the Betrayal</h3>
+      <p>Tungabhadra seals the tunnel. But Ravana-Putra, head of the Mining Consortium, has been watching. He sends Bhoomi-Takshaka to retrieve the artifacts by splitting the earth open from below — the same power the temple was sealed to contain.</p>
+    </div>
+  </div>
+  <div class="timeline-entry">
+    <div class="timeline-num">III</div>
+    <div class="timeline-content">
+      <h3>Shila-Rakshasa Awakens</h3>
+      <p>When the temple seal breaks, Shila-Rakshasa — the ancient stone demon — rises from the ruins. Neither hero nor villain can stop it alone. Sage Vidyaranya appears to Tungabhadra by the river, showing her the ancient method: the Gajadanda's elephant memory contains the first sealing ritual.</p>
+    </div>
+  </div>
+  <div class="timeline-entry">
+    <div class="timeline-num">IV</div>
+    <div class="timeline-content">
+      <h3>The Divine Echo — Final Confrontation</h3>
+      <p>In the ancient temple hall — beneath the stone murti of Indrani on her elephant Airavata, facing the carved Takshaka serpent — Tungabhadra and Bhoomi-Takshaka confront each other for the last time. The same elephant. Two dharmas. One temple. This is The Divine Echo.</p>
+    </div>
+  </div>
+  <div class="timeline-entry">
+    <div class="timeline-num">V</div>
+    <div class="timeline-content">
+      <h3>Seal or Shatter</h3>
+      <p>Tungabhadra must choose: seal the temple again (and lose Gajasena, who must become its eternal guardian), or destroy the artifacts (and risk Shila-Rakshasa escaping permanently). The people of Karnataka will bear the consequence of her choice for generations.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BACK NAV ===== -->
+<div class="back-nav">
+  <a href="character-gallery.html" class="green">&#9664; Character Gallery</a>
+  <a href="state-stories.html#karnataka">Full Story Text</a>
+  <a href="characters.html">All 28 Heroes</a>
+  <a href="index.html">Home</a>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer style="text-align:center;padding:28px 20px;border-top:1px solid var(--border-dim);color:var(--text-dim);font-size:0.84em;">
+  <p style="color:var(--gold);margin-bottom:6px;">MAHAHULMANE — The Great Assembly of Warriors</p>
+  <p>Karnataka Kingdom &bull; Indian Elephant &bull; Indrani &amp; Gajasena &bull; Mahabharata-inspired</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karnataka &mdash; The Buried Temple | MahaHulmane</title>
+  <link rel="stylesheet" href="../../../../../css/style.css">
+  <style>
+    /* --- Karnataka Story Page Styles --- */
+    .story-chapter {
+      max-width: 900px;
+      margin: 0 auto 2.5rem;
+      padding: 2rem 2.5rem;
+      background: rgba(0, 58, 26, 0.35);
+      border: 1px solid rgba(68, 255, 136, 0.15);
+      border-radius: var(--block-radius);
+      position: relative;
+      overflow: hidden;
+    }
+    .story-chapter::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, var(--south), transparent);
+    }
+    .story-chapter h3 {
+      color: var(--south);
+      font-size: 1.5rem;
+      margin-bottom: 0.3em;
+      text-shadow: 0 0 12px rgba(68, 255, 136, 0.3);
+    }
+    .story-chapter .chapter-subtitle {
+      font-style: italic;
+      color: var(--south-text);
+      font-size: 0.9em;
+      margin-bottom: 1.2em;
+      opacity: 0.8;
+    }
+    .story-chapter p {
+      color: var(--text);
+      line-height: 1.9;
+      font-size: 0.95em;
+      margin-bottom: 1.1em;
+      text-align: justify;
+    }
+    .story-chapter blockquote {
+      border-left-color: var(--south);
+    }
+    .story-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 2rem auto;
+      max-width: 300px;
+      color: var(--south);
+      opacity: 0.4;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+    }
+    .story-divider::before,
+    .story-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--south), transparent);
+    }
+    .char-card-mini {
+      background: rgba(0, 58, 26, 0.4);
+      border: 1px solid rgba(68, 255, 136, 0.2);
+      border-radius: var(--card-radius);
+      padding: 1.2rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .char-card-mini:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(68, 255, 136, 0.12);
+    }
+    .char-card-mini .char-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .char-card-mini h4 {
+      color: var(--south);
+      margin-bottom: 0.2em;
+    }
+    .char-card-mini .char-role {
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--south-text);
+      margin-bottom: 0.4em;
+    }
+    .char-card-mini p {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+    .connection-box {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 2.5rem;
+      background: linear-gradient(135deg, rgba(0, 58, 26, 0.3), rgba(26, 10, 0, 0.5));
+      border: 1px solid var(--south);
+      border-radius: var(--block-radius);
+      position: relative;
+    }
+    .connection-box::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--block-radius);
+      box-shadow: inset 0 0 40px rgba(68, 255, 136, 0.05);
+      pointer-events: none;
+    }
+    .back-nav {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .back-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      padding: 0.6em 1.5em;
+      border: 1px solid var(--south);
+      border-radius: 20px;
+      color: var(--south);
+      font-size: 0.9em;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .back-nav a:hover {
+      background: rgba(68, 255, 136, 0.1);
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      .story-chapter {
+        padding: 1.2rem 1rem;
+      }
+      .story-chapter h3 {
+        font-size: 1.2rem;
+      }
+      .connection-box {
+        padding: 1.2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav class="maha-nav">
+    <a href="../../../../../index.html" class="nav-logo">MahaHulmane</a>
+    <div class="nav-links">
+      <a href="../../../../../index.html">Home</a>
+      <a href="../../../../../characters.html">Heroes</a>
+      <a href="../../../../../state-stories.html">Kingdoms</a>
+      <a href="../../../../../regions.html">Regions</a>
+      <a href="../../../../../council.html">Council</a>
+      <a href="../../../../../story.html" class="active">Story</a>
+      <a href="../../../../../tattoo-system.html">Tattoos</a>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')">&#9776;</button>
+  </nav>
+
+  <div style="padding:70px 20px 0;max-width:1200px;margin:0 auto;font-size:0.8rem;">
+    <a href="../../../../../state-stories.html" style="color:var(--gold-dim);text-decoration:none;">All Kingdoms</a>
+    <span style="color:var(--text-dim);margin:0 6px;">&rsaquo;</span>
+    <a href="../../../index.html" style="color:var(--gold-dim);text-decoration:none;">India</a>
+    <span style="color:var(--text-dim);margin:0 6px;">&rsaquo;</span>
+    <a href="../../index.html" style="color:var(--gold-dim);text-decoration:none;">Dakshinapatha (South)</a>
+    <span style="color:var(--text-dim);margin:0 6px;">&rsaquo;</span>
+    <a href="index.html" style="color:var(--gold-dim);text-decoration:none;">Karnataka</a>
+    <span style="color:var(--text-dim);margin:0 6px;">&rsaquo;</span>
+    <span style="color:var(--gold);font-weight:bold;">The Buried Temple</span>
+  </div>
+
+  <!-- ===== 1. EPIC HEADER ===== -->
+  <section class="section" style="text-align:center; padding-top:80px;">
+    <div style="margin-bottom:20px;">
+      <svg viewBox="0 0 800 150" style="width:100%; max-width:900px; border-radius:12px;">
+        <defs>
+          <linearGradient id="karBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#003a1a"/>
+            <stop offset="50%" stop-color="#005a2a"/>
+            <stop offset="100%" stop-color="#003a1a"/>
+          </linearGradient>
+        </defs>
+        <rect width="800" height="150" fill="url(#karBg)"/>
+        <!-- Snake patterns -->
+        <path d="M0,120 Q100,100 200,120 Q300,140 400,120 Q500,100 600,120 Q700,140 800,120" fill="none" stroke="#44ff88" stroke-width="2" opacity="0.3"/>
+        <path d="M0,130 Q100,110 200,130 Q300,150 400,130 Q500,110 600,130 Q700,150 800,130" fill="none" stroke="#44ff88" stroke-width="1" opacity="0.2"/>
+        <!-- Faint serpent coils -->
+        <circle cx="100" cy="75" r="30" fill="none" stroke="#44ff88" stroke-width="0.5" opacity="0.1"/>
+        <circle cx="700" cy="75" r="25" fill="none" stroke="#44ff88" stroke-width="0.5" opacity="0.1"/>
+        <text x="400" y="50" fill="#44ff88" text-anchor="middle" font-size="14" font-family="Georgia" letter-spacing="3">Karnataka &mdash; The Southern Kingdom</text>
+        <text x="400" y="85" fill="#ffd700" text-anchor="middle" font-size="32" font-family="Georgia" font-weight="bold">The Buried Temple of the Western Ghats</text>
+        <text x="400" y="115" fill="#aaffcc" text-anchor="middle" font-size="14" font-family="Georgia" font-style="italic">The Story of Tungabhadra, the River Queen</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== 2. HERO INTRODUCTION CARD ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="card hero-south" style="max-width:900px; margin:0 auto; padding:30px; display:flex; gap:30px; align-items:center; flex-wrap:wrap;">
+      <div style="flex-shrink:0; text-align:center;" id="karHeroPortrait">
+        <!-- JS will populate with generateHeroSVG, fallback below -->
+        <div style="width:180px; height:240px; background:rgba(0,0,0,0.3); border-radius:8px; display:flex; align-items:center; justify-content:center;">
+          <span style="font-size:60px;">&#x1F418;</span>
+        </div>
+      </div>
+      <div style="flex:1; min-width:250px;">
+        <div style="font-size:0.8em; text-transform:uppercase; letter-spacing:2px; color:var(--south); margin-bottom:5px;">State Hero &mdash; Karnataka</div>
+        <h2 style="color:var(--south); margin-bottom:3px;">Tungabhadra</h2>
+        <div style="font-style:italic; color:var(--text-dim); margin-bottom:5px;">The River Queen &mdash; Mother of the Southern Fortress</div>
+        <p style="color:var(--text); line-height:1.7; margin-bottom:10px;">
+          Broad-shouldered and tall, with warm brown skin and kind eyes that harden to granite in battle.
+          She wears ornate gold jewelry in the Vijayanagara style and braids jasmine flowers
+          into her hair even before combat. Her war mace, Gajadanda, is topped with a bronze elephant head.
+        </p>
+        <div style="display:flex; gap:15px; flex-wrap:wrap; font-size:0.85em;">
+          <span style="color:var(--south);">&#x1F418; Indian Elephant</span>
+          <span style="color:var(--gold);">&#9876; War Mace &mdash; Gajadanda</span>
+          <span style="color:var(--gold-dim);">&#127919; Full Body Tattoo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. THE STORY &mdash; FULL NARRATIVE ===== -->
+  <section class="section" style="padding-top:0;">
+    <div style="max-width:900px; margin:0 auto;">
+      <h2 class="section-title" style="border-bottom-color:var(--south); color:var(--south);">The Full Story</h2>
+    </div>
+
+    <!-- Chapter 1: The Vanishing Serpents -->
+    <div class="story-chapter animate-on-scroll">
+      <h3>I. The Vanishing Serpents</h3>
+      <div class="chapter-subtitle">In which the king cobras of the Western Ghats begin to disappear, and a queen turns her gaze toward the ancient forest</div>
+
+      <p>
+        The report arrived at dusk, carried by a scout whose boots were caked with red laterite mud and whose face was pale
+        beneath the copper of his skin. He knelt before Tungabhadra in the open courtyard of the Hampi garrison, where the
+        evening light painted the ruined pillars in shades of amber, and he spoke three words that would change everything:
+        <em>&ldquo;The serpents are vanishing.&rdquo;</em>
+      </p>
+      <p>
+        Tungabhadra set down the clay cup of filter coffee she had been nursing &mdash; a small ritual she maintained even as
+        the weight of an entire kingdom pressed against her shoulders &mdash; and listened. The scout&rsquo;s name was Keshava,
+        captain of the Southern Ghats Watch, a man who had spent thirty years cataloguing the wildlife of the mountain forests
+        with the meticulous care of a temple scribe. He was not a man given to panic. But his hands were trembling.
+      </p>
+      <p>
+        The king cobras of the Western Ghats were the largest venomous snakes on the subcontinent &mdash; some measured over
+        eighteen feet, their hoods as broad as a warrior&rsquo;s shield, their eyes ancient and knowing. They had inhabited
+        these mountains since before the first human settlement, predating even the oldest songs. Keshava&rsquo;s team had
+        been tracking a particular population of forty-seven adults near the Kudremukh range. Over the past three months,
+        thirty-one had disappeared. Not died &mdash; their bodies were never found. Not migrated &mdash; the surrounding
+        territories showed no influx. They had simply ceased to exist in the places they had always been.
+      </p>
+      <p>
+        Tungabhadra rose from the stone bench, and the jasmine braided into her hair released its fragrance into the cooling
+        air. She crossed to the wall map &mdash; a vast hand-painted chart of Karnataka&rsquo;s forests that covered an entire
+        wall of the garrison &mdash; and traced the disappearance pattern with her calloused fingertip. The locations formed a
+        rough arc, curving inward from the forest&rsquo;s edge toward a point deep in the interior where no trail existed and
+        no survey team had ever penetrated. She studied the pattern for a long time. Then she said, quietly, &ldquo;Assemble
+        the Ghats team. We go in at first light.&rdquo;
+      </p>
+      <p>
+        Keshava hesitated. &ldquo;My lady, the interior is &mdash;&rdquo;
+      </p>
+      <p>
+        &ldquo;I know what it is,&rdquo; she said. Her voice was gentle but carried the undertone of stone grinding against
+        stone. &ldquo;I grew up in a herd, Keshava. I learned to listen before I learned to speak. And the forest is trying
+        to tell us something. We will listen.&rdquo;
+      </p>
+    </div>
+
+    <div class="story-divider">&#9671; &#9671; &#9671;</div>
+
+    <!-- Chapter 2: Into the Forest -->
+    <div class="story-chapter animate-on-scroll">
+      <h3>II. Into the Forest</h3>
+      <div class="chapter-subtitle">In which the team descends into the primordial heart of the Western Ghats, and the forest reveals its oldest secrets</div>
+
+      <p>
+        The Western Ghats at dawn were a cathedral of green. Mist hung between the trees like the breath of sleeping gods,
+        and the canopy was so dense that the rising sun became a rumor &mdash; a vague brightening somewhere infinitely above,
+        filtered through layer upon layer of leaves until it arrived at the forest floor as a diffuse emerald glow. The air
+        was thick and warm, saturated with moisture, heavy with the scent of decaying wood and wild cardamom and the faint
+        musky perfume of animals moving unseen through the undergrowth.
+      </p>
+      <p>
+        Tungabhadra led a team of twelve: Keshava and four of his best trackers, two herpetologists from the Mysuru Academy,
+        a geologist named Revathi whose specialty was subterranean formations, and three of Tungabhadra&rsquo;s personal guard
+        &mdash; warriors who bore the elephant tattoo at various stages and who moved through the forest with a silence that
+        belied their size. Tungabhadra herself carried Gajadanda strapped across her back, the bronze elephant head catching
+        stray flickers of green-filtered light.
+      </p>
+      <p>
+        They followed the snake trails. A king cobra&rsquo;s passage through the undergrowth leaves distinctive marks &mdash;
+        the broad belly-scrape in soft earth, the characteristic displacement of leaf litter, the faint traces of shed
+        venom-scales that glinted like dark glass under a tracker&rsquo;s lamp. Keshava read these signs the way a scholar
+        reads a manuscript, pausing to study a disturbed root here, a compressed patch of moss there. The trails were
+        converging. That was the first strange thing. King cobras are solitary hunters; they do not travel in groups, do not
+        share routes, do not cooperate. Yet here, trail after trail overlapped, braided, merged &mdash; as though the snakes
+        were being summoned.
+      </p>
+      <p>
+        On the second day, they spotted their first cobra. It was enormous &mdash; over sixteen feet, its hood a deep
+        olive-black, the pale chevron markings on its throat faded with age. It moved with a terrible deliberate grace,
+        ignoring the humans entirely, its body flowing over roots and rocks with the fluid certainty of water finding its
+        lowest point. They followed it for three hours, mounting motion-activated cameras on the trees as they went.
+        The snake did not deviate. It did not hunt. It did not pause to taste the air with its tongue, which was the second
+        strange thing, because a king cobra&rsquo;s tongue is in constant motion. This one moved as though it already knew
+        exactly where it was going.
+      </p>
+      <p>
+        And then, at the base of a massive strangler fig whose roots had swallowed an entire boulder like a fist closing
+        around a stone, the cobra vanished. One moment it was there, its body a dark ribbon against the grey rock. The next,
+        it had slipped into the earth and was gone. The team searched for twenty minutes before they found it &mdash; a
+        fissure in the rock, barely wider than a man&rsquo;s forearm, hidden behind a curtain of root-tendrils. The cameras
+        confirmed what Keshava had suspected: every snake they had tracked had disappeared at this exact point. The same
+        fissure. The same tree. The same impossible convergence.
+      </p>
+      <p>
+        Revathi the geologist pressed her ear to the rock and went very still. &ldquo;There is air moving beneath us,&rdquo;
+        she said. &ldquo;A lot of air. This is not a burrow. This goes deep.&rdquo;
+      </p>
+    </div>
+
+    <div class="story-divider">&#9671; &#9671; &#9671;</div>
+
+    <!-- Chapter 3: The Tunnel -->
+    <div class="story-chapter animate-on-scroll">
+      <h3>III. The Tunnel</h3>
+      <div class="chapter-subtitle">In which the earth opens its mouth, and the scent of sandalwood rises from impossible depths</div>
+
+      <p>
+        It took two days to widen the fissure enough for a human to pass through. They worked with hand tools only &mdash;
+        Tungabhadra forbade anything mechanical, partly out of respect for the forest and partly because the vibrations of
+        heavy equipment would scatter the snakes and destroy whatever trail they were following. The rock was basalt, ancient
+        and dense, but the fissure followed a natural fault line that yielded to patient chiseling. Behind the rock face,
+        they found the tunnel.
+      </p>
+      <p>
+        It was not a natural formation. That was clear from the first moment they shone their lamps into the darkness beyond.
+        The walls were smooth &mdash; not water-smoothed or wind-worn, but carved. The surface bore the faint, regular marks
+        of tools, and the cross-section was an elegant arch, perhaps seven feet tall at its apex and five feet wide, perfectly
+        proportioned. The floor was flat and even, with a gentle downward slope that led into darkness. And from that darkness
+        rose a current of warm air that carried the unmistakable scent of sandalwood.
+      </p>
+      <p>
+        The team stood at the entrance for a long time without speaking. The herpetologists were the first to voice what
+        everyone was thinking: there should not be sandalwood this deep in the Ghats. The nearest sandalwood forests were
+        over a hundred kilometers to the east. The warmth was wrong too &mdash; the ambient temperature inside the tunnel
+        was at least ten degrees higher than the forest floor, which suggested geothermal activity, but the Western Ghats
+        were not volcanically active. Nothing about this place obeyed the rules.
+      </p>
+      <p>
+        Keshava shone his lamp down the tunnel and they could see, on the walls, the first carvings. They were shallow,
+        worn almost to nothing by time, but discernible: a procession of hooded serpents, their bodies intertwined in
+        patterns that were neither purely decorative nor purely representational. They seemed to be a language of sorts, or
+        a map, or both. Revathi ran her fingers over them and said, in a voice that was not quite steady, &ldquo;These are
+        old. Very old. I would say pre-Chalukyan, but &mdash;&rdquo; She stopped. &ldquo;They may be older than anything
+        I have seen.&rdquo;
+      </p>
+      <p>
+        Tungabhadra removed Gajadanda from her back and held it at her side. The bronze elephant head seemed to catch the
+        lamplight and hold it, glowing with a warmth that matched the tunnel&rsquo;s breath. She felt something she had not
+        felt since childhood, since the days when she had walked with her mother&rsquo;s elephant herd through monsoon
+        storms and felt the earth tremble with messages only pachyderms could read: a vibration. Deep, rhythmic, patient.
+        The earth was speaking. And it was saying <em>come</em>.
+      </p>
+      <p>
+        &ldquo;Stay close,&rdquo; she told her team. &ldquo;Move slowly. Touch nothing.&rdquo; And she stepped into the
+        darkness.
+      </p>
+    </div>
+
+    <div class="story-divider">&#9671; &#9671; &#9671;</div>
+
+    <!-- Chapter 4: The Buried Temple -->
+    <div class="story-chapter animate-on-scroll">
+      <h3>IV. The Buried Temple</h3>
+      <div class="chapter-subtitle">In which the tunnel opens into a cathedral of gold and serpents, and the team beholds what was never meant to be found</div>
+
+      <p>
+        They descended for three hours. The tunnel wound through the rock in long, graceful curves &mdash; never sharp
+        turns, never switchbacks, always that steady downward spiral, as though the builders had been mimicking the
+        movement of a snake through grass. The carvings on the walls grew denser and more elaborate as they went deeper.
+        Serpents gave way to scenes: figures in robes performing rituals, buildings being raised, rivers being diverted.
+        An entire civilization was narrating itself in stone, and the deeper the team went, the older the story became.
+      </p>
+      <p>
+        The air grew warmer. The sandalwood scent intensified until it was almost overpowering, a rich, sweet, woody
+        presence that seemed to coat the inside of the lungs. And then, with no warning &mdash; no widening of the tunnel,
+        no change in the quality of the air &mdash; the walls fell away, and the team stepped into open space.
+      </p>
+      <p>
+        Tungabhadra raised her lamp. The light caught gold, and then more gold, and then so much gold that the reflections
+        multiplied and shattered and filled the darkness with a thousand scattered stars. The cavern was immense &mdash;
+        perhaps two hundred feet from floor to ceiling, and at least three hundred feet across. And standing in its center,
+        rising from the stone floor like a prayer made physical, was a temple.
+      </p>
+      <p>
+        It was beautiful in a way that made the heart ache. The walls were covered in gold leaf that still gleamed despite
+        the centuries, each sheet applied with a precision that modern craftsmen would envy. The pillars &mdash; there were
+        dozens of them, arranged in concentric rings &mdash; were carved from a single stone each, depicting scenes from a
+        mythology that none of the team recognized. These were not the gods of the Hindu pantheon, nor the Buddhas, nor the
+        Jain Tirthankaras. These were something else entirely &mdash; tall, elongated figures with serene faces and bodies
+        that seemed to blur at the edges, as though the sculptors had been depicting beings that existed only partially
+        in physical space.
+      </p>
+      <p>
+        And everywhere, on every surface &mdash; the floor, the pillars, the lintels, the steps of the central sanctum
+        &mdash; there were snakes. Hundreds of them. King cobras coiled in watchful spirals, their hoods half-raised, their
+        tongues tasting the sudden intrusion of human scent. Rat snakes draped along the architraves like living garlands.
+        Small, jewel-bright vine snakes wound through the carvings as though they were part of the decoration. The temple
+        was alive with serpents, and as the team&rsquo;s lamplight swept across the space, a thousand pairs of unblinking
+        eyes turned toward them.
+      </p>
+      <p>
+        Three of the warriors reached for their weapons. Tungabhadra stopped them with a raised hand. She understood
+        something the others did not &mdash; something her years with the elephants had taught her about animals that
+        guard sacred spaces. These snakes were not hunting. They were standing watch. They had been standing watch, she
+        realized with a chill that cut through the warm air, for a very long time.
+      </p>
+      <p>
+        &ldquo;Lower your lamps,&rdquo; she murmured. &ldquo;Move slowly. They will not strike unless we threaten what they
+        protect.&rdquo; She walked forward, and the snakes parted before her like tall grass before an elephant&rsquo;s
+        tread. Behind her, the team followed in her wake, their breath shallow, their hearts hammering, surrounded on all
+        sides by the patient, watchful silence of a thousand guardians.
+      </p>
+    </div>
+
+    <div class="story-divider">&#9671; &#9671; &#9671;</div>
+
+    <!-- Chapter 5: The Artifacts -->
+    <div class="story-chapter animate-on-scroll">
+      <h3>V. The Artifacts</h3>
+      <div class="chapter-subtitle">In which two relics are found at the temple's heart, and an ancient inscription tells the story of a civilization's last stand</div>
+
+      <p>
+        The central sanctum was a raised platform of polished black stone, and upon it rested two objects. The first was a
+        tablet &mdash; roughly two feet square, carved from a stone so dark it was nearly purple, with a sigil cut into its
+        surface: a serpent devouring its own tail, but with seven heads instead of one, each head facing a different cardinal
+        direction. When Tungabhadra approached, the tablet hummed. Not a sound exactly &mdash; more a vibration that she
+        felt in her teeth and her sternum and the soles of her feet, a frequency that bypassed the ears entirely and spoke
+        directly to the bones. The snakes nearest to the tablet swayed, their hoods fully extended, their bodies rigid with
+        agitation.
+      </p>
+      <p>
+        The second object was a stone slab &mdash; an inscription panel, eight feet long and three feet tall, covered in
+        dense text carved in a script that Revathi identified, with shaking voice, as a proto-Brahmi variant that predated
+        the Ashokan edicts by at least a thousand years. It was broken in two places, and time had erased portions of the
+        text, but enough remained to tell a story.
+      </p>
+      <p>
+        It took Revathi and the two herpetologists &mdash; who turned out to have training in ancient languages, because in
+        Karnataka, scholars rarely limit themselves to one discipline &mdash; nearly six hours to produce a working
+        translation. They sat on the stone floor of the buried temple, surrounded by snakes, their lamps arranged in a
+        semicircle, and they pieced together the words of a civilization that had tried to erase itself from history.
+      </p>
+      <p>
+        The inscription told of a people who had built this temple as the repository of their greatest knowledge and most
+        dangerous power. They called themselves the Nagavamsha &mdash; the Serpent Lineage &mdash; and they had lived in
+        these mountains when the forests were young. Their civilization had been vast and sophisticated, spanning the entire
+        Western Ghats from Kerala to Gujarat, and their power had been drawn from the bond between human and serpent &mdash;
+        a bond that predated even the Tattoo Covenant by millennia.
+      </p>
+      <p>
+        But a monster kingdom had risen in the east. The inscription called them the Rakshasarajya &mdash; the Demon
+        Dominion &mdash; and described them as beings of terrible hunger who consumed not just flesh but spirit, not just
+        cities but the memory of cities, not just civilizations but the possibility that those civilizations had ever
+        existed. They had come for the Nagavamsha&rsquo;s power, and in their approach, the very earth had trembled and
+        rivers had reversed their flow.
+      </p>
+      <p>
+        The Nagavamsha had fought. The inscription recorded battles of staggering scale &mdash; serpent armies clashing with
+        shadow-creatures across mountain ranges, rivers turned to poison, forests burned to ash and regrown in a single
+        night through desperate sorcery. But they were losing. The Rakshasarajya were too many, too hungry, too relentless.
+        And so the Nagavamsha made their final choice: they would bury everything. The temple. The artifacts. The knowledge.
+        Their entire civilization. They would disappear so completely that the Rakshasarajya would find nothing left to
+        consume. And they set their serpent companions &mdash; the great king cobras, bred across generations for loyalty
+        and longevity &mdash; to guard the buried sanctuary until the end of time, or until someone worthy came to reclaim
+        what was hidden.
+      </p>
+
+      <blockquote>
+        &ldquo;We who were many become none. We who built towers bury them. Let the earth remember what the sky forgets.
+        And let the serpents keep vigil where we cannot.&rdquo;<br>
+        &mdash; Final lines of the Nagavamsha Inscription
+      </blockquote>
+    </div>
+
+    <div class="story-divider">&#9671; &#9671; &#9671;</div>
+
+    <!-- Chapter 6: The Monster Kingdom's Shadow -->
+    <div class="story-chapter animate-on-scroll">
+      <h3>VI. The Monster Kingdom&rsquo;s Shadow</h3>
+      <div class="chapter-subtitle">In which the Rakshasarajya's descendants learn of the discovery, and war comes to the Western Ghats</div>
+
+      <p>
+        The attack came seventeen days after the discovery. Tungabhadra had barely begun to process the implications of the
+        buried temple &mdash; the historical rewriting it demanded, the power the serpent tablet contained, the existential
+        questions about the Nagavamsha and their relationship to the current Naga-Manava hybrid kingdoms &mdash; when
+        Keshava&rsquo;s perimeter scouts triggered the alarm. Something was moving through the forest. Something large.
+        Something that moved in a way that no natural creature should.
+      </p>
+      <p>
+        They came at night. The first sign was the silence &mdash; the complete, absolute cessation of every sound in the
+        forest. No crickets. No frogs. No night birds. Even the wind seemed to hold its breath. Then came the smell: a
+        thick, cloying sweetness that was the corruption of the sandalwood scent from the temple, as though someone had
+        taken that sacred fragrance and rotted it. And then, between the trees, the shadows began to move.
+      </p>
+      <p>
+        The Rakshasarajya&rsquo;s descendants called themselves the Chhayavanshi &mdash; the Shadow Lineage. They were
+        not the world-eating horrors their ancestors had been; time had diminished them, as it diminishes all things. But
+        they retained enough of the old power to be terrifying. They moved without sound and nearly without form &mdash;
+        shapes that were almost human but slightly wrong, proportions that shifted when observed directly, faces that were
+        holes in the darkness rather than features within it. They had been searching for the Nagavamsha temple for three
+        thousand years, following rumors and fragments of myth across the length of the subcontinent, and now they had
+        finally traced its location. How they had learned of Tungabhadra&rsquo;s discovery, she never determined. Perhaps
+        they had spies among the forest officials. Perhaps the tablet&rsquo;s activation had sent out a signal that only
+        shadow-kind could hear.
+      </p>
+      <p>
+        The battle of the Western Ghats was fought on two fronts. Above ground, Tungabhadra&rsquo;s warriors engaged the
+        Chhayavanshi in the thick forest, where visibility was measured in feet and the enemy could emerge from any shadow.
+        Tungabhadra fought with Gajadanda in both hands, the bronze elephant head singing as it cut through darkness that
+        tried to reform around each blow. She fought the way she had been taught by the elephants &mdash; not with speed
+        or agility, but with devastating, unstoppable momentum. Where she charged, the shadows broke. Where she stood, the
+        ground held. Her warriors rallied around her like calves around a matriarch, taking courage from her solidity, her
+        refusal to yield a single step.
+      </p>
+      <p>
+        Below ground, a smaller force attempted to breach the tunnel. Keshava led the defense there, and it was the snakes
+        who turned the tide. The king cobras, roused from their ancient vigil by the intrusion of shadow-kind, attacked with
+        a fury that shocked even Tungabhadra&rsquo;s seasoned warriors. The great serpents struck at the Chhayavanshi with
+        a precision that went beyond instinct &mdash; they targeted the points where the shadow-forms were most solid,
+        where the darkness was most concentrated, and their venom, it turned out, burned shadow-flesh as easily as it
+        burned human tissue. Perhaps more easily. The tunnel became a killing ground, and the snakes showed no mercy.
+      </p>
+      <p>
+        The battle lasted two nights and a day. When it ended, the Chhayavanshi had retreated, but they had not been
+        destroyed. Tungabhadra, bleeding from a dozen wounds and leaning on Gajadanda for support, watched the last of
+        the shadows melt back into the forest and knew, with the certainty of one who reads the earth, that they would
+        return.
+      </p>
+    </div>
+
+    <div class="story-divider">&#9671; &#9671; &#9671;</div>
+
+    <!-- Chapter 7: The Decision -->
+    <div class="story-chapter animate-on-scroll">
+      <h3>VII. The Decision</h3>
+      <div class="chapter-subtitle">In which Tungabhadra chooses to bury what was buried, and entrusts an eternal vigil to new guardians</div>
+
+      <p>
+        The council of war convened on the floor of the buried temple itself, because there was nowhere else secure enough
+        to hold it. Tungabhadra sat on the steps of the central sanctum, the serpent tablet behind her still humming its
+        low, bone-deep note, and she listened as her advisors argued.
+      </p>
+      <p>
+        Revathi wanted to bring in researchers. The inscription alone, she said, would rewrite the history of the Indian
+        subcontinent. The Nagavamsha civilization was unknown to modern scholarship &mdash; its discovery would be the
+        archaeological event of the millennium. The serpent tablet&rsquo;s power, if understood and harnessed, could be
+        a weapon against the Void Maw. How could they justify burying it again when the universe itself was at stake?
+      </p>
+      <p>
+        The herpetologists agreed with Revathi. Keshava did not. He had fought beside the snakes in the tunnel and he had
+        seen what the Chhayavanshi were. &ldquo;The Nagavamsha buried this place for a reason,&rdquo; he said. His voice
+        was raw from smoke and exertion, and there were new grey streaks in his beard that had not been there three weeks
+        ago. &ldquo;They did not bury it because they were weak. They buried it because the alternative was worse. If the
+        Chhayavanshi take the tablet, we lose more than a battle. We lose the memory of everything these people were.&rdquo;
+      </p>
+      <p>
+        Tungabhadra listened until every voice had spoken and every argument had been made. The snakes coiled quietly
+        around her, and she felt their patience, their ancient willingness to wait. She thought of her mother, who had
+        died defending Karnataka and who had taught her, in the few years they had together, that true strength was not
+        the ability to take but the ability to protect. She thought of the Nagavamsha, who had loved their civilization
+        enough to destroy it rather than see it devoured. She thought of the Void Maw, somewhere beyond the stars,
+        consuming everything in its path.
+      </p>
+      <p>
+        &ldquo;Seal the tunnel,&rdquo; she said.
+      </p>
+      <p>
+        The silence that followed was absolute. Even the serpents seemed to hold still.
+      </p>
+      <p>
+        &ldquo;Seal it,&rdquo; she repeated. &ldquo;Collapse the entrance. Fill it with rubble. Plant new trees over the
+        site. The Nagavamsha chose to disappear, and we will honor that choice. The tablet&rsquo;s power is real, but
+        power that must be hidden to be safe is not power we are ready to wield.&rdquo; She looked at Revathi. &ldquo;Copy
+        the inscription. Every word, every symbol. That knowledge, at least, we can preserve. But the tablet stays in the
+        earth. And we will set our own guard.&rdquo;
+      </p>
+      <p>
+        She chose twelve warriors from her personal guard &mdash; the most loyal, the most disciplined, the most skilled
+        at patience. She stationed them in the forest around the sealed entrance, dressed as wildlife rangers, equipped
+        with tracking gear and communication devices, indistinguishable from the legitimate conservation teams that
+        patrolled the Western Ghats. Their true mission was known only to Tungabhadra and Keshava: watch the forest,
+        watch the shadows, and if the Chhayavanshi return, die before the tunnel is breached again.
+      </p>
+      <p>
+        The snakes, unbidden, resumed their vigil. Within weeks of the tunnel&rsquo;s sealing, the king cobras returned
+        to the area in numbers that made the herpetologists weep with confused joy. They coiled over the collapsed
+        entrance as though the rubble were their ancestral home. They nested in the roots of the strangler fig. They
+        patrolled the surrounding forest in slow, deliberate circuits, tasting the air for shadow, for threat, for the
+        corrupted sweetness that heralded the Chhayavanshi&rsquo;s approach. Three thousand years of guardianship had
+        not ended. It had merely acquired reinforcements.
+      </p>
+    </div>
+
+    <div class="story-divider">&#9671; &#9671; &#9671;</div>
+
+    <!-- Chapter 8: Legacy -->
+    <div class="story-chapter animate-on-scroll">
+      <h3>VIII. Legacy</h3>
+      <div class="chapter-subtitle">In which the weight of hidden knowledge reshapes a queen, and the world changes beneath the surface of the known</div>
+
+      <p>
+        The discovery of the buried temple changed Tungabhadra in ways that were visible to those who knew her well and
+        invisible to everyone else. She carried herself differently now &mdash; not with less confidence, but with a
+        gravity that went beyond the physical. She had always been the most beloved of the southern heroes, the one who
+        led through warmth and trust. Now there was something behind her eyes that her warriors could not quite name: the
+        look of someone who has glimpsed the depth of history and understood that the present is a thin skin stretched
+        over an abyss of forgotten things.
+      </p>
+      <p>
+        She told no one outside her inner circle about the temple&rsquo;s true contents. At the Grand Council, she
+        mentioned the expedition in passing &mdash; a routine investigation of wildlife patterns in the Western Ghats,
+        nothing more. But she began to ask questions that unsettled the other Regional Leaders. She inquired about the
+        Naga-Manava hybrid kingdom &mdash; were they truly the descendants of ancient serpent-worshippers, or could they
+        be the actual descendants of the Nagavamsha themselves? She studied the accounts of the Void Maw with a new
+        intensity, looking for patterns that matched the inscription&rsquo;s description of the Rakshasarajya &mdash;
+        entities that consumed not just matter but memory, not just worlds but the possibility of worlds.
+      </p>
+      <p>
+        The parallels haunted her. The Rakshasarajya, as described in the Nagavamsha inscription, sounded disturbingly
+        like a local manifestation of whatever force the Void Maw represented. If the Nagavamsha had fought a smaller
+        version of this cosmic hunger three thousand years ago, then the buried temple was not just an archaeological
+        curiosity &mdash; it was evidence. Evidence that the Void Maw, or something like it, had touched the Earth before.
+        And the Nagavamsha had survived. Not by fighting, not by running, but by hiding so completely that the hunger
+        could find nothing left to consume.
+      </p>
+      <p>
+        Was that the answer? Not a weapon, but a disappearance? Could the entire planet learn to bury itself the way the
+        Nagavamsha had buried their temple?
+      </p>
+      <p>
+        Tungabhadra did not share this thought with the Grand Council. It was too radical, too terrifying, too close to
+        surrender to be spoken aloud in a chamber full of warriors who defined themselves by their willingness to fight.
+        But she kept it. She turned it over in her mind the way she had once turned river stones in her hands as a child,
+        feeling for their shape, their weight, their hidden contours. And she returned, in secret, to the copy of the
+        Nagavamsha inscription, searching its damaged text for the one thing she had not yet found: instructions.
+        Because a civilization that chose to bury itself must have left instructions for the unburying, and those
+        instructions, if they existed, might be the key to everything.
+      </p>
+      <p>
+        Meanwhile, the Chhayavanshi did not rest. Reports filtered in from Keshava&rsquo;s disguised sentinels: shadows
+        at the forest&rsquo;s edge, testing the defenses, probing for weakness. Twice they attempted to breach the
+        perimeter and were driven back &mdash; once by the warriors, once by the snakes alone. They were patient, these
+        shadow-children. They had waited three thousand years. They could wait longer. But so could the serpents. And so,
+        now, could Tungabhadra.
+      </p>
+      <p>
+        Beneath the Western Ghats, in a cavern of gold and darkness, the buried temple waited. The serpent tablet
+        hummed its low, eternal note. The carvings told their story to no one. And the snakes coiled and uncoiled in
+        their slow, ancient rhythm, guarding what had been hidden, what had been forgotten, what might yet save the world
+        &mdash; or end it.
+      </p>
+
+      <div style="text-align:center; padding:25px; margin-top:20px; background:rgba(68,255,136,0.04); border:1px solid rgba(68,255,136,0.15); border-radius:12px;">
+        <p style="color:var(--south); font-size:1.15em; font-weight:bold; margin-bottom:8px;">The Temple Waits</p>
+        <p style="color:var(--south-text); font-style:italic; font-size:0.9em;">
+          The serpents guard. The shadows probe. And Tungabhadra carries the weight of a secret<br>
+          that could change the war against the Void Maw &mdash; or make it unwinnable.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. KEY CHARACTERS IN THIS STORY ===== -->
+  <section class="section">
+    <div style="max-width:900px; margin:0 auto;">
+      <h2 class="section-title" style="border-bottom-color:var(--south); color:var(--south);">Key Characters</h2>
+      <div class="grid-4" style="gap:1rem;">
+
+        <div class="char-card-mini" style="cursor:pointer;" onclick="if(window.showHeroDetail) window.showHeroDetail('karnataka');">
+          <div class="char-icon">&#x1F418;</div>
+          <h4>Tungabhadra</h4>
+          <div class="char-role">The River Queen &mdash; Karnataka</div>
+          <p>State hero of Karnataka. Bearer of the full elephant tattoo. Protector of the buried temple and keeper of the Nagavamsha secret.</p>
+        </div>
+
+        <div class="char-card-mini">
+          <div class="char-icon">&#x1F3AF;</div>
+          <h4>Keshava</h4>
+          <div class="char-role">Captain of the Southern Ghats Watch</div>
+          <p>Veteran scout and tracker who first reported the vanishing serpents. Led the tunnel defense. Now commands the disguised sentinels.</p>
+        </div>
+
+        <div class="char-card-mini">
+          <div class="char-icon">&#x1F4DC;</div>
+          <h4>Revathi</h4>
+          <div class="char-role">Geologist &amp; Inscription Decipherer</div>
+          <p>Subterranean formations specialist from Mysuru Academy. Translated the Nagavamsha inscription. Advocates for further study.</p>
+        </div>
+
+        <div class="char-card-mini">
+          <div class="char-icon">&#x1F311;</div>
+          <h4>The Chhayavanshi</h4>
+          <div class="char-role">Agents of the Shadow Lineage</div>
+          <p>Descendants of the Rakshasarajya &mdash; the Demon Dominion. Diminished but patient. Three thousand years of seeking the buried temple.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. CONNECTION TO THE LARGER STORY ===== -->
+  <section class="section">
+    <div class="connection-box">
+      <h2 class="section-title" style="border-bottom-color:var(--south); color:var(--south);">Connection to the MahaHulmane Saga</h2>
+
+      <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:1.5rem;">
+        <div style="flex:1; min-width:250px;">
+          <h4 style="color:var(--south); margin-bottom:0.5em;">The Rakshasarajya &amp; the Void Maw</h4>
+          <p style="font-size:0.9em; line-height:1.7; color:var(--text);">
+            The Nagavamsha inscription describes the Rakshasarajya as beings that consumed &ldquo;not just flesh but spirit,
+            not just cities but the memory of cities.&rdquo; This language mirrors almost exactly the accounts given by the
+            alien Void Walkers about the Void Maw. If the Rakshasarajya were an earthly manifestation of the same
+            cosmic hunger, then the buried temple may contain the only historical record of a civilization that
+            survived contact with this force &mdash; not through combat, but through erasure.
+          </p>
+        </div>
+        <div style="flex:1; min-width:250px;">
+          <h4 style="color:var(--south); margin-bottom:0.5em;">The Serpent Tablet&rsquo;s Power</h4>
+          <p style="font-size:0.9em; line-height:1.7; color:var(--text);">
+            The seven-headed serpent sigil on the buried tablet hums at a frequency that resonates with the
+            bones of anyone who approaches it. If this artifact is a weapon &mdash; or a shield &mdash; forged
+            by a civilization that understood the Void Maw&rsquo;s nature, it could be the key to the Grand
+            Council&rsquo;s war. But Tungabhadra sealed it away, believing humanity is not ready. The question
+            that haunts her: will humanity be ready before the Void Maw arrives?
+          </p>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:20px; flex-wrap:wrap;">
+        <div style="flex:1; min-width:250px;">
+          <h4 style="color:var(--south); margin-bottom:0.5em;">The Naga-Manava Connection</h4>
+          <p style="font-size:0.9em; line-height:1.7; color:var(--text);">
+            The Naga-Manava hybrid kingdom &mdash; half-serpent, half-human beings who sit on the Grand Council&rsquo;s
+            outer ring &mdash; may be the direct descendants of the Nagavamsha. If so, they hold ancestral knowledge
+            about the buried temple and the Chhayavanshi that could prove invaluable. But the Naga-Manava have their
+            own agenda, and their relationship with human civilization has always been one of guarded secrecy.
+          </p>
+        </div>
+        <div style="flex:1; min-width:250px;">
+          <h4 style="color:var(--south); margin-bottom:0.5em;">The Strategy of Erasure</h4>
+          <p style="font-size:0.9em; line-height:1.7; color:var(--text);">
+            Tungabhadra&rsquo;s darkest thought: the Nagavamsha survived by making themselves nothing. Could
+            Earth do the same? Could the Grand Council, instead of fighting the Void Maw, choose to hide &mdash;
+            to bury everything, as the Nagavamsha did, and wait for the hunger to pass? It is a strategy of
+            desperation, but it is the only strategy that has ever worked. And the instructions, if they exist,
+            lie somewhere in the damaged text of the inscription that Revathi copied by lamplight in a temple
+            of gold and serpents.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. BACK NAVIGATION ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="back-nav">
+      <a href="index.html">&#8592; Karnataka Kingdom</a>
+      <a href="../../../../../characters.html#karnataka">&#8592; Tungabhadra&rsquo;s Character Page</a>
+      <a href="../../index.html">&#8592; Southern Kingdoms</a>
+      <a href="../../../../../story.html">&#8592; The Full Saga</a>
+      <a href="../../../../../index.html">&#8592; Home</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="text-align:center; padding:40px 20px; border-top:1px solid var(--border-dim); color:var(--text-dim); font-size:0.85em;">
+    <p style="color:var(--gold); margin-bottom:10px;">MahaHulmane &mdash; The Great Assembly of Warriors</p>
+    <p>Inspired by the Mahabharata &bull; A World of Twenty-Eight Kingdoms</p>
+    <p style="margin-top:15px;">
+      Reference: <a href="../../../../../mahabharata_family_tree.html" style="color:var(--gold-dim);">Mahabharata Family Tree</a> &bull;
+      <a href="../../../../../mahabharata_family_tree_kannada.html" style="color:var(--gold-dim);">&#x0C8E;&#x0CB9;&#x0CBE;&#x0CAD;&#x0CBE;&#x0CB0;&#x0CA4; &#x0CB5;&#x0C82;&#x0CB6;&#x0CB5;&#x0CC3;&#x0C95;&#x0CCD;&#x0CB7; (Kannada)</a>
+    </p>
+  </footer>
+
+  <!-- ===== EXTERNAL SCRIPTS ===== -->
+  <script src="../../../../../js/characters-data.js"></script>
+  <script src="../../../../../js/app.js"></script>
+
+  <!-- ===== PAGE SCRIPT: Populate Hero Portrait from JS Data ===== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Populate hero portrait from character data if available
+      var portraitContainer = document.getElementById('karHeroPortrait');
+      if (portraitContainer && window.HEROES && window.generateHeroSVG) {
+        var hero = window.HEROES.find(function(h) { return h.id === 'karnataka'; });
+        if (hero) {
+          var svg = window.generateHeroSVG(hero);
+          if (svg) {
+            portraitContainer.innerHTML = '<div style="width:180px; height:240px; border-radius:8px; overflow:hidden; background:rgba(0,0,0,0.3);">' + svg + '</div>';
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
