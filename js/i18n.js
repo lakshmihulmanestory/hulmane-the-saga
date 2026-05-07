@@ -1,5 +1,5 @@
 /**
- * MahaHulmane — Internationalization Engine
+ * Hulmane-The-Saga — Internationalization Engine
  * Simple i18n system with localStorage persistence.
  * Load language files (lang-en.js, lang-kn.js, etc.) after this script.
  */

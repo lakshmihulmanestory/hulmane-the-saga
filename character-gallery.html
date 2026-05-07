@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Character Gallery &mdash; MahaHulmane</title>
+  <title>Character Gallery &mdash; Hulmane-The-Saga</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
     /* ── Gallery-specific styles ── */
@@ -199,16 +199,15 @@
 <body>
 
   <!-- ===== NAV ===== -->
-  <nav class="maha-nav">
-    <a href="index.html" class="nav-logo">MahaHulmane</a>
+    <nav class="maha-nav">
+    <a href="index.html" class="nav-logo">Hulmane-The-Saga</a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="characters.html">Heroes</a>
-      <a href="character-gallery.html" class="active">Gallery</a>
       <a href="state-stories.html">Kingdoms</a>
       <a href="regions.html">Regions</a>
       <a href="council.html">Council</a>
-      <a href="story.html">Story</a>
+      <a href="kingdom-identity.html">Identities</a>
       <a href="tattoo-system.html">Tattoos</a>
     </div>
     <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')">&#9776;</button>
@@ -243,14 +242,17 @@
 
   <!-- ===== FILTERS ===== -->
   <div class="gallery-filters">
-    <button class="filter-btn active" data-filter="all">All 28 Kingdoms</button>
-    <button class="filter-btn" data-filter="south"     style="border-color:var(--south);">&#9670; South India</button>
-    <button class="filter-btn" data-filter="west"      style="border-color:var(--west);">&#9670; West India</button>
-    <button class="filter-btn" data-filter="east"      style="border-color:var(--east);">&#9670; East India</button>
-    <button class="filter-btn" data-filter="north"     style="border-color:var(--north);">&#9670; North India</button>
-    <button class="filter-btn" data-filter="northeast" style="border-color:var(--northeast);">&#9670; Northeast India</button>
-    <button class="filter-btn" data-filter="central"   style="border-color:var(--central);">&#9670; Central India</button>
+    <button class="filter-btn active" data-filter="all" onclick="showGalleryTiles('all')">All 28 Kingdoms</button>
+    <button class="filter-btn" data-filter="south"     style="border-color:var(--south);"     onclick="showGalleryTiles('south')">&#9670; South India</button>
+    <button class="filter-btn" data-filter="west"      style="border-color:var(--west);"      onclick="showGalleryTiles('west')">&#9670; West India</button>
+    <button class="filter-btn" data-filter="east"      style="border-color:var(--east);"      onclick="showGalleryTiles('east')">&#9670; East India</button>
+    <button class="filter-btn" data-filter="north"     style="border-color:var(--north);"     onclick="showGalleryTiles('north')">&#9670; North India</button>
+    <button class="filter-btn" data-filter="northeast" style="border-color:var(--northeast);" onclick="showGalleryTiles('northeast')">&#9670; Northeast India</button>
+    <button class="filter-btn" data-filter="central"   style="border-color:var(--central);"   onclick="showGalleryTiles('central')">&#9670; Central India</button>
   </div>
+
+  <!-- ===== KINGDOM TILE NAVIGATION ===== -->
+  <div id="galleryKingdomTiles" style="max-width:1400px; margin:0 auto; padding:0 28px 20px;"></div>
 
   <!-- ===== GALLERY GRID ===== -->
   <div class="portrait-grid" id="galleryGrid">
@@ -358,6 +360,71 @@
           });
         });
       });
+
+      // Kingdom tile navigation
+      var GALLERY_REGION_INFO = {
+        south:     { c: '#44ff88', label: 'South India — Dakshinapatha', states: [
+          { id: 'andhra-pradesh', name: 'Andhra Pradesh' }, { id: 'telangana', name: 'Telangana' },
+          { id: 'tamil-nadu', name: 'Tamil Nadu' }, { id: 'kerala', name: 'Kerala' }, { id: 'karnataka', name: 'Karnataka' }
+        ]},
+        west:      { c: '#ff8c00', label: 'West India — Paschimapatha', states: [
+          { id: 'maharashtra', name: 'Maharashtra' }, { id: 'gujarat', name: 'Gujarat' },
+          { id: 'goa', name: 'Goa' }, { id: 'rajasthan', name: 'Rajasthan' }
+        ]},
+        east:      { c: '#44aaff', label: 'East India — Purvapatha', states: [
+          { id: 'west-bengal', name: 'West Bengal' }, { id: 'odisha', name: 'Odisha' },
+          { id: 'bihar', name: 'Bihar' }, { id: 'jharkhand', name: 'Jharkhand' }
+        ]},
+        north:     { c: '#ff66cc', label: 'North India — Uttarapatha', states: [
+          { id: 'uttar-pradesh', name: 'Uttar Pradesh' }, { id: 'uttarakhand', name: 'Uttarakhand' },
+          { id: 'himachal-pradesh', name: 'Himachal Pradesh' }, { id: 'punjab', name: 'Punjab' }, { id: 'haryana', name: 'Haryana' }
+        ]},
+        northeast: { c: '#aa66ff', label: 'Northeast India — Pragjyotisha', states: [
+          { id: 'assam', name: 'Assam' }, { id: 'arunachal-pradesh', name: 'Arunachal Pradesh' },
+          { id: 'manipur', name: 'Manipur' }, { id: 'meghalaya', name: 'Meghalaya' },
+          { id: 'mizoram', name: 'Mizoram' }, { id: 'nagaland', name: 'Nagaland' },
+          { id: 'sikkim', name: 'Sikkim' }, { id: 'tripura', name: 'Tripura' }
+        ]},
+        central:   { c: '#ffaa00', label: 'Central India — Madhyadesa', states: [
+          { id: 'madhya-pradesh', name: 'Madhya Pradesh' }, { id: 'chhattisgarh', name: 'Chhattisgarh' }
+        ]}
+      };
+
+      window.showGalleryTiles = function(regionFilter) {
+        var tileDiv = document.getElementById('galleryKingdomTiles');
+        if (!tileDiv) return;
+        var regionOrder = ['south', 'west', 'east', 'north', 'northeast', 'central'];
+        var regionsToShow = regionFilter === 'all' ? regionOrder : [regionFilter];
+        var html = '';
+        regionsToShow.forEach(function(rid) {
+          var ri = GALLERY_REGION_INFO[rid];
+          if (!ri) return;
+          html += '<div style="margin-bottom:18px;">';
+          html += '<div style="font-size:0.7em; text-transform:uppercase; letter-spacing:2px; color:' + ri.c + '; margin-bottom:8px; font-weight:bold;">' + ri.label + '</div>';
+          html += '<div style="display:flex; flex-wrap:wrap; gap:8px;">';
+          ri.states.forEach(function(s) {
+            var hero = window.HEROES ? window.HEROES.find(function(h) { return h.id === s.id; }) : null;
+            var animalName = hero && hero.animal ? (typeof hero.animal === 'string' ? hero.animal : hero.animal.name) : '';
+            var heroName = hero && hero.hero ? hero.hero.name : '';
+            var genderIcon = hero && hero.hero && hero.hero.gender === 'female' ? '&#9792;' : '&#9794;';
+            html += '<a href="stories/asia/india/' + rid + '/' + s.id + '/index.html" style="' +
+              'display:flex; flex-direction:column; align-items:center; padding:10px 14px; min-width:105px; ' +
+              'background:rgba(0,0,0,0.2); border:1px solid ' + ri.c + '40; border-radius:10px; ' +
+              'text-decoration:none; transition:all 0.2s; text-align:center;" ' +
+              'onmouseover="this.style.borderColor=\'' + ri.c + '\'; this.style.background=\'rgba(0,0,0,0.4)\'" ' +
+              'onmouseout="this.style.borderColor=\'' + ri.c + '40\'; this.style.background=\'rgba(0,0,0,0.2)\'">' +
+              '<div style="font-size:0.75em; color:' + ri.c + '; font-weight:bold; margin-bottom:2px;">' + s.name + '</div>' +
+              (heroName ? '<div style="font-size:0.65em; color:var(--text-dim); margin-bottom:2px;">' + genderIcon + ' ' + heroName + '</div>' : '') +
+              (animalName ? '<div style="font-size:0.62em; color:var(--text-dim); opacity:0.7;">' + animalName + '</div>' : '') +
+            '</a>';
+          });
+          html += '</div></div>';
+        });
+        tileDiv.innerHTML = html;
+      };
+
+      // Show tiles on load
+      window.showGalleryTiles('all');
     }
 
     // ── Modal ──────────────────────────────────────────────────────────
@@ -398,7 +465,8 @@
 
           '</div>' +
           '<div style="text-align:center; margin-top:20px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">' +
-            '<a href="state-stories.html#' + hero.id + '" style="display:inline-block;padding:10px 28px;background:var(--bg-card);border:1px solid var(--gold-dim);color:var(--gold);text-decoration:none;border-radius:8px;font-size:0.9em;">Read ' + hero.state + '\'s Full Story &rarr;</a>' +
+            '<a href="stories/asia/india/' + hero.region + '/' + hero.id + '/index.html" style="display:inline-block;padding:10px 28px;background:var(--bg-card);border:1px solid var(--gold-dim);color:var(--gold);text-decoration:none;border-radius:8px;font-size:0.9em;">Read ' + hero.state + '\'s Full Story &rarr;</a>' +
+            '<a href="state-stories.html" style="display:inline-block;padding:10px 28px;background:var(--bg-card);border:1px solid var(--border-dim);color:var(--text-dim);text-decoration:none;border-radius:8px;font-size:0.9em;">All 28 Kingdoms &rarr;</a>' +
             (hero.id === 'karnataka' ? '<a href="karnataka-portrait.html" style="display:inline-block;padding:10px 28px;background:rgba(0,58,26,0.5);border:1px solid #44ff88;color:#44ff88;text-decoration:none;border-radius:8px;font-size:0.9em;">&#9670; View Detailed Portrait</a>' : '') +
           '</div>' +
         '</div>';

@@ -1,5 +1,5 @@
 /**
- * MahaHulmane — English Language Strings
+ * Hulmane-The-Saga — English Language Strings
  */
 (function () {
   'use strict';
@@ -15,7 +15,7 @@
     'nav.family_tree': 'Family Tree',
 
     // Index page
-    'index.title': 'MahaHulmane',
+    'index.title': 'Hulmane-The-Saga',
     'index.subtitle': 'The Grand Kingdom',
     'index.tagline': 'Where heroes rise from every corner of the land',
     'index.enter': 'Enter the Kingdom',
@@ -84,7 +84,7 @@
     'regions.tier_state': 'State Heroes',
     'regions.tier_regional': 'Regional Leaders',
     'regions.tier_council': 'Grand Council',
-    'regions.tier_kingdom': 'MahaHulmane Kingdom',
+    'regions.tier_kingdom': 'Hulmane-The-Saga Kingdom',
     'regions.comparison': 'Region Comparison',
 
     // Council page

@@ -13,7 +13,9 @@
       "Bash(python3 -c \"import subprocess; r = subprocess.run\\(['python3','-m','pip','show','Pillow'],capture_output=True,text=True\\); print\\(r.stdout[:80] or 'not found'\\)\")",
       "Bash(pip3 install *)",
       "Bash(python3 -c \"from PIL import Image; print\\('Pillow installed OK'\\)\")",
-      "Bash(\nIMAGES=\"/Users/smk/repos/MahaHulmane/media/states/south/karnataka/stories/vijayanagara-reborn/images\"\nrm -f \"$IMAGES\"/allied-*.png\necho \"Removed allied images. Remaining count: $\\(ls \"$IMAGES\"/*.png | wc -l | tr -d ' '\\)\")"
+      "Bash(\nIMAGES=\"/Users/smk/repos/MahaHulmane/media/states/south/karnataka/stories/vijayanagara-reborn/images\"\nrm -f \"$IMAGES\"/allied-*.png\necho \"Removed allied images. Remaining count: $\\(ls \"$IMAGES\"/*.png | wc -l | tr -d ' '\\)\")",
+      "Bash(xargs -I {} find {} -maxdepth 1 -type d)",
+      "Bash(python3 -)"
     ],
     "additionalDirectories": [
       "/Users/smk/repos/MahaHulmane/images",

@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Grand Council &mdash; MahaHulmane</title>
+  <title>The Grand Council &mdash; Hulmane-The-Saga</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <!-- ===== NAVIGATION BAR ===== -->
-  <nav class="maha-nav">
-    <a href="index.html" class="nav-logo">MahaHulmane</a>
+    <nav class="maha-nav">
+    <a href="index.html" class="nav-logo">Hulmane-The-Saga</a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="characters.html">Heroes</a>
       <a href="state-stories.html">Kingdoms</a>
       <a href="regions.html">Regions</a>
       <a href="council.html" class="active">Council</a>
-      <a href="story.html">Story</a>
+      <a href="kingdom-identity.html">Identities</a>
       <a href="tattoo-system.html">Tattoos</a>
     </div>
     <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')">&#9776;</button>
@@ -28,7 +28,7 @@
     <h1>The Grand Council of Warriors</h1>
     <p class="subtitle">Where Earth Meets Sky, and Stars Meet Steel</p>
     <p style="max-width:750px; margin:20px auto; color:var(--text-dim); line-height:1.7;">
-      The MahaHulmane is not merely an Indian alliance. When the signs of the Void Maw appeared
+      The Hulmane-The-Saga is not merely an Indian alliance. When the signs of the Void Maw appeared
       in the heavens, representatives from every continent, alien civilizations from beyond the stars,
       and ancient hybrid kingdoms that predate human memory &mdash; all answered the call.
       They gather in the Grand Chamber, united by a single truth: divided, they are prey.
@@ -43,8 +43,8 @@
         <!-- Background -->
         <defs>
           <radialGradient id="chamberBg" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#2d1500" stop-opacity="0.8"/>
-            <stop offset="100%" stop-color="#1a0a00"/>
+            <stop offset="0%" stop-color="#220630" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#120310"/>
           </radialGradient>
         </defs>
         <circle cx="350" cy="350" r="345" fill="url(#chamberBg)" stroke="#5a3e10" stroke-width="1"/>
@@ -65,7 +65,7 @@
         <circle cx="350" cy="350" r="100" fill="none" stroke="#ffd70040" stroke-width="1" stroke-dasharray="8,4"/>
 
         <!-- Center: The Grand Throne -->
-        <circle cx="350" cy="350" r="35" fill="#1a0a00" stroke="#ffd700" stroke-width="2">
+        <circle cx="350" cy="350" r="35" fill="#120310" stroke="#ffd700" stroke-width="2">
           <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
         </circle>
         <text x="350" y="346" fill="#ffd700" text-anchor="middle" font-size="10" font-family="Georgia" font-weight="bold">MAHA</text>
@@ -175,7 +175,7 @@
 
   <!-- ===== FOOTER ===== -->
   <footer style="text-align:center; padding:40px 20px; border-top:1px solid var(--border-dim); color:var(--text-dim); font-size:0.85em;">
-    <p style="color:var(--gold); margin-bottom:10px;">MahaHulmane &mdash; The Great Assembly of Warriors</p>
+    <p style="color:var(--gold); margin-bottom:10px;">Hulmane-The-Saga &mdash; The Great Assembly of Warriors</p>
     <p>Inspired by the Mahabharata &bull; A World of Twenty-Eight Kingdoms</p>
     <p style="margin-top:15px;">
       Reference: <a href="mahabharata_family_tree.html" style="color:var(--gold-dim);">Mahabharata Family Tree</a> &bull;
@@ -210,7 +210,7 @@
           circle.setAttribute('cx', x);
           circle.setAttribute('cy', y);
           circle.setAttribute('r', 18);
-          var colors = { india: ['#2b1a00','#ffd700'], world: ['#001a3a','#44aaff'], space: ['#2a1a3a','#aa66ff'], hybrid: ['#3a0000','#ff4444'] };
+          var colors = { india: ['#210526','#ffd700'], world: ['#001a3a','#44aaff'], space: ['#2a1a3a','#aa66ff'], hybrid: ['#3a0000','#ff4444'] };
           var pair = colors[colorClass] || ['#2a2a2a','#888'];
           var fill = pair[0];
           var stroke = pair[1];
@@ -225,21 +225,95 @@
           text.setAttribute('text-anchor', 'middle');
           text.setAttribute('font-size', '8');
           text.setAttribute('font-family', 'Georgia');
-          var name = item.representative ? item.representative.name : (item.leader ? item.leader.name : item.name);
+          var rep = item.representative || item.leader || {};
+          var name = rep.name || item.name || '';
           text.textContent = name.length > 8 ? name.substring(0, 7) + '.' : name;
 
           g.appendChild(circle);
           g.appendChild(text);
 
-          // Tooltip on hover
+          // Tooltip on hover — fixed position near cursor, always stays in viewport
           g.addEventListener('mouseenter', function(e) {
-            var rep = item.representative || item.leader || {};
-            var tipHTML = '<div style="font-weight:bold; color:' + stroke + ';">' + (rep.name || item.name) + '</div>';
-            tipHTML += '<div style="font-style:italic; font-size:0.85em;">' + (rep.title || '') + '</div>';
-            tipHTML += '<div style="font-size:0.8em; margin-top:3px; opacity:0.7;">' + (item.kingdom || item.name || item.origin || '') + '</div>';
-            if (window.showTooltip) window.showTooltip(svg.parentElement, tipHTML, e);
+            var tip = document.getElementById('councilTip') || (function() {
+              var t = document.createElement('div');
+              t.id = 'councilTip';
+              t.style.cssText = 'position:fixed;z-index:9999;pointer-events:none;opacity:0;transition:opacity 0.15s;' +
+                'background:rgba(10,5,0,0.96);border:1px solid;border-radius:10px;padding:12px 16px;' +
+                'min-width:160px;max-width:240px;box-shadow:0 8px 30px rgba(0,0,0,0.6);font-family:Georgia,serif;';
+              document.body.appendChild(t);
+              return t;
+            })();
+            tip.style.borderColor = stroke;
+            tip.innerHTML =
+              '<div style="font-weight:bold; color:' + stroke + '; font-size:0.92em; margin-bottom:4px;">' + name + '</div>' +
+              '<div style="font-style:italic; font-size:0.78em; color:#ccc; margin-bottom:4px;">' + (rep.title || '') + '</div>' +
+              '<div style="font-size:0.72em; color:#999; margin-bottom:6px;">' + (item.kingdom || item.name || item.origin || '') + '</div>' +
+              '<div style="font-size:0.68em; color:' + stroke + '; opacity:0.85;">&#9670; Click for full details</div>';
+            // Position near cursor but stay in viewport
+            var vw = window.innerWidth, vh = window.innerHeight;
+            var tw = 240, th = 100;
+            var tx = e.clientX + 16;
+            var ty = e.clientY - 30;
+            if (tx + tw > vw - 10) tx = e.clientX - tw - 16;
+            if (ty + th > vh - 10) ty = e.clientY - th - 10;
+            if (ty < 10) ty = 10;
+            tip.style.left = tx + 'px';
+            tip.style.top = ty + 'px';
+            tip.style.opacity = '1';
           });
-          g.addEventListener('mouseleave', function() { if (window.hideTooltip) window.hideTooltip(); });
+          g.addEventListener('mousemove', function(e) {
+            var tip = document.getElementById('councilTip');
+            if (!tip) return;
+            var vw = window.innerWidth, vh = window.innerHeight;
+            var tw = 240, th = tip.offsetHeight || 100;
+            var tx = e.clientX + 16;
+            var ty = e.clientY - 30;
+            if (tx + tw > vw - 10) tx = e.clientX - tw - 16;
+            if (ty + th > vh - 10) ty = e.clientY - th - 10;
+            if (ty < 10) ty = 10;
+            tip.style.left = tx + 'px';
+            tip.style.top = ty + 'px';
+          });
+          g.addEventListener('mouseleave', function() {
+            var tip = document.getElementById('councilTip');
+            if (tip) tip.style.opacity = '0';
+          });
+
+          // Click: show quick-view modal
+          g.addEventListener('click', function() {
+            if (window.hideTooltip) window.hideTooltip();
+            var desc = rep.description || item.leader && item.leader.origin || '';
+            var linkHref = '#';
+            var linkLabel = 'View Full Roster';
+            if (colorClass === 'india') {
+              linkHref = 'regions.html';
+              linkLabel = 'View Regional Leaders &rarr;';
+            } else if (colorClass === 'world') {
+              linkHref = 'council.html';
+              linkLabel = 'View World Council Roster &rarr;';
+            } else if (colorClass === 'space') {
+              linkHref = 'council.html';
+              linkLabel = 'View Space Kingdoms Roster &rarr;';
+            } else if (colorClass === 'hybrid') {
+              linkHref = 'council.html';
+              linkLabel = 'View Hybrid Kingdoms Roster &rarr;';
+            }
+            var kindLabel = { india: 'India — Regional Leader', world: 'World Continent', space: 'Space Kingdom', hybrid: 'Hybrid Kingdom' }[colorClass] || '';
+            var animalBadge = rep.animal ? '<div style="margin-top:8px; font-size:0.8em; color:' + stroke + '; opacity:0.8;">Sacred Beast: ' + rep.animal + '</div>' : '';
+            var modalHTML =
+              '<div style="padding:30px;">' +
+                '<div style="font-size:0.7em; text-transform:uppercase; letter-spacing:2px; color:' + stroke + '; margin-bottom:8px;">' + kindLabel + '</div>' +
+                '<h2 style="color:' + stroke + '; margin:0 0 4px;">' + name + '</h2>' +
+                '<p style="font-style:italic; color:var(--text-dim); margin:0 0 16px;">' + (rep.title || '') + '</p>' +
+                '<div style="font-size:0.85em; color:var(--text-dim); margin-bottom:8px;">' + (item.kingdom || item.name || item.origin || '') + '</div>' +
+                (desc ? '<p style="color:var(--text); line-height:1.7; font-size:0.9em; margin-bottom:16px;">' + desc + '</p>' : '') +
+                animalBadge +
+                '<div style="margin-top:20px;">' +
+                  '<a href="' + linkHref + '" style="display:inline-block; padding:8px 22px; border:1px solid ' + stroke + '; border-radius:20px; color:' + stroke + '; text-decoration:none; font-size:0.85em; transition:background 0.2s;" onmouseover="this.style.background=\'rgba(255,255,255,0.08)\'" onmouseout="this.style.background=\'transparent\'">' + linkLabel + '</a>' +
+                '</div>' +
+              '</div>';
+            if (window.openModal) window.openModal(modalHTML);
+          });
 
           svg.appendChild(g);
         });

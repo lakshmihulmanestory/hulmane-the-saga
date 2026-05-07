@@ -1,10 +1,10 @@
-# MahaHulmane — AI Agent Context
+# Hulmane-The-Saga — AI Agent Context
 
 > Read this first. Everything you need to orient yourself in this project.
 
-## What is MahaHulmane?
+## What is Hulmane-The-Saga?
 
-**MahaHulmane** ("The Great Assembly of Warriors") is an original Indian fantasy IP
+**Hulmane-The-Saga** ("The Great Assembly of Warriors") is an original Indian fantasy IP
 inspired by the Mahabharata and Hindu mythology. It is being built as a **multi-format
 transmedia franchise** — not just a single story, but a full universe designed to scale
 across film, animation, games, books, and more.
@@ -64,7 +64,7 @@ See `docs/CHARACTER_SYSTEM.md` for the full schema and rules for using these ref
 ## Project File Structure
 
 ```
-MahaHulmane/
+Hulmane-The-Saga/
 ├── CLAUDE.md              ← YOU ARE HERE (AI agent context)
 ├── docs/                  ← Full documentation for team + AI agents
 │   ├── PROJECT_VISION.md  ← IP vision, world rules, lore bible overview
@@ -73,7 +73,7 @@ MahaHulmane/
 │   └── CHARACTERS.md      ← Character design rules and deity mapping
 ├── media/                 ← Production media (generated art, SVG, video, audio)
 │   ├── images/            ← Generated SVGs by region/state (character reference art)
-│   ├── MAHAHULMANE/       ← Grand Council, Sacred Tattoo, world-level content
+│   ├── HULMANE-THE-SAGA/       ← Grand Council, Sacred Tattoo, world-level content
 │   ├── regions/           ← 6 regional hero content
 │   └── states/            ← 28 kingdoms → stories → images/samples/videos/audio
 ├── samples/               ← AI-generated reference images (Gemini, ChatGPT, etc.)

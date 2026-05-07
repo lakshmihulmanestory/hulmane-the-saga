@@ -1,8 +1,8 @@
-# MahaHulmane — Project Vision & IP Bible
+# Hulmane-The-Saga — Project Vision & IP Bible
 
 **Version:** 1.0 — May 2026  
 **Status:** Active Development  
-**Owner:** MahaHulmane Project
+**Owner:** Hulmane-The-Saga Project
 
 ---
 
@@ -16,7 +16,7 @@
 
 ## The Core Idea
 
-MahaHulmane is an original Indian fantasy universe where **every Indian state is a kingdom**
+Hulmane-The-Saga is an original Indian fantasy universe where **every Indian state is a kingdom**
 with its own mythology, sacred animal, hero, and villain. The world draws from the Mahabharata,
 Hindu gods, and India's rich regional cultures — but tells entirely new stories.
 
@@ -53,7 +53,7 @@ See `docs/CHARACTERS.md` for the full 28-hero deity map.
 
 ### The Power Hierarchy
 ```
-MAHAHULMANE Grand Council   (top — 7 leaders)
+HULMANE-THE-SAGA Grand Council   (top — 7 leaders)
       ↑
 6 Regional Leaders          (one per region)
       ↑
@@ -64,13 +64,13 @@ Village / Clan champions    (entry level — where most stories start)
 
 ### The Threat
 Beyond internal kingdom politics, an external cosmic threat — **The Void Maw** — approaches.
-Only a united MahaHulmane can withstand it. This is the overarching arc that ties all 28 kingdoms.
+Only a united Hulmane-The-Saga can withstand it. This is the overarching arc that ties all 28 kingdoms.
 
 ---
 
 ## The Transmedia Plan
 
-MahaHulmane is designed from the ground up as a **transmedia franchise**.
+Hulmane-The-Saga is designed from the ground up as a **transmedia franchise**.
 Each format tells different parts of the same world — they do not duplicate each other.
 
 ### Format 1 — Feature Film Series
@@ -147,7 +147,7 @@ Each format tells different parts of the same world — they do not duplicate ea
 - **Collection angle:** "Collect all 28 — one for every kingdom of Bharata"
 
 ### Format 7 — Big RPG Game (AAA / Console)
-- **Scope:** Open-world action RPG — the full MahaHulmane universe as a game world
+- **Scope:** Open-world action RPG — the full Hulmane-The-Saga universe as a game world
 - **Audience:** 16+, core gamers
 - **Tone:** Dark fantasy, morally complex — the adult version of the world
 - **Length:** 60–100 hour main story + 200+ hours of side content
@@ -269,4 +269,4 @@ ANIMAL FACT (50 words)
 **Phase 5 (Year 5+):** Global
 - Feature film (Hindi + regional languages + subtitled for global release)
 - International licensing
-- MahaHulmane theme park concept
+- Hulmane-The-Saga theme park concept

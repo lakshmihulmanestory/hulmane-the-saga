@@ -1,4 +1,4 @@
-# MahaHulmane — Media Folder
+# Hulmane-The-Saga — Media Folder
 
 All project media lives here. Every folder has four subfolders: `images/` `samples/` `videos/` `audio/`
 
@@ -7,7 +7,7 @@ All project media lives here. Every folder has four subfolders: `images/` `sampl
 ```
 media/
 │
-├── MAHAHULMANE/              World-level content (Grand Council, Sacred Tattoo, crossovers)
+├── HULMANE-THE-SAGA/              World-level content (Grand Council, Sacred Tattoo, crossovers)
 │   ├── grand-council/        The 7-member Council art & media
 │   ├── sacred-tattoo/        Tattoo system diagrams, animations
 │   ├── world-overview/       Full-world establishing shots
@@ -78,5 +78,5 @@ media/
 
 ## Adding a crossover story (multiple states)
 
-Put it in `media/MAHAHULMANE/crossover-stories/` and name the subfolder clearly:
+Put it in `media/HULMANE-THE-SAGA/crossover-stories/` and name the subfolder clearly:
 e.g. `crossover-stories/karnataka-assam-elephant-alliance/`

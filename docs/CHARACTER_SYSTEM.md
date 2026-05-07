@@ -1,6 +1,6 @@
-# MahaHulmane — Character Design System
+# Hulmane-The-Saga — Character Design System
 
-> Every hero and villain in MahaHulmane is built from a structured set of attributes.
+> Every hero and villain in Hulmane-The-Saga is built from a structured set of attributes.
 > This document defines the schema. The data lives in `data/heroes.csv` and `data/villains.csv`.
 > Divine reference definitions live in `data/references/`.
 

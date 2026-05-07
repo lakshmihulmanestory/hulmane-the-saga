@@ -1,4 +1,4 @@
-# MahaHulmane — Resume Checkpoint
+# Hulmane-The-Saga — Resume Checkpoint
 
 **Session paused due to usage limits. Resume after 5 hours.**
 
@@ -30,8 +30,8 @@
 ### Media folders — fully created
 - `media/` — 28 states × stories × images/samples/videos/audio
 - `samples/media/` — mirrors media/ exactly
-- `media/MAHAHULMANE/` — Grand Council, Sacred Tattoo, world-level
-- `media/MAHAHULMANE/merchandise/` — stickers/cards/apparel/prints/toys
+- `media/HULMANE-THE-SAGA/` — Grand Council, Sacred Tattoo, world-level
+- `media/HULMANE-THE-SAGA/merchandise/` — stickers/cards/apparel/prints/toys
 
 ### Vehicle data added to all 28 heroes AND 28 villains
 Every character now has:

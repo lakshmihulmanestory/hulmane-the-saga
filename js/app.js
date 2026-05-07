@@ -1,5 +1,5 @@
 /**
- * MahaHulmane - Shared JavaScript Utilities
+ * Hulmane-The-Saga - Shared JavaScript Utilities
  * Epic fantasy website: Heroes of India's states, their animals, and tattoo progressions.
  * Loaded on every page. All public functions attached to window.
  */
@@ -181,7 +181,7 @@ window.generateHeroSVG = function generateHeroSVG(hero) {
     return window.HERO_ART[hero.id](colors, hero);
   }
 
-  const gender = (hero.gender || 'male').toLowerCase();
+  const gender = ((hero.hero && hero.hero.gender) || hero.gender || 'male').toLowerCase();
   const silhouette = gender === 'female' ? FEMALE_SILHOUETTE : MALE_SILHOUETTE;
   const fillOpacity = 0.35;
 
@@ -220,11 +220,15 @@ window.renderHeroCard = function renderHeroCard(hero, options) {
   if (!hero) return '';
   const opts = Object.assign({ compact: false, showTattoo: true, clickable: true }, options);
   const region = (hero.region || 'central').toLowerCase();
-  const gender = (hero.gender || 'male').toLowerCase();
+  const gender = ((hero.hero && hero.hero.gender) || hero.gender || 'male').toLowerCase();
+  const heroName = (hero.hero && hero.hero.name) || hero.name || 'Unknown';
+  const heroTitle = (hero.hero && hero.hero.title) || hero.title || '';
   const animalName = hero.animal ? (typeof hero.animal === 'string' ? hero.animal : hero.animal.name) : '';
-  const currentLevel = hero.tattooLevel || hero.currentLevel || 0;
+  const currentLevel = (hero.tattoo && hero.tattoo.currentLevel) || hero.tattooLevel || hero.currentLevel || 0;
   const clickAttr = opts.clickable ? `onclick="window.showHeroDetail('${hero.id}')"` : '';
   const compactClass = opts.compact ? ' hero-card--compact' : '';
+  const genderIcon = gender === 'female' ? '&#9792;' : '&#9794;';
+  const genderLabel = gender === 'female' ? 'Female' : 'Male';
 
   let tattooHTML = '';
   if (opts.showTattoo) {
@@ -239,12 +243,17 @@ window.renderHeroCard = function renderHeroCard(hero, options) {
     tabindex="${opts.clickable ? '0' : '-1'}">
     <div class="hero-portrait">${window.generateHeroSVG(hero)}</div>
     <div class="hero-info">
-      <div class="hero-name">${hero.name || 'Unknown'}</div>
-      <div class="hero-title">${hero.title || ''}</div>
+      <div class="hero-name">${heroName}</div>
+      <div class="hero-title">${heroTitle}</div>
       <div class="hero-state">${hero.state || ''}</div>
-      <div class="animal-badge">
-        <span class="animal-icon">${getAnimalEmoji(hero.animal)}</span>
-        <span>${animalName}</span>
+      <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+        <div class="animal-badge">
+          <span class="animal-icon">${getAnimalEmoji(hero.animal)}</span>
+          <span>${animalName}</span>
+        </div>
+        <div class="gender-badge" style="font-size:0.72em; padding:3px 10px; border-radius:12px; border:1px solid; ${gender === 'female' ? 'border-color:#ff66cc; color:#ff66cc;' : 'border-color:#7b9eff; color:#7b9eff;'}">
+          ${genderIcon} ${genderLabel}
+        </div>
       </div>
       ${tattooHTML}
     </div>
@@ -259,7 +268,7 @@ window.renderTattooProgress = function renderTattooProgress(hero, animated) {
   const animalName = hero.animal ? (typeof hero.animal === 'string' ? hero.animal : hero.animal.name) : '';
   const region = (hero.region || 'central').toLowerCase();
   const colors = REGION_COLORS[region] || REGION_COLORS.central;
-  const level = hero.tattooLevel || hero.currentLevel || 0;
+  const level = (hero.tattoo && hero.tattoo.currentLevel) || hero.tattooLevel || hero.currentLevel || 0;
   const stageLabels = ['Pawprint', 'Legs Revealed', 'Half Body', 'Full Form'];
   const clipHeights = [85, 60, 35, 0]; // y-offset for clip-rect top edge
 
@@ -322,7 +331,7 @@ window.openModal = function openModal(contentHTML) {
   const overlay = document.createElement('div');
   overlay.className = 'mh-modal-overlay';
   overlay.innerHTML = `<div class="mh-modal-content" role="dialog" aria-modal="true">
-    <button class="mh-modal-close" aria-label="Close">&times;</button>
+    <button class="mh-modal-close" aria-label="Close" title="Close">&times;</button>
     <div class="mh-modal-body">${contentHTML}</div>
   </div>`;
 
@@ -363,32 +372,57 @@ window.showHeroDetail = function showHeroDetail(heroId) {
   const colors = REGION_COLORS[region] || REGION_COLORS.central;
   const animalName = hero.animal ? (typeof hero.animal === 'string' ? hero.animal : hero.animal.name) : '';
 
+  // Handle nested vs flat data structure
+  const heroName = (hero.hero && hero.hero.name) || hero.name || 'Unknown';
+  const heroTitle = (hero.hero && hero.hero.title) || hero.title || '';
+  const heroEpithet = (hero.hero && hero.hero.epithet) || hero.epithet || '';
+  const heroGender = ((hero.hero && hero.hero.gender) || hero.gender || 'male').toLowerCase();
+  const genderLabel = heroGender === 'female' ? '&#9792; Female' : '&#9794; Male';
+
+  // Backstory fields (under hero.backstory or flat)
+  const backstoryData = hero.backstory || {};
+  const heroOrigin = backstoryData.origin || hero.origin || '';
+  const heroSummary = backstoryData.summary || hero.summary || '';
+  const heroFamilyDrama = backstoryData.familyDrama || hero.familyDrama || '';
+  const backstoryTimespan = backstoryData.timespan || hero.backstoryTimespan || '';
+  const timespan = backstoryTimespan ? ` <span class="timespan">(${backstoryTimespan})</span>` : '';
+
+  // Tattoo milestones
+  const tattooStages = (hero.tattoo && hero.tattoo.stages) ? hero.tattoo.stages : [];
+  const milestoneHTML = tattooStages.length
+    ? tattooStages.map(function (s, i) {
+        return `<p class="milestone"><strong>Stage ${i + 1} — ${s.name || ''}:</strong> ${s.milestone || ''}</p>`;
+      }).join('')
+    : '';
+
+  // Story page link
+  const storyLink = `stories/asia/india/${region}/${hero.id}/index.html`;
+
   const portrait = window.generateHeroSVG(hero);
   const tattoo = window.renderTattooProgress(hero, true);
 
   const overview = `
     <div class="detail-section">
+      <p style="margin-bottom:8px;"><span style="font-size:0.8em; padding:3px 10px; border-radius:10px; border:1px solid; ${heroGender === 'female' ? 'border-color:#ff66cc; color:#ff66cc;' : 'border-color:#7b9eff; color:#7b9eff;'}">${genderLabel}</span></p>
       ${hero.appearance ? `<p><strong>Appearance:</strong> ${hero.appearance}</p>` : ''}
       ${hero.personality ? `<p><strong>Personality:</strong> ${hero.personality}</p>` : ''}
       ${hero.fightingStyle ? `<p><strong>Fighting Style:</strong> ${hero.fightingStyle}</p>` : ''}
       ${hero.weapon ? `<p><strong>Weapon:</strong> ${hero.weapon}</p>` : ''}
+      <p style="margin-top:15px;"><a href="${storyLink}" style="color:var(--gold); text-decoration:none; border:1px solid var(--gold-dim); padding:6px 18px; border-radius:20px; font-size:0.85em;">View Kingdom Story &rarr;</a></p>
     </div>`;
 
-  const timespan = hero.backstoryTimespan ? ` <span class="timespan">(${hero.backstoryTimespan})</span>` : '';
   const backstory = `
     <div class="detail-section">
-      ${hero.origin ? `<p><strong>Origin:</strong> ${hero.origin}</p>` : ''}
-      ${hero.summary ? `<p><strong>Summary:</strong>${timespan} ${hero.summary}</p>` : ''}
-      ${hero.familyDrama ? `<p><strong>Family Drama:</strong> ${hero.familyDrama}</p>` : ''}
+      ${heroOrigin ? `<p><strong>Origin:</strong> ${heroOrigin}</p>` : ''}
+      ${heroSummary ? `<p><strong>Summary:</strong>${timespan} ${heroSummary}</p>` : ''}
+      ${heroFamilyDrama ? `<p><strong>Family Drama:</strong> ${heroFamilyDrama}</p>` : ''}
     </div>`;
 
   const tattooTab = `
     <div class="detail-section">
       <h3>Tattoo Progression &mdash; ${animalName}</h3>
       ${tattoo}
-      ${hero.milestones ? hero.milestones.map(function (m, i) {
-        return `<p class="milestone"><strong>Stage ${i + 1}:</strong> ${m}</p>`;
-      }).join('') : ''}
+      ${milestoneHTML}
     </div>`;
 
   const html = `
@@ -396,9 +430,9 @@ window.showHeroDetail = function showHeroDetail(heroId) {
       <div class="hero-detail-portrait">${portrait}</div>
       <div class="hero-detail-main">
         <header class="hero-detail-header">
-          <h2 class="hero-detail-name">${hero.name || 'Unknown'}</h2>
-          <p class="hero-detail-title">${hero.title || ''}</p>
-          ${hero.epithet ? `<p class="hero-detail-epithet">"${hero.epithet}"</p>` : ''}
+          <h2 class="hero-detail-name">${heroName}</h2>
+          <p class="hero-detail-title">${heroTitle}</p>
+          ${heroEpithet ? `<p class="hero-detail-epithet">"${heroEpithet}"</p>` : ''}
           <p class="hero-detail-meta">${hero.state || ''} &mdash; ${region}</p>
         </header>
         <nav class="hero-detail-tabs" role="tablist">

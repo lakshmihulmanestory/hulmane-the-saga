@@ -1,4 +1,4 @@
-// MahaHulmane — Character Portrait Renderer
+// Hulmane-The-Saga — Character Portrait Renderer
 // Generates SVG portraits for all 28 kingdoms: hero, villain, animal & weapons
 // Each hero inspired by Hindu gods; villains are the same animal's dark spirit
 // Villain weapon: modern + dark version of hero's weapon

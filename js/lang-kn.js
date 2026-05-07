@@ -1,5 +1,5 @@
 /**
- * MahaHulmane — Kannada Language Strings (ಕನ್ನಡ)
+ * Hulmane-The-Saga — Kannada Language Strings (ಕನ್ನಡ)
  */
 (function () {
   'use strict';

@@ -1,4 +1,4 @@
-# MahaHulmane — Media Organisation Guide
+# Hulmane-The-Saga — Media Organisation Guide
 
 > Where every file goes. Read before creating or placing any media asset.
 
@@ -26,7 +26,7 @@ media/
 │   └── <region>/<state>/            ← State-level art, usable across ALL stories
 │       Example: images/south/karnataka/karnataka-portrait.svg
 │
-├── MAHAHULMANE/                     ← World-level content (not state-specific)
+├── HULMANE-THE-SAGA/                     ← World-level content (not state-specific)
 │   ├── grand-council/               ← The 7-member council art
 │   ├── sacred-tattoo/               ← Tattoo system diagrams, progression art
 │   ├── world-overview/              ← Full-world maps, establishing shots
@@ -173,9 +173,9 @@ andhra-krishnaveni-BOOK-cover-01.jpg
 | Final scene illustration for Vijayanagara Reborn film | `media/states/south/karnataka/stories/vijayanagara-reborn/images/` |
 | Story trailer video for Buried Temple | `media/states/south/karnataka/stories/buried-temple-western-ghats/videos/` |
 | Karnataka kingdom theme music (used in all stories) | `media/states/south/karnataka/audio/` |
-| Grand Council overview image | `media/MAHAHULMANE/grand-council/images/` |
-| Sacred Tattoo system diagram | `media/MAHAHULMANE/sacred-tattoo/images/` |
-| A story where Karnataka + Assam heroes team up | `media/MAHAHULMANE/crossover-stories/images/` |
+| Grand Council overview image | `media/HULMANE-THE-SAGA/grand-council/images/` |
+| Sacred Tattoo system diagram | `media/HULMANE-THE-SAGA/sacred-tattoo/images/` |
+| A story where Karnataka + Assam heroes team up | `media/HULMANE-THE-SAGA/crossover-stories/images/` |
 | South India regional hero group shot | `media/regions/south/images/` |
 
 ---

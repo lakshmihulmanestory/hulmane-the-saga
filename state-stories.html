@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MahaHulmane &mdash; The 28 Kingdoms</title>
+  <title>Hulmane-The-Saga &mdash; The 28 Kingdoms</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
     .kingdoms-hero {
       text-align: center;
       padding: 100px 20px 40px;
-      background: linear-gradient(180deg, #1a0a00 0%, #0d0500 100%);
+      background: linear-gradient(180deg, #120310 0%, #0a0210 100%);
     }
     .kingdoms-hero h1 { font-size: 2.8rem; margin-bottom: 10px; }
     .kingdoms-hero .subtitle { color: var(--gold-dim); font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.8; }
@@ -23,7 +23,7 @@
       position: sticky;
       top: 60px;
       z-index: 100;
-      background: rgba(26, 10, 0, 0.95);
+      background: rgba(18, 3, 16, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border-dim);
     }
@@ -51,7 +51,7 @@
     }
 
     .kingdom-card {
-      background: linear-gradient(135deg, rgba(43, 26, 0, 0.6), rgba(26, 10, 0, 0.8));
+      background: linear-gradient(135deg, rgba(40, 6, 36, 0.6), rgba(18, 3, 16, 0.8));
       border: 1px solid var(--border-dim);
       border-radius: 12px;
       margin-bottom: 30px;
@@ -362,7 +362,7 @@
       left: 0;
       right: 0;
       height: 80px;
-      background: linear-gradient(transparent, rgba(26, 10, 0, 0.95));
+      background: linear-gradient(transparent, rgba(18, 3, 16, 0.95));
     }
     .saga-toggle {
       display: block;
@@ -599,15 +599,15 @@
 <body>
 
   <!-- NAVIGATION -->
-  <nav class="maha-nav">
-    <a href="index.html" class="nav-logo">MahaHulmane</a>
+    <nav class="maha-nav">
+    <a href="index.html" class="nav-logo">Hulmane-The-Saga</a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="characters.html">Heroes</a>
       <a href="state-stories.html" class="active">Kingdoms</a>
       <a href="regions.html">Regions</a>
       <a href="council.html">Council</a>
-      <a href="story.html">Story</a>
+      <a href="kingdom-identity.html">Identities</a>
       <a href="tattoo-system.html">Tattoos</a>
     </div>
     <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')">&#9776;</button>
@@ -667,7 +667,7 @@
 
   <!-- FOOTER -->
   <footer style="text-align:center; padding:40px 20px; border-top:1px solid var(--border-dim); color:var(--text-dim); font-size:0.85em;">
-    <p style="color:var(--gold); margin-bottom:10px;">MahaHulmane &mdash; The Great Assembly of Warriors</p>
+    <p style="color:var(--gold); margin-bottom:10px;">Hulmane-The-Saga &mdash; The Great Assembly of Warriors</p>
     <p>28 Kingdoms &bull; 28 Sacred Beasts &bull; Epic Sagas of Dharma and Adharma</p>
     <p style="margin-top:10px;">
       <a href="stories/asia/india/index.html" style="color:var(--gold);">Browse by Region (Hierarchical View)</a>
@@ -683,6 +683,7 @@
   <!-- SCRIPTS -->
   <script src="js/state-stories-data.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/tattoo-art.js"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -712,13 +713,14 @@
 
           if (k.region !== lastRegion) {
             lastRegion = k.region;
+            var rc = REGION_CONFIG[k.region];
             var regionHtml = '<div class="region-divider" data-region="' + k.region + '">' +
               '<h2>' + regionNames[k.region] + '</h2>' +
-              '<p class="region-subtitle">' + (REGION_CONFIG[k.region] ? REGION_CONFIG[k.region].label : '') + '</p>' +
+              '<p class="region-subtitle">' + (rc ? rc.label : '') + '</p>' +
+              (rc && rc.description ? '<p style="max-width:900px; margin:10px auto 0; color:var(--text-dim); font-size:0.88rem; line-height:1.8; text-align:left; padding:0 20px;">' + rc.description + '</p>' : '') +
             '</div>';
 
             // Shape-shifter section for regions that have one
-            var rc = REGION_CONFIG[k.region];
             if (rc && rc.shapeshifter) {
               var ss = rc.shapeshifter;
               var powersHtml = '';
@@ -772,10 +774,13 @@
               '<a href="stories/asia/india/' + k.region + '/' + k.stateId + '/index.html" style="display:inline-block;margin-bottom:20px;padding:8px 20px;border:1px solid var(--gold-dim);border-radius:20px;color:var(--gold);text-decoration:none;font-size:0.85rem;transition:all 0.3s;" onmouseover="this.style.background=\'rgba(255,215,0,0.1)\'" onmouseout="this.style.background=\'transparent\'">View Dedicated Kingdom Page &rarr;</a>' +
 
               '<div class="creatures-bar">' +
-                '<div class="creature-item">' +
-                  '<span class="label">Sacred Animal</span>' +
-                  '<span class="name">' + k.animal.name + '</span>' +
-                  '<span class="symbolism">' + k.animal.symbolism + '</span>' +
+                '<div class="creature-item" style="display:flex; align-items:center; gap:12px;">' +
+                  (window.renderTattooPNG ? window.renderTattooPNG(k.animal.name, 4, 64) : '') +
+                  '<div>' +
+                    '<span class="label">Sacred Animal</span>' +
+                    '<span class="name">' + k.animal.name + '</span>' +
+                    '<span class="symbolism">' + k.animal.symbolism + '</span>' +
+                  '</div>' +
                 '</div>' +
                 '<div class="creature-item">' +
                   '<span class="label">Sacred Bird</span>' +

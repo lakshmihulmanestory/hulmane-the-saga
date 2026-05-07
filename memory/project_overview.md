@@ -1,10 +1,10 @@
 ---
-name: MahaHulmane Project Overview
+name: Hulmane-The-Saga Project Overview
 description: Core project structure — 28 Indian kingdoms, hero/villain per kingdom, sacred animals, Hindu god inspiration
 type: project
 ---
 
-MahaHulmane is a Mahabharata-inspired fantasy web project. 28 Indian kingdoms each have a hero bonded to a sacred animal (state animal). Every kingdom also has a villain who shares the same animal but embodies its dark spirit.
+Hulmane-The-Saga is a Mahabharata-inspired fantasy web project. 28 Indian kingdoms each have a hero bonded to a sacred animal (state animal). Every kingdom also has a villain who shares the same animal but embodies its dark spirit.
 
 **Key files:**
 - `index.html` — Home page with nav, India map, collage

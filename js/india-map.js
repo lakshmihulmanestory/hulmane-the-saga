@@ -1,6 +1,6 @@
 /**
  * india-map.js
- * Interactive SVG India map for the MahaHulmane website.
+ * Interactive SVG India map for the Hulmane-The-Saga website.
  * Provides window.createIndiaMap(containerId), window.highlightState(stateId),
  * and window.clearMapHighlight().
  */
@@ -168,7 +168,7 @@
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700"' +
       ' style="width:100%;max-width:600px;height:auto;" role="img"' +
       ' aria-label="Interactive map of India">\n' +
-      '<title>MahaHulmane India Map</title>\n' +
+      '<title>Hulmane-The-Saga India Map</title>\n' +
       paths +
       '</svg>'
     );
@@ -306,7 +306,8 @@
 
         path.addEventListener('click', function () {
           var stateId = path.getAttribute('id');
-          window.location.href = 'characters.html#' + stateId;
+          var region = STATE_REGIONS[stateId] || 'central';
+          window.location.href = 'stories/asia/india/' + region + '/' + stateId + '/index.html';
         });
       })(statePaths[i]);
     }
@@ -316,7 +317,10 @@
     if (select) {
       select.addEventListener('change', function () {
         var val = select.value;
-        if (val) window.location.href = 'characters.html#' + val;
+        if (val) {
+          var region = STATE_REGIONS[val] || 'central';
+          window.location.href = 'stories/asia/india/' + region + '/' + val + '/index.html';
+        }
       });
     }
 

@@ -1,4 +1,4 @@
-# MahaHulmane — Story Formats Reference
+# Hulmane-The-Saga — Story Formats Reference
 
 > Quick reference for writers, artists, and AI agents.
 > Before creating ANY content, identify which format it belongs to.
@@ -359,7 +359,7 @@ CHAPTER 5: THE DARK MIRROR (10 pages)
 CHAPTER 6: THE RESOLUTION (10 pages)
   Resolution — not necessarily full victory.
   The hero earns tattoo level 3 or 4.
-  Sets up the larger MahaHulmane world — a reference to another kingdom.
+  Sets up the larger Hulmane-The-Saga world — a reference to another kingdom.
 
 BACK MATTER
   • Cultural notes: real history behind the story's setting (2 pages)
@@ -581,7 +581,7 @@ Print method: Screen print (bold designs) + DTG (detailed art)
 | Tattoo Art | The sacred tattoo design extracted and enlarged. Runs down sleeve or full back | Adults |
 | Duo Art | Hero + Villain facing each other, split colour. No text needed | Adults |
 | Chibi / Cute | Simplified, round-featured heroes for kids' line | Kids |
-| Typography | "MAHAHULMANE" + regional language + Sanskrit in strong typographic layout | Adults |
+| Typography | "HULMANE-THE-SAGA" + regional language + Sanskrit in strong typographic layout | Adults |
 
 **Art Rules for APPAREL:**
 - Designs must work on dark AND light fabric — test both

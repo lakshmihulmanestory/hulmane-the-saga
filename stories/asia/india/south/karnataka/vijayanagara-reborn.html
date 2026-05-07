@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kingdom &mdash; MahaHulmane</title>
+  <title>Kingdom &mdash; Hulmane-The-Saga</title>
   <link rel="stylesheet" href="../../../../../css/style.css">
   <style>
     .root { --root: '../../../../../'; }
@@ -359,13 +359,14 @@
 
   <!-- NAVIGATION -->
   <nav class="maha-nav">
-    <a href="../../../../../index.html" class="nav-logo">MahaHulmane</a>
+    <a href="../../../../../index.html" class="nav-logo">Hulmane-The-Saga</a>
     <div class="nav-links">
       <a href="../../../../../index.html">Home</a>
       <a href="../../../../../characters.html">Heroes</a>
       <a href="../../../../../state-stories.html">Kingdoms</a>
       <a href="../../../../../regions.html">Regions</a>
       <a href="../../../../../council.html">Council</a>
+      <a href="../../../../../kingdom-identity.html#karnataka">Identities</a>
       <a href="../../../../../story.html">Story</a>
       <a href="../../../../../tattoo-system.html">Tattoos</a>
     </div>
@@ -384,6 +385,9 @@
   </div>
 
   <!-- SCRIPTS -->
+  <script>window.KINGDOM_ID = 'karnataka';</script>
+  <script src="../../../../../js/kingdom-identity-data.js"></script>
+  <script src="../../../../../js/kingdom-theme.js"></script>
   <script src="../../../../../js/state-stories-data.js"></script>
   <script>
     (function() {
@@ -412,7 +416,7 @@
 
       var rc = regionColors[kingdom.region] || '#ffd700';
 
-      document.title = kingdom.kingdomName + ' \u2014 MahaHulmane';
+      document.title = kingdom.kingdomName + ' \u2014 Hulmane-The-Saga';
 
       // Breadcrumb
       document.getElementById('breadcrumb').innerHTML =

@@ -1,5 +1,5 @@
 // ============================================================
-// STATE KINGDOMS OF MAHAHULMANE
+// STATE KINGDOMS OF HULMANE-THE-SAGA
 // 28 Sacred Kingdoms of Bharatavarsha
 // Each kingdom bound by blood, tattoo, and sacred beast
 // ============================================================
@@ -59,6 +59,15 @@ const STATE_KINGDOMS = [
       { name: "Chandra-Mukhi", title: "The Moon-Faced", specialty: "Former assassin turned spy, master of disguise", loyalty: "neutral" },
       { name: "Rakta-Vahini", title: "The Blood Current", specialty: "Narakasura's general, controls poison in water sources", loyalty: "villain" }
     ],
+    storyImages: {
+      basePath: "../../../../../media/states/south/andhra-pradesh/stories/dharmakshetra-amaravati/images/",
+      hero: [
+        { file: "krishnaveni-portrait.png", label: "Krishnaveni — The River's Daughter", caption: "Krishnaveni: the hero of Amaravati, wielding the Urumi whips Godavari and Krishna with fluid river-like motion." }
+      ],
+      villain: [
+        { file: "narakasura-portrait.png", label: "Narakasura Reborn — The Blood Emperor", caption: "Narakasura Reborn: the cursed river lord whose inverted blackbuck tattoo boils water and scorches the land." }
+      ]
+    },
     saga: {
       title: "The River's Oath — A Film in Two Halves",
       narrative: `═══ FIRST HALF ═══
@@ -685,7 +694,7 @@ Parashurama VII lifts his axe — Parashu, forged from meteorite iron, reforged 
 
 We see his world: Kerala, the land won from the sea. The backwaters — a labyrinth of rivers, lakes, and canals where houseboats carry families and secrets. The elephant temples — where tuskers in gold caparison walk in procession, their footsteps shaking the earth. The Western Ghats — a wall of green jungle that guards the kingdom from the east.
 
-Parashurama VII is the oldest hero in all of MahaHulmane. He has held the axe since nineteen. In those thirty-nine years, he has buried three students, survived two assassination attempts by his own family, and mastered all 108 forms of Kalaripayattu — the oldest martial art in the world. Every morning, he teaches the young ones at the kalari. Every evening, he talks to his elephants. He is feared, respected, and lonely. The axe-bearer has no equal, and a man with no equal has no friend.
+Parashurama VII is the oldest hero in all of Hulmane-The-Saga. He has held the axe since nineteen. In those thirty-nine years, he has buried three students, survived two assassination attempts by his own family, and mastered all 108 forms of Kalaripayattu — the oldest martial art in the world. Every morning, he teaches the young ones at the kalari. Every evening, he talks to his elephants. He is feared, respected, and lonely. The axe-bearer has no equal, and a man with no equal has no friend.
 
 Except one. Once.
 
@@ -1732,7 +1741,7 @@ Khanij-Raja fled to the surface, weeping for his lost arm and the minerals he co
 
 Birsa Munda's voice echoes through the Sal forests: "The boy fights well, but fighting is not enough. He must learn to heal what has been broken." The Asian koel sings before dawn, and Vanajara listens, planning his next strike from the canopy.
 
-He is twenty-two. The oldest hero in the MahaHulmane started at nineteen. Vanajara has time.
+He is twenty-two. The oldest hero in the Hulmane-The-Saga started at nineteen. Vanajara has time.
 
 The forest has time. The forest always has time.`
     }
@@ -1840,7 +1849,7 @@ The Ganga flows between them and judges neither. The Ganga has seen empires rise
       age: 14,
       weapon: "Mountain knife called Kasturi-Khanjar and a tranquilizing blowpipe — she prefers to incapacitate rather than kill",
       tattoo: "Alpine Musk Deer on her left wrist, so small it looks like a birthmark — footprint mark only",
-      description: "The youngest hero in the entire MahaHulmane at just fourteen, Kasturika carries a weight that would crush most adults. Her parents and siblings died in an avalanche when she was nine, and she survived by burying herself in the body of a dead musk deer, whose warmth kept her alive through the night. She emerged speaking in a language that only mountain animals understand.",
+      description: "The youngest hero in the entire Hulmane-The-Saga at just fourteen, Kasturika carries a weight that would crush most adults. Her parents and siblings died in an avalanche when she was nine, and she survived by burying herself in the body of a dead musk deer, whose warmth kept her alive through the night. She emerged speaking in a language that only mountain animals understand.",
       battleCry: "I survived the mountain. I can survive you."
     },
     villain: {
@@ -1852,7 +1861,7 @@ The Ganga flows between them and judges neither. The Ganga has seen empires rise
       weapon: "An ice-pickaxe of enormous size, called Hima-Vajra (Ice Thunderbolt) — one swing can shatter frozen stone",
       darkPower: "Controls avalanches. Can feel the stress patterns in snowpack and trigger collapses with a single strike of his pickaxe. In the Himalayas, this is equivalent to controlling death itself.",
       description: "Once a temple priest at Kedarnath, he was the sole survivor of a devastating flood that killed his entire congregation while he was leading prayer. He prayed for divine intervention as his people drowned, and nothing came. His faith did not simply die — it inverted. He now seeks to destroy every temple in Uttarakhand, believing that false hope is worse than honest despair.",
-      motivation: "Believes the gods either do not exist (making the temples lies) or do not care (making the temples cruelty). Either way, the temples must fall. His rage is born from genuine grief, making him the most tragic villain in the MahaHulmane."
+      motivation: "Believes the gods either do not exist (making the temples lies) or do not care (making the temples cruelty). Either way, the temples must fall. His rage is born from genuine grief, making him the most tragic villain in the Hulmane-The-Saga."
     },
     guru: {
       name: "Nanda Devi Ma",
@@ -1876,7 +1885,7 @@ The avalanche came without warning — a white wall traveling at two hundred kil
 
 She lay in darkness for sixteen hours. The temperature was minus twenty. She should have died — would have died — if the body of a musk deer, killed by the avalanche, had not fallen across her like a blanket. The deer's musk gland, crushed in death, released its scent — the most precious fragrance in the Himalayas — and the warmth of its body kept hers alive.
 
-When rescuers found her, she was curled inside the deer's belly like a fawn in a womb. She had a tiny tattoo on her wrist that had not been there before: a musk deer, no larger than a thumbprint. The smallest tattoo in the MahaHulmane — and the most dearly paid for.
+When rescuers found her, she was curled inside the deer's belly like a fawn in a womb. She had a tiny tattoo on her wrist that had not been there before: a musk deer, no larger than a thumbprint. The smallest tattoo in the Hulmane-The-Saga — and the most dearly paid for.
 
 Kedar-Rakshasa's tragedy began differently but ended in the same mountains. The flood at Kedarnath in 2013 killed over five thousand pilgrims. The priest who survived — the man who would become Kedar-Rakshasa — was found clinging to the temple wall, still reciting prayers. His congregation had been swept away mid-prayer, their hands still folded, their eyes still closed.
 
@@ -1954,7 +1963,7 @@ The war continues. It is the quietest war in India — fought with whispers, wit
 
 Her father was a mountaineer — the greatest climber Himachal had ever produced. He conquered fourteen peaks above 6,000 meters before the mountain took its payment: both his feet, claimed by frostbite on his final expedition. He sits now in their village home at 3,000 meters, carving wooden deities with hands that remember the grip of ice-axes, watching the peaks he can no longer climb.
 
-Every year, Himavati descends from whatever mission the MahaHulmane has sent her on and spends one week with her father. They do not speak of her work. They carve wood together. It is the only time the Snow Ghost is not a ghost.
+Every year, Himavati descends from whatever mission the Hulmane-The-Saga has sent her on and spends one week with her father. They do not speak of her work. They carve wood together. It is the only time the Snow Ghost is not a ghost.
 
 Himaalaya-Rakshasa chose the worst possible time to strike — during Himavati's annual descent. His Agni-Danda pierced the Shigri Glacier, and the oldest ice in Himachal Pradesh began to weep. The meltwater became a river, then a flood, then a wall of water carrying boulders and trees and the frozen memories of ten thousand years.
 
@@ -2016,7 +2025,7 @@ Himaalaya-Rakshasa called it a victory. Himavati calls it a strategic retreat. H
     guru: {
       name: "Baba Nanak's Langar",
       title: "The Eternal Kitchen",
-      description: "At the Golden Temple in Amritsar, the langar has fed millions without discrimination for five centuries. In the MahaHulmane world, the langar is also a place of spiritual power — the food served here temporarily removes all distinctions of caste, power, tattoo-rank, and even hero-villain status. Within the langar, Panchanada and Durjaya Singh could sit side by side and eat as equals.",
+      description: "At the Golden Temple in Amritsar, the langar has fed millions without discrimination for five centuries. In the Hulmane-The-Saga world, the langar is also a place of spiritual power — the food served here temporarily removes all distinctions of caste, power, tattoo-rank, and even hero-villain status. Within the langar, Panchanada and Durjaya Singh could sit side by side and eat as equals.",
       wisdom: "Before God and before food, there is no king and no servant. There is only hunger and the grace to feed it."
     },
     warriors: [
@@ -2282,7 +2291,7 @@ The Great Hornbills circled outside, unable to enter the cave. The gayals lowed 
 
 Baba Parashar, watching from above the clouds, said: "This is not a war. This is a sibling argument that the universe is taking too seriously."
 
-He is right. But sibling arguments in the MahaHulmane have consequences measured in kingdoms.
+He is right. But sibling arguments in the Hulmane-The-Saga have consequences measured in kingdoms.
 
 Udayagiri has not given up. Every morning, he forges a new spear in the dawn and walks to the cave entrance. Every morning, his sister's darkness pushes the light back. And every morning, the light gains one inch more.
 
@@ -2535,7 +2544,7 @@ If you are made of the right material.`
       age: 34,
       weapon: "Traditional Naga dao (machete-sword) called Dzukou and a woven shield — the dao was her grandmother's",
       tattoo: "Gayal with traditional Naga geometric patterns on its hide, across her entire body — full-body mark achieved without a single kill",
-      description: "Fierce as a headhunter, gentle as the morning lily in the Dzukou Valley. Dzulevira bridges the gap between Nagaland's warrior past and its peaceful present. She earned the full-body mark not through killing but through something the MahaHulmane had never seen before: uniting all sixteen Naga tribes under one council for the first time in recorded history.",
+      description: "Fierce as a headhunter, gentle as the morning lily in the Dzukou Valley. Dzulevira bridges the gap between Nagaland's warrior past and its peaceful present. She earned the full-body mark not through killing but through something the Hulmane-The-Saga had never seen before: uniting all sixteen Naga tribes under one council for the first time in recorded history.",
       battleCry: "Sixteen tribes! One voice!"
     },
     villain: {
@@ -2609,7 +2618,7 @@ The old ways do not die easily. They haunt.`
       age: 45,
       weapon: "A prayer wheel mace called Chintamani (Wish-Fulfilling Jewel) — spins with mantras that create force-fields of spiritual energy",
       tattoo: "Red Panda sitting peacefully on a snow-covered branch, surrounded by the five treasures of Kanchenjunga — full-body mark, the only one achieved through compassion alone",
-      description: "The gentlest hero in the entire MahaHulmane and possibly the most powerful. Kanchenjunga has never killed. His prayer wheel mace generates force-fields that protect rather than destroy, and his fighting style redirects aggression rather than matching it. He is a Buddhist monk who became a warrior by accident and a hero by necessity.",
+      description: "The gentlest hero in the entire Hulmane-The-Saga and possibly the most powerful. Kanchenjunga has never killed. His prayer wheel mace generates force-fields that protect rather than destroy, and his fighting style redirects aggression rather than matching it. He is a Buddhist monk who became a warrior by accident and a hero by necessity.",
       battleCry: "(He does not have one. He chants Om Mani Padme Hum, and somehow that is more terrifying.)"
     },
     villain: {
@@ -2706,7 +2715,7 @@ And somewhere between the monastery and the summit, a thief with empty hands sit
       age: "Mythological — the demon Tripurasura reborn",
       weapon: "Three flying fortresses — remnants of the original Tripura (three flying cities) that Shiva destroyed with a single arrow. They have been rebuilt, smaller but still deadly, as armored aerial platforms.",
       darkPower: "When all three fortresses align — which happens once every seven years — their combined power can fire a beam of concentrated energy equal to Shiva's arrow. Tripura-Asura missed the last alignment. He will not miss the next.",
-      description: "In Hindu mythology, the three Asura brothers built three flying cities — gold, silver, and iron — that were indestructible except when aligned. Shiva destroyed them with a single cosmic arrow. But destruction, in the world of the MahaHulmane, is never permanent. The cities have reformed, and the demon who commanded them has returned — this time, as an engineer.",
+      description: "In Hindu mythology, the three Asura brothers built three flying cities — gold, silver, and iron — that were indestructible except when aligned. Shiva destroyed them with a single cosmic arrow. But destruction, in the world of the Hulmane-The-Saga, is never permanent. The cities have reformed, and the demon who commanded them has returned — this time, as an engineer.",
       motivation: "Wants to prove that engineering can surpass divinity. If a demon's machine-city can withstand a god's arrow, then gods are obsolete. He is the ultimate technologist — the villain who believes invention, not prayer, is the path to immortality."
     },
     guru: {
@@ -2979,11 +2988,114 @@ const REGION_CONFIG = {
       }
     }
   },
-  west: { name: "Paschimapatha", label: "Western Kingdoms", color: "#ff8c00", icon: "🏔️" },
-  east: { name: "Purvapatha", label: "Eastern Kingdoms", color: "#44aaff", icon: "🌿" },
-  north: { name: "Uttarapatha", label: "Northern Kingdoms", color: "#ff66cc", icon: "❄️" },
-  northeast: { name: "Pragjyotisha", label: "Northeastern Kingdoms", color: "#aa66ff", icon: "🌅" },
-  central: { name: "Madhyadesa", label: "Central Kingdoms", color: "#ffaa00", icon: "🛡️" }
+  west: {
+    name: "Paschimapatha", label: "Western Kingdoms", color: "#ff8c00", icon: "🏔️",
+    description: "The western kingdoms rise from the desert sands of Rajasthan to the volcanic plateaus of Maharashtra, from Gujarat's endless shoreline to Goa's golden coast. These are the kingdoms of merchants and fortress-builders — where the Asiatic lion still stalks the Gir forests, where giant squirrels leap between the fort walls of the Sahyadri ranges, and where the one-horned rhinoceros wades through Deccan rivers. The west has always known that the sea is both threat and opportunity — trade and invasion come from the same horizon.",
+    shapeshifter: {
+      name: "Paschima-Rupa",
+      title: "The Desert Wind",
+      epithet: "He Who Walks Between Sand and Sea",
+      gender: "male",
+      age: "Appears between 25 and 60 — the desert ages him in sunlight, the sea restores him at night",
+      description: "Paschima-Rupa is the West's hidden guardian — a desert-wanderer who has mastered the ancient trade routes connecting India's western coast to the Persian Gulf, the Red Sea, and beyond. He channels the four western sacred beasts: the Asiatic Lion's sovereignty, the Giant Squirrel's agility across the Sahyadri forts, the Chinkara's desert endurance, and the Blackbuck's speed across open terrain. He is older than any western kingdom, having witnessed the fall of the Indus Valley civilization and the rise of the Chalukyas. He appears in markets, caravanserais, and battlefields — always seemingly at random, always at the moment of greatest need.",
+      combinedTattoo: "His tattoo shifts with the desert light — lion mane at dawn, squirrel fur at midday, chinkara horns at dusk, blackbuck spots at night. Merchants who have seen it describe it as a map of every trade route in the world, animated by the breath of wind.",
+      powers: [
+        "Lion Form: Command over pride and sovereignty — his roar silences armies",
+        "Squirrel Form: Impossible vertical mobility across fort walls and cliff faces",
+        "Chinkara Form: Desert survival — can go without water for thirty days, reads sand like a book",
+        "Blackbuck Form: Open terrain speed — outruns desert sandstorms on foot"
+      ],
+      flaws: "Every form he takes ages the others. When he becomes the lion, the squirrel in him grows ancient. He must continuously shift to keep all four aspects alive — and one day, one of them will simply stop waking.",
+      origin: "He was the navigator of the last Harappan fleet, preserved by a ritual that bound his life force to the four sacred animals of the western trade routes. He has served every western kingdom that ever rose — and watched every one of them fall."
+    }
+  },
+  east: {
+    name: "Purvapatha", label: "Eastern Kingdoms", color: "#44aaff", icon: "🌿",
+    description: "The eastern kingdoms are where the Ganges meets the sea — where Bengal tigers and fishing cats haunt the mangrove deltas, where the holy rivers carry both life and memory. West Bengal guards the literary heart of India; Odisha bears temples carved from sandstone; Bihar holds the sacred ground where the Buddha first saw light; Jharkhand protects vast forest kingdoms of the Adivasi peoples. These kingdoms understand that the river is not merely water — it is time itself, flowing endlessly toward the ocean of all stories.",
+    shapeshifter: {
+      name: "Purva-Rupa",
+      title: "The Delta Dreamer",
+      epithet: "She Who Reads the River's Memory",
+      gender: "female",
+      age: "Changes with the rivers — young during monsoon, ancient during drought",
+      description: "Purva-Rupa was born where the Ganges delta meets the Bay of Bengal — the Sundarbans, where tiger and human have coexisted in uneasy balance for millennia. She carries the aspects of the four eastern sacred beasts: the Fishing Cat's amphibious stealth, the Bengal Tiger's authority over the delta, the Indian Python's patient stillness, and the Asiatic Elephant's memory of every monsoon that has ever flooded the plains. She can read the silt of any river and tell you what happened a thousand years upstream.",
+      combinedTattoo: "Her tattoo is drawn in water — she traces it in river silt each morning, and each evening the river washes it away. But it never truly disappears: the pattern appears in the ripples of still water, in the flight of fishing birds, in the tracks of delta mud.",
+      powers: [
+        "Fishing Cat Form: Moves silently through water, impossible to track in mangroves",
+        "Tiger Form: Delta authority — all animals of the eastern forests fall still when she roars",
+        "Python Form: Stillness so perfect she becomes invisible — used for healing, not combat",
+        "Elephant Form: Carries the memory of every eastern kingdom that ever rose and fell"
+      ],
+      flaws: "She has lived through so many floods and droughts that she has trouble distinguishing the present from the past. She sometimes gives counsel about events that happened five centuries ago as if they were happening now.",
+      origin: "The Sundarbans have always had a guardian — a being between tiger and human who mediates the ancient treaty between the Bengal Tiger and the delta peoples. Purva-Rupa is the latest in an unbroken line reaching back to the Vedic age."
+    }
+  },
+  north: {
+    name: "Uttarapatha", label: "Northern Kingdoms", color: "#ff66cc", icon: "❄️",
+    description: "The northern kingdoms are where the Himalayan snows meet the Gangetic plains — where the snow leopard hunts in clouds above sixteen thousand feet, where the barasingha wades through sacred wetlands, where the great rivers of civilization begin. Uttar Pradesh carries the weight of history — Ayodhya, Mathura, Varanasi — cities older than memory. Uttarakhand guards the source of the Ganga itself. Punjab and Haryana are the breadbasket and the battlesword of India, and Himachal Pradesh keeps the mountain passes between India and the high kingdoms of Central Asia. These are kingdoms that know both the coldest winters and the most burning ambitions.",
+    shapeshifter: {
+      name: "Uttara-Rupa",
+      title: "The Mountain Echo",
+      epithet: "He Who Hears the Himalaya's Heartbeat",
+      gender: "male",
+      age: "Appears ageless — the mountains do not count years the way valleys do",
+      description: "Uttara-Rupa inhabits the border between snow and sky — the treeline where Himalayan forests give way to glacier. He carries the aspects of the five northern sacred beasts: the Snow Leopard's mountain sovereignty, the Barasingha's wetland grace, the Indian Buffalo's plains power, the Nilgiri Tahr's cliff endurance (though far to the north), and the rare Himalayan wolf's pack-wisdom. He has watched armies cross the Khyber Pass, has seen empires rise on the Gangetic plain, and understands that the north is not merely a direction — it is a destiny.",
+      combinedTattoo: "His tattoo is drawn in snow — it appears on mountainsides after fresh snowfall, visible for kilometers. Pilgrims traveling to Char Dham have reported seeing a massive figure tattooed in white on the mountain faces, watching them pass.",
+      powers: [
+        "Snow Leopard Form: Perfect camouflage in mountain terrain, ambush predation at altitude",
+        "Barasingha Form: Navigation through floodplains and wetlands, reads the river network",
+        "Buffalo Form: Plains combat — unstoppable charge across flat terrain",
+        "Wolf Form: Pack coordination — can command any group of warriors as a single mind"
+      ],
+      flaws: "The altitude has made him isolationist. He finds the politics of the plains beneath his attention and sometimes refuses to descend from the mountains when the valleys need him most.",
+      origin: "He was the last guardian of the Silk Road's Indian end — the being who kept the mountain passes safe for ten centuries of trade. When the trade routes fell, he retreated to the peaks and has not fully returned."
+    }
+  },
+  northeast: {
+    name: "Pragjyotisha", label: "Northeastern Kingdoms", color: "#aa66ff", icon: "🌅",
+    description: "The northeastern kingdoms are India's most secret face — eight states of extraordinary diversity packed into a peninsula between Bangladesh, China, Myanmar, and Bhutan. These are the lands of living root bridges and cloud forests, of one-horned rhinoceroses and clouded leopards, of warrior traditions that predate the Mahabharata itself. Assam guards the great Brahmaputra; Manipur keeps the flame of classical Indian dance; Meghalaya is the wettest place on Earth; Arunachal Pradesh watches the sunrise before any other Indian state. These kingdoms have always known something the mainland forgot: that the boundary between civilizations is not a wall but a conversation.",
+    shapeshifter: {
+      name: "Pragjyoti-Rupa",
+      title: "The First Light",
+      epithet: "She Who Greets the Sun Before All Others",
+      gender: "female",
+      age: "As old as the Brahmaputra — which is to say, older than the Himalayas themselves",
+      description: "Pragjyoti-Rupa embodies the extraordinary biodiversity of India's northeast — the region that connects the Indian subcontinent to Southeast Asia and serves as a corridor for species found nowhere else on Earth. She carries the aspects of eight northeastern sacred beasts: the One-Horned Rhino's armor, the Clouded Leopard's mystery, the Red Panda's gentleness, the Gayal's forest sovereignty, the Sangai's dancing grace, the Hoolock Gibbon's voice, the Serow's mountain tenacity, and the Phayre's Langur's spectacled intelligence. She is the most complex shapeshifter of all the regional guardians — eight animals, eight cultures, eight voices that somehow speak as one.",
+      combinedTattoo: "Her tattoo is embroidered — literally stitched in the traditional textile patterns of all eight northeastern states. Each form she takes adds a new thread. The full tattoo, when all eight aspects are active, looks like the most complex indigenous textile ever woven — a living garment of power.",
+      powers: [
+        "Rhino Form: Impenetrable armor, can charge through any fortification",
+        "Clouded Leopard Form: Tree-canopy combat, moves through forest three-dimensionally",
+        "Red Panda Form: Healing touch and absolute calm — neutralizes all aggression in range",
+        "Sangai Form: Dancing combat — movement so beautiful it temporarily paralyzes opponents",
+        "Gayal Form: Commands the living forest as an army",
+        "Gibbon Form: Voice that can shatter stone or harmonize any group into unity",
+        "Serow Form: Mountain defense — immovable from any high ground she chooses to hold",
+        "Langur Form: Strategic intelligence — sees all patterns, all consequences"
+      ],
+      flaws: "Eight voices constantly debating. She cannot act quickly because all eight aspects must reach consensus. In individual combat she is devastating; in situations requiring instant decision she is paralyzed.",
+      origin: "She is the spirit of the Brahmaputra River itself — the great river that flows east to west, contrary to all other Himalayan rivers, as if it refused to follow the rules of geography."
+    }
+  },
+  central: {
+    name: "Madhyadesa", label: "Central Kingdoms", color: "#ffaa00", icon: "🛡️",
+    description: "The central kingdoms are the heart of the subcontinent — the ancient Madhyadesa that Sanskrit texts call the middle country, the navel of India from which all directions radiate. Madhya Pradesh holds the oldest human-painted caves on Earth at Bhimbetka, the forests of Kipling's Jungle Book, and the sacred city of Ujjain. Chhattisgarh guards the tribal heartland — vast forests inhabited by peoples who maintained sovereignty while empires rose and fell around them. The barasingha deer walks these wetlands as it has for ten thousand years, and the wild buffalo's call echoes through forests that have never been fully mapped.",
+    shapeshifter: {
+      name: "Madhya-Rupa",
+      title: "The Pivot of All Things",
+      epithet: "The One Who Holds the Center So Others Can Exist",
+      gender: "non-binary",
+      age: "The age of the Bhimbetka caves — thirty thousand years and counting",
+      description: "Madhya-Rupa is the oldest of all the regional guardians — a being as ancient as the cave paintings at Bhimbetka, who watched the first humans in India pick up a brush and leave their mark on stone. They carry both central beasts: the Barasingha's twelve-fold wisdom and the Wild Buffalo's primal power. But their true ability is not transformation — it is mediation. Madhya-Rupa can stand at the exact center of any conflict, any battle, any argument, and make both sides simultaneously right. They have ended more wars than any weapon. They have also, in moments of rage, started a few.",
+      combinedTattoo: "Their tattoo is a perfect mandala — barasingha antlers forming one half, wild buffalo horns forming the other, meeting at a precise geometric center that pulses faintly gold. It is the most balanced tattoo in existence, and the most impossible to achieve — it requires perfect equilibrium of opposing forces.",
+      powers: [
+        "Barasingha Form: Twelve-fold wisdom — sees twelve different solutions simultaneously",
+        "Wild Buffalo Form: Primal force that cannot be reasoned with or stopped by anything but equal force",
+        "Combined Form (rare): Perfect balance — can neutralize any power by becoming its exact equal and opposite"
+      ],
+      flaws: "They are so committed to balance that they sometimes refuse to take sides even when one side is clearly wrong. Their concept of 'center' can be morally troubling. The very thing that makes them powerful also makes them, occasionally, useless.",
+      origin: "The Bhimbetka caves were not painted by random wanderers — they were painted by the first students of Madhya-Rupa, recording the visions of a being who had already lived ten thousand years and intended to live ten thousand more."
+    }
+  }
 };
 
 // ============================================================

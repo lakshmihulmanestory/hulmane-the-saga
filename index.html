@@ -3,82 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAHAHULMANE &mdash; The Great Assembly of Warriors</title>
+  <title>HULMANE-THE-SAGA &mdash; The Great Assembly of Warriors</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ===== 1. INTRO OVERLAY ===== -->
-  <div class="intro-overlay" id="introOverlay">
-    <div class="intro-text">
-      <div class="intro-line" style="animation-delay: 0.5s">When courage and faith speak louder than swords.</div>
-      <div class="intro-line" style="animation-delay: 2s">When every kingdom holds its secrets close.</div>
-      <div class="intro-line" style="animation-delay: 3.5s">And the darkness gathers behind the stars.</div>
-      <div class="intro-line gold" style="animation-delay: 5s">The great MahaHulmane stands &mdash; gathering all the arts of the world to guard its people and its kingdom.</div>
-      <div class="intro-line intro-subtitle" style="animation-delay: 6.5s">Here, Dharma is the wind. Courage is the path. And the trust of the people will always triumph over the sword.</div>
-    </div>
-    <button class="intro-skip" onclick="skipIntro()">Skip &#9654;</button>
-  </div>
-
-  <script>
-    function skipIntro() {
-      document.getElementById('introOverlay').style.opacity = '0';
-      setTimeout(function() { document.getElementById('introOverlay').style.display = 'none'; }, 500);
-    }
-    setTimeout(skipIntro, 8500);
-  </script>
-
   <!-- ===== 2. NAVIGATION BAR ===== -->
-  <nav class="maha-nav">
-    <a href="index.html" class="nav-logo">MAHAHULMANE</a>
+    <nav class="maha-nav">
+    <a href="index.html" class="nav-logo">Hulmane-The-Saga</a>
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="characters.html">Heroes</a>
-      <a href="character-gallery.html">Gallery</a>
       <a href="state-stories.html">Kingdoms</a>
       <a href="regions.html">Regions</a>
       <a href="council.html">Council</a>
-      <a href="story.html">Story</a>
+      <a href="kingdom-identity.html">Identities</a>
       <a href="tattoo-system.html">Tattoos</a>
     </div>
     <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')">&#9776;</button>
   </nav>
 
   <!-- ===== 3. HERO BANNER SECTION ===== -->
-  <section class="section hero-banner" style="text-align:center; padding-top:80px;">
-    <div class="hero-graphic">
-      <svg viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-        <defs>
-          <linearGradient id="heroGlow" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#ffd700" stop-opacity="0.25" />
-            <stop offset="100%" stop-color="#ff8c00" stop-opacity="0.05" />
-          </linearGradient>
-        </defs>
-        <rect width="1000" height="400" fill="transparent" />
-        <path d="M150 340 Q220 120 320 110 Q410 90 500 120 Q580 142 640 160 Q760 200 820 340 Z" fill="rgba(255,215,0,0.09)" />
-        <path d="M520 60 C 520 60, 520 20, 560 20 C 600 20, 620 50, 620 80 C 620 110, 580 140, 540 135 C 500 130, 480 100, 520 60Z" fill="rgba(255,255,255,0.18)" />
-        <path d="M430 130 C 240 150, 160 380, 320 340 C 390 320, 530 300, 660 320 C 770 340, 760 160, 660 130 C 620 120, 560 100, 500 110 C 450 118, 430 130, 430 130Z" fill="#1f0b00" opacity="0.32" />
-        <path d="M360 170 C 300 140, 300 100, 360 90 C 420 80, 540 100, 560 150 C 570 180, 520 210, 470 210 C 410 218, 385 190, 360 170Z" fill="#ffd700" opacity="0.28" />
-        <path d="M500 100 L480 145 L520 158 L560 140 L580 112" stroke="#ffd700" stroke-width="6" fill="none" opacity="0.6" />
-        <circle cx="540" cy="170" r="8" fill="#ffd700" />
-        <circle cx="430" cy="220" r="10" fill="#ffd700" />
-        <path d="M320 240 Q330 180 380 160 Q420 150 440 170 Q460 190 430 230" stroke="#ffd700" stroke-width="4" fill="none" opacity="0.6" />
-      </svg>
+  <section class="section hero-banner" style="text-align:center; padding-top:80px; padding-bottom:20px;">
+    <h1>HULMANE-THE-SAGA</h1>
+  </section>
+
+  <!-- ===== MOTTO & THEME IMAGE ===== -->
+  <section class="section" style="padding-top:0; padding-bottom:0;">
+
+    <!-- Theme image -->
+    <div style="max-width:960px; margin:0 auto 0; text-align:center;">
+      <img src="media/images/hulmane-the-saga-motto.png"
+           alt="Hulmane-The-Saga — The Eternal Equation"
+           style="width:100%; max-height:520px; object-fit:cover; object-position:center;
+                  border-radius:16px; display:block;
+                  border:1px solid rgba(255,215,0,0.18);
+                  box-shadow:0 0 60px rgba(255,215,0,0.08);"
+           onerror="this.style.display='none'">
     </div>
-    <h1>MAHAHULMANE</h1>
-    <p class="subtitle">The Great Assembly of Warriors</p>
-    <p style="max-width:760px; margin:20px auto; color: var(--text-dim); line-height:1.8;">
-      Inspired by the Mahabharata, MahaHulmane is a tale where courage and faith
-      speak louder than swords. Even when darkness gathers behind the stars &mdash;
-      or rises from within the kingdom itself &mdash; the people, their trust,
-      and their Dharma will stand against it all. Dharma is the wind that carries
-      every hero forward. All the art of this world begins and ends with courage.
-    </p>
+
+    <!-- Motto block -->
+    <div style="max-width:820px; margin:0 auto; padding:48px 24px 20px; text-align:center;">
+
+      <!-- Eyebrow -->
+      <div style="font-size:0.62em; text-transform:uppercase; letter-spacing:3px; color:var(--gold-dim); margin-bottom:20px; opacity:0.7;">
+        The Eternal Equation &mdash; Motto of the Saga
+      </div>
+
+      <!-- Sanskrit -->
+      <p style="font-size:1.45rem; font-family:Georgia,serif; color:var(--gold); line-height:1.7; margin:0 0 6px; letter-spacing:0.5px;">
+        यतो योग्यता ततो सत्यम् । यतो ऋतं ततो जयः ॥
+      </p>
+      <p style="font-size:0.88em; color:var(--gold-dim); font-style:italic; margin:0 0 22px; opacity:0.8; letter-spacing:0.5px;">
+        Yato Yogyat&#257; Tato Satyam &bull; Yato Ritam Tato Jayah
+      </p>
+
+      <!-- Divider -->
+      <div style="display:flex; align-items:center; gap:16px; margin:0 auto 22px; max-width:400px;">
+        <div style="flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(255,215,0,0.3));"></div>
+        <span style="color:var(--gold); opacity:0.4; font-size:1.1em;">&#9670;</span>
+        <div style="flex:1; height:1px; background:linear-gradient(90deg,rgba(255,215,0,0.3),transparent);"></div>
+      </div>
+
+      <!-- Kannada -->
+      <p style="font-size:1.15rem; font-family:Georgia,serif; color:rgba(255,215,0,0.75); line-height:1.7; margin:0 0 4px;">
+        ಎಲ್ಲಿ ಅರ್ಹತೆಯೋ ಅಲ್ಲಿ ಸತ್ಯ &bull; ಎಲ್ಲಿ ವ್ಯವಸ್ಥೆಯೋ ಅಲ್ಲಿ ಜಯ ॥
+      </p>
+      <p style="font-size:0.8em; color:var(--text-dim); font-style:italic; margin:0 0 22px; opacity:0.65;">
+        Elli Arhateyo Alli Satya &bull; Elli Vyavastheyo Alli Jaya
+      </p>
+
+      <!-- English translation — the punchline -->
+      <p style="font-size:1.05rem; color:var(--text); font-family:Georgia,serif; line-height:1.8; margin:0 0 10px;
+                padding:18px 28px; background:rgba(255,215,0,0.04);
+                border:1px solid rgba(255,215,0,0.14); border-radius:10px; font-style:italic;">
+        &ldquo;Where there is Merit, there is Truth &mdash;<br>
+        Where there is Order, there is Victory.&rdquo;
+      </p>
+    </div>
+
+    <!-- Prologue -->
+    <div style="max-width:820px; margin:0 auto; padding:0 24px 56px;">
+      <div style="font-size:0.6em; text-transform:uppercase; letter-spacing:3px; color:var(--gold-dim); margin-bottom:20px; opacity:0.6; text-align:center;">
+        The Saga Prologue
+      </div>
+      <div style="border-left:3px solid rgba(255,215,0,0.25); padding-left:24px;">
+        <p style="color:var(--text-dim); font-size:0.9em; line-height:1.9; margin:0 0 14px;">
+          History remembers the Mahabharata as the war of brothers, fought for the soil of a kingdom.
+          But the soil has turned to dust, and the kingdom has expanded to the stars.
+        </p>
+        <p style="color:var(--text-dim); font-size:0.9em; line-height:1.9; margin:0 0 14px;">
+          Today, the world of nations is fractured. The old kings have traded their crowns for codes,
+          and their chariots for satellites. They claim leadership by the virtue of their names,
+          hiding behind the shadows of their ancestors. But as the borders of Earth bleed and the
+          gears of global peace grind to a halt, a new cry rises from the chaos.
+        </p>
+        <p style="color:var(--text); font-size:0.92em; line-height:1.9; margin:0 0 14px; font-style:italic;">
+          The war of the modern age is not for land &mdash; it is for the Truth.
+        </p>
+        <p style="color:var(--text-dim); font-size:0.9em; line-height:1.9; margin:0 0 14px;">
+          The throne of the world &mdash; the &lsquo;Hulmane&rsquo; &mdash; is a crown of thorns that rejects the
+          unworthy. It does not care for bloodlines or hierarchies. It waits for the one whose mind
+          is aligned with the universe. For in this saga, power is not a birthright; it is a burden
+          earned through excellence.
+        </p>
+        <p style="color:var(--text-dim); font-size:0.9em; line-height:1.9; margin:0 0 20px;">
+          As nations prepare for the final conflict, the ancient law is reborn in a new tongue:
+        </p>
+        <div style="text-align:center; padding:16px 20px;
+                    background:rgba(255,215,0,0.05); border-radius:8px;
+                    border:1px solid rgba(255,215,0,0.12); margin-bottom:20px;">
+          <p style="color:var(--gold); font-family:Georgia,serif; font-size:0.95em; line-height:1.7; margin:0 0 6px; font-style:italic;">
+            &ldquo;Where there is Merit, there is Truth.<br>
+            And only in that Truth, can the Galaxy find its Victory.&rdquo;
+          </p>
+        </div>
+        <p style="color:var(--gold-dim); font-size:0.88em; line-height:1.8; margin:0; font-family:Georgia,serif; text-align:center; letter-spacing:1px;">
+          The Saga of Hulmane begins now.
+        </p>
+      </div>
+    </div>
+
   </section>
 
   <!-- ===== 3.5. HERO COLLAGE SECTION ===== -->
   <section class="section">
-    <h2 class="section-title">The Heroes of MahaHulmane</h2>
+    <h2 class="section-title">The Heroes of Hulmane-The-Saga</h2>
     <div class="collage-block card">
       <p style="max-width:760px; margin:0 auto 1.4rem; color:var(--text-dim); line-height:1.8;">
         Twenty-eight kingdoms. Twenty-eight heroes. Each carries their own sacred symbol,
@@ -86,7 +136,7 @@
         who they are and where they come from. This is the world at a glance: warriors,
         guardians, legends, all rising together against the gathering dark.
       </p>
-      <div class="character-collage" aria-label="A cinematic collage of heroes from every kingdom of MahaHulmane">
+      <div class="character-collage" aria-label="A cinematic collage of heroes from every kingdom of Hulmane-The-Saga">
         <svg viewBox="0 0 900 440" preserveAspectRatio="xMidYMid meet">
           <defs>
             <radialGradient id="collageGlow" cx="50%" cy="50%" r="50%">
@@ -109,10 +159,10 @@
           <!-- Central hero — the grand warrior, full body tattoo, golden aura -->
           <g transform="translate(400,40)">
             <ellipse cx="50" cy="180" rx="55" ry="160" fill="#ffd700" opacity="0.08"/>
-            <rect x="30" y="50" width="40" height="100" rx="6" fill="#2b1a00" stroke="#ffd700" stroke-width="2"/>
-            <circle cx="50" cy="35" r="22" fill="#2b1a00" stroke="#ffd700" stroke-width="2"/>
+            <rect x="30" y="50" width="40" height="100" rx="6" fill="#210526" stroke="#ffd700" stroke-width="2"/>
+            <circle cx="50" cy="35" r="22" fill="#210526" stroke="#ffd700" stroke-width="2"/>
             <circle cx="50" cy="35" r="14" fill="#ffd700" opacity="0.25"/>
-            <path d="M38 150 L30 220 L42 220 L50 180 L58 220 L70 220 L62 150" fill="#2b1a00" stroke="#ffd700" stroke-width="1.5"/>
+            <path d="M38 150 L30 220 L42 220 L50 180 L58 220 L70 220 L62 150" fill="#210526" stroke="#ffd700" stroke-width="1.5"/>
             <path d="M25 70 L10 120 M75 70 L90 120" stroke="#ffd700" stroke-width="2" fill="none"/>
             <path d="M35 60 L35 140" stroke="#ffd700" stroke-width="1" opacity="0.4"/>
             <path d="M65 60 L65 140" stroke="#ffd700" stroke-width="1" opacity="0.4"/>
@@ -208,7 +258,7 @@
 
   <!-- ===== 4. WORLD OVERVIEW — THREE COLUMNS ===== -->
   <section class="section">
-    <h2 class="section-title">The World of MAHAHULMANE</h2>
+    <h2 class="section-title">The World of HULMANE-THE-SAGA</h2>
     <div class="grid-3">
 
       <!-- Column 1: Tattoo System -->
@@ -217,22 +267,22 @@
         <div style="text-align:center; margin:20px 0;">
           <svg viewBox="0 0 400 100" style="max-width:100%;">
             <g>
-              <rect x="10" y="60" width="60" height="30" rx="5" fill="#2b1a00" stroke="#ffd700" stroke-width="1"/>
+              <rect x="10" y="60" width="60" height="30" rx="5" fill="#210526" stroke="#ffd700" stroke-width="1"/>
               <text x="40" y="80" fill="#ffd700" text-anchor="middle" font-size="9" font-family="Georgia">Footprint</text>
             </g>
             <line x1="75" y1="75" x2="105" y2="75" stroke="#5a3e10" stroke-width="1"/>
             <g>
-              <rect x="110" y="50" width="60" height="40" rx="5" fill="#2b1a00" stroke="#ffd700" stroke-width="1"/>
+              <rect x="110" y="50" width="60" height="40" rx="5" fill="#210526" stroke="#ffd700" stroke-width="1"/>
               <text x="140" y="75" fill="#ffd700" text-anchor="middle" font-size="9" font-family="Georgia">Leg</text>
             </g>
             <line x1="175" y1="70" x2="205" y2="70" stroke="#5a3e10" stroke-width="1"/>
             <g>
-              <rect x="210" y="35" width="70" height="55" rx="5" fill="#2b1a00" stroke="#ffd700" stroke-width="1"/>
+              <rect x="210" y="35" width="70" height="55" rx="5" fill="#210526" stroke="#ffd700" stroke-width="1"/>
               <text x="245" y="67" fill="#ffd700" text-anchor="middle" font-size="9" font-family="Georgia">Half Body</text>
             </g>
             <line x1="285" y1="62" x2="315" y2="62" stroke="#5a3e10" stroke-width="1"/>
             <g>
-              <rect x="320" y="15" width="70" height="75" rx="5" fill="#2b1a00" stroke="#ffd700" stroke-width="2"/>
+              <rect x="320" y="15" width="70" height="75" rx="5" fill="#210526" stroke="#ffd700" stroke-width="2"/>
               <text x="355" y="55" fill="#ffd700" text-anchor="middle" font-size="9" font-family="Georgia" font-weight="bold">Full Body</text>
               <text x="355" y="68" fill="#d4a855" text-anchor="middle" font-size="7" font-family="Georgia">LEADER</text>
             </g>
@@ -251,19 +301,27 @@
       <div class="card animate-on-scroll" style="animation-delay:0.2s;">
         <h3 style="color:var(--gold);">The Power Hierarchy</h3>
         <div class="pyramid" style="margin:20px 0;">
-          <div class="pyramid-level" style="width:50%; background: linear-gradient(90deg, #3a0000, #1a0000); border:1px solid #ff4444; padding:8px; text-align:center; border-radius:5px;">
-            <span style="color:#ff4444; font-size:0.8em; font-weight:bold;">MAHAHULMANE</span><br>
-            <span style="color:#ffaaaa; font-size:0.7em;">Grand Kingdom</span>
-          </div>
-          <div class="pyramid-level" style="width:65%; background: linear-gradient(90deg, #2b1a00, #1a0a00); border:1px solid #ffd700; padding:6px; text-align:center; border-radius:5px;">
-            <span style="color:#ffd700; font-size:0.75em; font-weight:bold;">Council of Warriors</span>
-          </div>
-          <div class="pyramid-level" style="width:80%; background: linear-gradient(90deg, #1a1a4e, #0a0a2e); border:1px solid #7b9eff; padding:6px; text-align:center; border-radius:5px;">
-            <span style="color:#7b9eff; font-size:0.75em;">6 Regional Leaders</span>
-          </div>
-          <div class="pyramid-level" style="width:100%; background: linear-gradient(90deg, #003a1a, #001a0a); border:1px solid #44ff88; padding:6px; text-align:center; border-radius:5px;">
-            <span style="color:#44ff88; font-size:0.75em;">28 State Heroes</span>
-          </div>
+          <a href="council.html" style="text-decoration:none; display:block;">
+            <div class="pyramid-level" style="width:50%; background: linear-gradient(90deg, #3a0000, #1a0000); border:1px solid #ff4444; padding:8px; text-align:center; border-radius:5px; transition:filter 0.2s;" onmouseover="this.style.filter='brightness(1.3)'" onmouseout="this.style.filter=''">
+              <span style="color:#ff4444; font-size:0.8em; font-weight:bold;">HULMANE-THE-SAGA</span><br>
+              <span style="color:#ffaaaa; font-size:0.7em;">Grand Kingdom</span>
+            </div>
+          </a>
+          <a href="council.html" style="text-decoration:none; display:block;">
+            <div class="pyramid-level" style="width:65%; background: linear-gradient(90deg, #210526, #120310); border:1px solid #ffd700; padding:6px; text-align:center; border-radius:5px; transition:filter 0.2s;" onmouseover="this.style.filter='brightness(1.3)'" onmouseout="this.style.filter=''">
+              <span style="color:#ffd700; font-size:0.75em; font-weight:bold;">Council of Warriors &rarr;</span>
+            </div>
+          </a>
+          <a href="regions.html" style="text-decoration:none; display:block;">
+            <div class="pyramid-level" style="width:80%; background: linear-gradient(90deg, #1a1a4e, #0a0a2e); border:1px solid #7b9eff; padding:6px; text-align:center; border-radius:5px; transition:filter 0.2s;" onmouseover="this.style.filter='brightness(1.3)'" onmouseout="this.style.filter=''">
+              <span style="color:#7b9eff; font-size:0.75em;">6 Regional Leaders &rarr;</span>
+            </div>
+          </a>
+          <a href="characters.html" style="text-decoration:none; display:block;">
+            <div class="pyramid-level" style="width:100%; background: linear-gradient(90deg, #003a1a, #001a0a); border:1px solid #44ff88; padding:6px; text-align:center; border-radius:5px; transition:filter 0.2s;" onmouseover="this.style.filter='brightness(1.3)'" onmouseout="this.style.filter=''">
+              <span style="color:#44ff88; font-size:0.75em;">28 State Heroes &rarr;</span>
+            </div>
+          </a>
         </div>
         <p style="color:var(--text-dim); font-size:0.9em; line-height:1.6;">
           From village champion to Grand Warrior &mdash; the path ascends through
@@ -297,7 +355,7 @@
           Star systems go dark in its wake. The signs have been read &mdash;
           only a united front of every kingdom on Earth, and beyond, can withstand what comes.
         </p>
-        <a href="story.html" style="display:block; margin-top:15px; color:var(--gold); text-decoration:none;">Read the Story &rarr;</a>
+        <a href="galactic-threat.html" style="display:block; margin-top:15px; color:var(--gold); text-decoration:none;">Explore the Galactic Threat &rarr;</a>
       </div>
 
     </div>
@@ -348,7 +406,7 @@
 
   <!-- ===== 8. FOOTER ===== -->
   <footer style="text-align:center; padding:40px 20px; border-top:1px solid var(--border-dim); color:var(--text-dim); font-size:0.85em;">
-    <p style="color:var(--gold); margin-bottom:10px;">MAHAHULMANE &mdash; The Great Assembly of Warriors</p>
+    <p style="color:var(--gold); margin-bottom:10px;">HULMANE-THE-SAGA &mdash; The Great Assembly of Warriors</p>
     <p>Inspired by the Mahabharata &bull; A World of Twenty-Eight Kingdoms</p>
     <p style="margin-top:15px;">
       Reference: <a href="mahabharata_family_tree.html" style="color:var(--gold-dim);">Mahabharata Family Tree</a> &bull;

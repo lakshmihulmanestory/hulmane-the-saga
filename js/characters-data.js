@@ -1,4 +1,4 @@
-// MahaHulmane — Complete Character Data
+// Hulmane-The-Saga — Complete Character Data
 // All 28 State Heroes, 6 Regional Leaders, and Grand Council
 
 window.HEROES = [
@@ -533,7 +533,7 @@ window.HEROES = [
     backstory: {
       timespan: "800 years",
       summary: "The Gangaputra lineage is the oldest continuous champion dynasty in northern India. Born on the banks of the Ganga in Varanasi during a solar eclipse, the priests declared him either a savior or a destroyer — the prophecy was unclear. He was trained in every art — combat, statecraft, philosophy, music — to be the perfect ruler.",
-      familyDrama: "His mother was a powerful politician who groomed him for leadership from infancy, denying him a childhood. His father was a simple priest who wanted his son to find inner peace. The parents' war over his soul continues — his mother pushes him toward the MahaHulmane throne, his father begs him to renounce power. He loves both and can satisfy neither.",
+      familyDrama: "His mother was a powerful politician who groomed him for leadership from infancy, denying him a childhood. His father was a simple priest who wanted his son to find inner peace. The parents' war over his soul continues — his mother pushes him toward the Hulmane-The-Saga throne, his father begs him to renounce power. He loves both and can satisfy neither.",
       origin: "The Gangaputra claim their ancestor was found floating in the Ganga as an infant, raised by the river itself — mirroring the Mahabharata's Bhishma."
     },
     colors: { primary: "#ff66cc", background: "#3a0030", text: "#ffccee" }
