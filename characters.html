@@ -195,6 +195,34 @@
     var _ki = (typeof KINGDOM_IDENTITY !== 'undefined' ? KINGDOM_IDENTITY : (window.KINGDOM_IDENTITY || []));
     _ki.forEach(function (k) { TATTOO_PATHS[k.id] = k.tattooPath; });
 
+    /* ── Hero / Villain portrait images per state ───────────────────── */
+    var PORTRAIT_MAP = {
+      'andhra-pradesh': {
+        hero:    'media/states/south/andhra-pradesh/stories/dharmakshetra-amaravati/images/krishnaveni-portrait.png',
+        villain: 'media/states/south/andhra-pradesh/stories/dharmakshetra-amaravati/images/narakasura-portrait.png'
+      },
+      'telangana': {
+        hero:    'media/states/south/telangana/stories/chaya-golkonda-shadow-fortress/images/hero-chittaranga-portrait.png',
+        villain: null
+      },
+      'kerala': {
+        hero:    'media/states/south/kerala/stories/parashurama-kshetra/images/hero-parashurama-portrait.png',
+        villain: null
+      },
+      'karnataka': {
+        hero:    'media/states/south/karnataka/stories/vijayanagara-reborn/images/hero-tungabhadra-portrait.png',
+        villain: 'media/states/south/karnataka/stories/vijayanagara-reborn/images/villain-ravana-putra-portrait.png'
+      },
+      'goa': {
+        hero:    'media/states/west/goa/stories/samudra-dvipa/images/hero-sagaradeva-poster.png',
+        villain: 'media/states/west/goa/stories/samudra-dvipa/images/villain-samud-daitya.png'
+      },
+      'assam': {
+        hero:    'media/states/northeast/assam/stories/ganda-kshetra-rhinoceros-realm/images/hero-kamalavarna-portrait.png',
+        villain: 'media/states/northeast/assam/stories/ganda-kshetra-rhinoceros-realm/images/villain-naga-poacher-lord.png'
+      }
+    };
+
     /* ── Story URLs ─────────────────────────────────────────────────── */
     var STORY_URLS = (typeof KINGDOM_STORY_URLS !== 'undefined' ? KINGDOM_STORY_URLS : (window.KINGDOM_STORY_URLS || {}));
 
@@ -221,14 +249,8 @@
           },
           animal:     k.animal ? k.animal.name : '',
           bird:       k.bird   ? k.bird.name   : '',
-          heroImg:
-            k.stateId === 'karnataka' ? 'media/states/south/karnataka/stories/vijayanagara-reborn/images/hero-tungabhadra-portrait.png' :
-            k.stateId === 'andhra-pradesh' ? 'media/states/south/andhra-pradesh/stories/dharmakshetra-amaravati/images/krishnaveni-portrait.png' :
-            null,
-          villainImg:
-            k.stateId === 'karnataka' ? 'media/states/south/karnataka/stories/vijayanagara-reborn/images/villain-ravana-putra-portrait.png' :
-            k.stateId === 'andhra-pradesh' ? 'media/states/south/andhra-pradesh/stories/dharmakshetra-amaravati/images/narakasura-portrait.png' :
-            null,
+          heroImg:    (PORTRAIT_MAP[k.stateId] && PORTRAIT_MAP[k.stateId].hero)    || null,
+          villainImg: (PORTRAIT_MAP[k.stateId] && PORTRAIT_MAP[k.stateId].villain) || null,
           storyUrl:   STORY_URLS[k.stateId] || null,
           tattooPath: TATTOO_PATHS[k.stateId] || null
         });
@@ -257,7 +279,8 @@
       hero:    { name:'Kamalavarna', title:'The Lotus Shield', weapon:'Ganda-Kavach shield and rhino-horn spear' },
       villain: { name:'The Syndicate', title:'The Poacher Army' },
       animal:'Indian One-horned Rhinoceros', bird:'Greater Adjutant Stork',
-      heroImg:null, villainImg:null,
+      heroImg:'media/states/northeast/assam/stories/ganda-kshetra-rhinoceros-realm/images/hero-kamalavarna-portrait.png',
+      villainImg:'media/states/northeast/assam/stories/ganda-kshetra-rhinoceros-realm/images/villain-syndicate-warriors.png',
       storyUrl:'stories/asia/india/northeast/assam/rhino-knight.html',
       tattooPath: TATTOO_PATHS['assam'] || null
     });

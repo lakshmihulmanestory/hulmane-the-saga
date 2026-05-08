@@ -276,6 +276,15 @@
   </div>
 
   <!-- SCRIPTS -->
+  <script>
+    window.STATE_IMAGES = {
+      basePath: '../../../../../media/states/south/andhra-pradesh/stories/dharmakshetra-amaravati/images/',
+      heroPortrait: 'hero-krishnaveni-portrait.png', villainPortrait: 'villain-narakasura-portrait.png',
+      poster: 'poster-rivers-oath.png', characterSheet: 'character-sheet-full.png',
+      warriors: [{file:'warrior-bhimavaram.png', name:'Bhimavaram', role:'The Delta Shield (Hero)'}, {file:'warrior-nelluri-devi.png', name:'Nelluri Devi', role:'The Rice Blade (Hero)'}, {file:'warrior-chandra-mukhi.png', name:'Chandra-Mukhi', role:'The Moon-Faced (Neutral)'}, {file:'warrior-rakta-vahini.png', name:'Rakta-Vahini', role:'The Blood Current (Villain)'}],
+      scenes:   [{file:'guru-rishi-amareshwara.png', label:'Guru — Rishi Amareshwara'}, {file:'scene-drought-crisis.png', label:'Scene — The Drought Crisis'}]
+    };
+  </script>
   <script src="../../../../../js/state-stories-data.js"></script>
   <script>
     (function() {
@@ -484,6 +493,32 @@
       '</div>';
       html += '</div>';
 
+      // ── Story image gallery ──
+      if (window.STATE_IMAGES && window.STATE_IMAGES.basePath) {
+        var _si = window.STATE_IMAGES, _bp = _si.basePath;
+        if (_si.poster) {
+          html += '<div style="margin:0 0 24px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,215,0,0.12);"><img src="' + _bp + _si.poster + '" style="width:100%;display:block;" onerror="this.parentNode.style.display=\'none\'"></div>';
+        }
+        if (_si.heroPortrait || _si.villainPortrait) {
+          html += '<div class="section-title-bar"><h2 style="color:' + rc + ';">Character Portraits</h2></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">';
+          if (_si.heroPortrait)   html += '<div><img src="' + _bp + _si.heroPortrait   + '" style="width:100%;border-radius:10px;border:1px solid rgba(68,255,136,0.2);" onerror="this.parentNode.style.display=\'none\'"></div>';
+          if (_si.villainPortrait) html += '<div><img src="' + _bp + _si.villainPortrait + '" style="width:100%;border-radius:10px;border:1px solid rgba(255,68,68,0.2);"   onerror="this.parentNode.style.display=\'none\'"></div>';
+          html += '</div>';
+        }
+        if (_si.warriors && _si.warriors.length) {
+          html += '<div class="section-title-bar"><h2 style="color:' + rc + ';">Warriors &amp; Allies</h2></div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:24px;">';
+          _si.warriors.forEach(function(w){ html += '<div style="border-radius:9px;overflow:hidden;border:1px solid var(--border-dim);"><img src="' + _bp + w.file + '" style="width:100%;display:block;" onerror="this.parentNode.style.display=\'none\'"><div style="padding:7px 9px;background:rgba(0,0,0,0.3);"><div style="color:var(--gold);font-size:0.83em;font-weight:bold;">' + w.name + '</div><div style="color:var(--text-dim);font-size:0.7em;font-style:italic;">' + w.role + '</div></div></div>'; });
+          html += '</div>';
+        }
+        if (_si.scenes && _si.scenes.length) {
+          html += '<div class="section-title-bar"><h2 style="color:' + rc + ';">Story Scenes</h2></div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:24px;">';
+          _si.scenes.forEach(function(s){ html += '<div style="border-radius:9px;overflow:hidden;border:1px solid var(--border-dim);"><img src="' + _bp + s.file + '" style="width:100%;display:block;" onerror="this.parentNode.style.display=\'none\'"><div style="padding:6px 9px;background:rgba(0,0,0,0.3);font-size:0.7em;color:var(--text-dim);font-style:italic;">' + s.label + '</div></div>'; });
+          html += '</div>';
+        }
+        if (_si.characterSheet) {
+          html += '<div class="section-title-bar"><h2 style="color:' + rc + ';">Character Sheet</h2></div><div style="margin-bottom:24px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,215,0,0.12);"><img src="' + _bp + _si.characterSheet + '" style="width:100%;display:block;" onerror="this.parentNode.style.display=\'none\'"></div>';
+        }
+      }
       document.getElementById('content').innerHTML = html;
     })();
   </script>

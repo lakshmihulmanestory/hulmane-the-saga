@@ -686,6 +686,65 @@
   <script src="js/tattoo-art.js"></script>
 
   <script>
+    // ── Portrait images for each kingdom ──────────────────────────────────
+    var HERO_IMAGES = {
+      'andhra-pradesh': {
+        hero:    'media/states/south/andhra-pradesh/stories/dharmakshetra-amaravati/images/hero-krishnaveni-portrait.png',
+        villain: 'media/states/south/andhra-pradesh/stories/dharmakshetra-amaravati/images/villain-narakasura-portrait.png',
+        poster:  'media/states/south/andhra-pradesh/stories/dharmakshetra-amaravati/images/poster-rivers-oath.png',
+        scenes:  ['media/states/south/andhra-pradesh/stories/dharmakshetra-amaravati/images/guru-rishi-amareshwara.png',
+                  'media/states/south/andhra-pradesh/stories/dharmakshetra-amaravati/images/scene-drought-crisis.png']
+      },
+      'telangana': {
+        hero:    'media/states/south/telangana/stories/chaya-golkonda-shadow-fortress/images/hero-chittaranga-portrait.png',
+        villain: null,
+        poster:  'media/states/south/telangana/stories/chaya-golkonda-shadow-fortress/images/character-sheet-full.png',
+        scenes:  ['media/states/south/telangana/stories/chaya-golkonda-shadow-fortress/images/ally-darpana-devi-portrait.png']
+      },
+      'kerala': {
+        hero:    'media/states/south/kerala/stories/parashurama-kshetra/images/hero-parashurama-portrait.png',
+        villain: null,
+        poster:  null,
+        scenes:  ['media/states/south/kerala/stories/parashurama-kshetra/images/scene-theyyam-warrior.png',
+                  'media/states/south/kerala/stories/parashurama-kshetra/images/scene-sacred-conch-waterfall.png']
+      },
+      'karnataka': {
+        hero:    'media/states/south/karnataka/stories/vijayanagara-reborn/images/hero-tungabhadra-portrait.png',
+        villain: 'media/states/south/karnataka/stories/vijayanagara-reborn/images/villain-ravana-putra-portrait.png',
+        poster:  null,
+        scenes:  []
+      },
+      'gujarat': {
+        hero:    'media/states/west/gujarat/stories/simha-dwara/images/hero-simhavikrama-ancient-modern.png',
+        villain: null,
+        poster:  null,
+        scenes:  ['media/states/west/gujarat/stories/simha-dwara/images/characters-ancient-row.png',
+                  'media/states/west/gujarat/stories/simha-dwara/images/characters-modern-row.png']
+      },
+      'goa': {
+        hero:    'media/states/west/goa/stories/samudra-dvipa/images/hero-sagaradeva-poster.png',
+        villain: 'media/states/west/goa/stories/samudra-dvipa/images/villain-samud-daitya.png',
+        poster:  'media/states/west/goa/stories/samudra-dvipa/images/hero-sagaradeva-heroofgoa.png',
+        scenes:  ['media/states/west/goa/stories/samudra-dvipa/images/guru-padre-velha.png']
+      },
+      'assam': {
+        hero:    'media/states/northeast/assam/stories/ganda-kshetra-rhinoceros-realm/images/hero-kamalavarna-portrait.png',
+        villain: 'media/states/northeast/assam/stories/ganda-kshetra-rhinoceros-realm/images/villain-naga-poacher-lord.png',
+        poster:  'media/states/northeast/assam/stories/ganda-kshetra-rhinoceros-realm/images/hero-kamalavarna-with-rhino.png',
+        scenes:  ['media/states/northeast/assam/stories/ganda-kshetra-rhinoceros-realm/images/animal-rhino-portrait.png',
+                  'media/states/northeast/assam/stories/ganda-kshetra-rhinoceros-realm/images/scene-elephant-cavalry.png',
+                  'media/states/northeast/assam/stories/ganda-kshetra-rhinoceros-realm/images/villain-syndicate-warriors.png']
+      },
+      'bihar': {
+        hero:    null,
+        villain: null,
+        poster:  'media/states/east/bihar/stories/vajra-bhumi/images/character-sheet-bihar.png',
+        scenes:  []
+      }
+    };
+  </script>
+
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
       var container = document.getElementById('kingdomsContainer');
       var currentRegion = 'all';
@@ -757,6 +816,7 @@
           }
 
           var sagaText = k.saga.narrative.replace(/\n\n/g, '\n\n');
+          var _imgs = HERO_IMAGES[k.stateId] || {};
 
           var cardHtml = '<div class="kingdom-card" data-region="' + k.region + '" data-state="' + k.stateId + '">' +
             '<div class="kingdom-header" onclick="toggleKingdom(this)">' +
@@ -789,8 +849,11 @@
                 '</div>' +
               '</div>' +
 
+              (_imgs.poster ? '<div style="margin:0 0 18px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,215,0,0.15);"><img src="' + _imgs.poster + '" style="width:100%;display:block;" onerror="this.parentNode.style.display=\'none\'"></div>' : '') +
+
               '<div class="faceoff">' +
                 '<div class="char-profile hero-profile">' +
+                  (_imgs.hero ? '<img src="' + _imgs.hero + '" alt="' + k.hero.name + '" style="width:100%;max-height:280px;object-fit:cover;object-position:top;border-radius:8px;margin-bottom:12px;border:1px solid rgba(68,255,136,0.2);" onerror="this.style.display=\'none\'">' : '') +
                   '<span class="char-tag">Hero</span>' +
                   '<h4>' + k.hero.name + '</h4>' +
                   '<div class="char-title">' + k.hero.title + ' &mdash; ' + k.hero.epithet + '</div>' +
@@ -802,6 +865,7 @@
                 '</div>' +
                 '<div class="faceoff-vs"><div class="vs-badge">VS</div></div>' +
                 '<div class="char-profile villain-profile">' +
+                  (_imgs.villain ? '<img src="' + _imgs.villain + '" alt="' + k.villain.name + '" style="width:100%;max-height:280px;object-fit:cover;object-position:top;border-radius:8px;margin-bottom:12px;border:1px solid rgba(255,68,68,0.2);" onerror="this.style.display=\'none\'">' : '') +
                   '<span class="char-tag">Villain</span>' +
                   '<h4>' + k.villain.name + '</h4>' +
                   '<div class="char-title">' + k.villain.title + ' &mdash; ' + k.villain.epithet + '</div>' +
@@ -829,6 +893,7 @@
                 '<div class="saga-subtitle">' + k.saga.title + '</div>' +
                 '<div class="saga-text" id="saga-' + k.stateId + '">' + sagaText + '</div>' +
                 '<button class="saga-toggle" onclick="toggleSaga(\'' + k.stateId + '\', this)">Read Full Saga</button>' +
+                (_imgs.scenes && _imgs.scenes.length ? '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:16px;">' + _imgs.scenes.map(function(s){ return '<div style="border-radius:8px;overflow:hidden;border:1px solid var(--border-dim);"><img src="' + s + '" style="width:100%;display:block;" onerror="this.parentNode.style.display=\'none\'"></div>'; }).join('') + '</div>' : '') +
               '</div>';
 
           // Modern Arsenal & Geopolitics
