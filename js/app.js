@@ -599,6 +599,55 @@ function highlightActiveNavLink() {
 /* ====================================================================
    14. INITIALIZATION
    ==================================================================== */
+/* ====================================================================
+   15. PRINT BUTTON & PRINT HANDLERS
+   ==================================================================== */
+
+function injectPrintButton() {
+  if (document.getElementById('hulmane-print-btn')) return;
+  var btn = document.createElement('button');
+  btn.id = 'hulmane-print-btn';
+  btn.title = 'Print this page with full colour theme and images';
+  btn.innerHTML =
+    '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+      '<polyline points="6 9 6 2 18 2 18 9"/>' +
+      '<path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>' +
+      '<rect x="6" y="14" width="12" height="8"/>' +
+    '</svg>' +
+    'Print';
+  btn.addEventListener('click', function () { window.print(); });
+  document.body.appendChild(btn);
+}
+
+// Before printing: expand all collapsed sections so full content prints
+window.addEventListener('beforeprint', function () {
+  document.querySelectorAll('.saga-text').forEach(function (el) {
+    el.dataset._hadExpanded = el.classList.contains('expanded') ? '1' : '';
+    el.classList.add('expanded');
+  });
+  document.querySelectorAll('.kingdom-body').forEach(function (el) {
+    el.dataset._printH = el.style.maxHeight || '';
+    el.dataset._printO = el.style.overflow  || '';
+    el.style.maxHeight = 'none';
+    el.style.overflow  = 'visible';
+    el.style.display   = 'block';
+  });
+});
+
+// After printing: restore collapsed state
+window.addEventListener('afterprint', function () {
+  document.querySelectorAll('.saga-text').forEach(function (el) {
+    if (!el.dataset._hadExpanded) el.classList.remove('expanded');
+    delete el.dataset._hadExpanded;
+  });
+  document.querySelectorAll('.kingdom-body').forEach(function (el) {
+    el.style.maxHeight = el.dataset._printH || '';
+    el.style.overflow  = el.dataset._printO || '';
+    delete el.dataset._printH;
+    delete el.dataset._printO;
+  });
+});
+
 document.addEventListener('DOMContentLoaded', function () {
   initScrollAnimations();
   initNavigation();
@@ -609,4 +658,5 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   highlightActiveNavLink();
+  injectPrintButton();
 });

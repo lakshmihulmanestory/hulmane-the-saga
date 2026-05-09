@@ -1577,57 +1577,143 @@ body {
 
 /* ====================================================================
    PRINT STYLES — Reading & Printing Friendly
-   White paper, dark text, red-violet accents
+   Print — preserves full visual appearance (dark theme, colours, images)
    ==================================================================== */
+
+/* ── Print button (shown on screen, hidden when printing) ── */
+#hulmane-print-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(10, 4, 8, 0.92);
+  border: 1.5px solid #ffd700;
+  border-radius: 28px;
+  color: #ffd700;
+  font-size: 0.85rem;
+  font-family: Georgia, serif;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.15);
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+}
+#hulmane-print-btn:hover {
+  background: rgba(255, 215, 0, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(255, 215, 0, 0.25);
+}
+#hulmane-print-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #ffd700;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
 @media print {
-  * { box-shadow: none !important; animation: none !important; transition: none !important; }
 
-  body {
-    background: #ffffff !important;
-    color: #1a001a !important;
-    font-size: 11pt;
-    line-height: 1.6;
+  /* ── Force all colours and backgrounds to print exactly as on screen ── */
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+    box-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
   }
 
-  .maha-nav, .nav-toggle, footer nav, .filter-bar,
-  .filter-btn, button, [onclick] { display: none !important; }
-
-  h1, h2, h3, h4 {
-    color: #6a0060 !important;
-    text-shadow: none !important;
-    page-break-after: avoid;
-  }
-
-  .section-title {
-    color: #6a0060 !important;
-    border-bottom-color: #c06ab0 !important;
-  }
-
-  .card, .block, .hero-card {
-    background: #ffffff !important;
-    border: 1px solid #c06ab0 !important;
-    break-inside: avoid;
-    color: #1a001a !important;
-  }
-
-  p, li, .text-dim, .text-muted, .subtitle, .hero-title,
-  .hero-state, .text {
-    color: #2a0025 !important;
-  }
-
-  .gold, [style*="color:var(--gold)"], [style*="color:#ffd700"] {
-    color: #7a0068 !important;
-  }
-
-  .section { padding: 20px 0; }
-
-  a { color: #7a0068 !important; }
-  a::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #999; }
-
-  .hero-card .hero-portrait { height: 140px; }
-
+  /* ── Page setup ── */
   @page {
-    margin: 2cm;
     size: A4;
+    margin: 1.2cm 1.5cm;
   }
+
+  /* ── Hide screen-only chrome ── */
+  .maha-nav,
+  .nav-toggle,
+  #hulmane-print-btn,
+  .filter-bar,
+  .ch-region-bar,
+  .ch-state-bar,
+  .ch-count,
+  .back-nav,
+  .back-links,
+  .region-nav,
+  .saga-toggle,
+  .region-btn,
+  .filter-btn,
+  .ki-sidebar,
+  .ki-viewbar,
+  .ki-breadcrumb { display: none !important; }
+
+  /* ── Expand collapsed saga text so full story prints ── */
+  .saga-text,
+  .saga-text:not(.expanded) {
+    max-height: none !important;
+    overflow: visible !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+  .saga-text::after { display: none !important; }
+
+  /* ── Prevent awkward page breaks inside cards ── */
+  .card,
+  .story-chapter,
+  .chapter,
+  .kingdom-card,
+  .ch-card,
+  .ki-card,
+  .profile-full,
+  .hero-intro,
+  .creature-box,
+  .char-card-mini { break-inside: avoid; }
+
+  /* ── Page break before each major kingdom card ── */
+  .kingdom-card { page-break-before: auto; }
+
+  /* ── Images: always show, never crop ── */
+  img {
+    max-width: 100% !important;
+    display: block;
+    break-inside: avoid;
+  }
+
+  /* ── Headings: avoid orphan breaks ── */
+  h1, h2, h3, h4, h5 { break-after: avoid; }
+
+  /* ── Remove href URL annotations ── */
+  a::after { content: none !important; }
+
+  /* ── Ensure full-width layout ── */
+  .content-area,
+  .section,
+  .ki-detail { width: 100% !important; max-width: 100% !important; padding: 0 !important; }
+
+  /* ── Grid: 2 columns max in print ── */
+  .ch-grid,
+  .ki-gallery-grid,
+  .grid-4,
+  .cast-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* ── Tattoo stages: 4 across ── */
+  .ki-tattoo-stages { grid-template-columns: repeat(4, 1fr) !important; }
+
+  /* ── Story scene image pairs ── */
+  .img-pair { grid-template-columns: 1fr 1fr !important; }
+
+  /* ── Portrait strip: keep side-by-side ── */
+  .ch-portraits { grid-template-columns: 1fr 30px 1fr !important; }
+
+  /* ── Footer: keep but compact ── */
+  footer { padding: 12px 0 !important; font-size: 0.8em !important; }
 }

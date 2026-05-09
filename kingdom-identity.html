@@ -235,6 +235,7 @@
   </div>
 
   <script src="js/kingdom-identity-data.js"></script>
+  <script src="js/vehicle-art.js"></script>
   <script>
   (function () {
     'use strict';
@@ -257,6 +258,7 @@
       { id:'culture',  label:'&#127963; Culture' },
       { id:'food',     label:'&#127857; Food' },
       { id:'vehicles', label:'&#128663; Vehicles' },
+      { id:'emblems',  label:'&#128273; Emblems' },
       { id:'tattoos',  label:'&#10039; Tattoos' },
       { id:'specialty',label:'&#9728; Specialties' }
     ];
@@ -267,6 +269,7 @@
       culture:   { title:'Culture & Heritage', sub:'28 distinct civilisations — art, dance, tradition and history' },
       food:      { title:'Kingdom Foods', sub:'Authentic regional cuisine — what warriors eat between battles' },
       vehicles:  { title:'Vehicles of War', sub:'Ancient mounts and modern machines — built for each kingdom\'s terrain' },
+      emblems:   { title:'Kingdom Emblems & Seals', sub:'Royal badges and heraldic symbols — the identity of all 28 kingdoms' },
       tattoos:   { title:'Sacred Tattoos — All 28 Kingdoms', sub:'All four stages of the sacred beast — click to enter kingdom detail' },
       specialty: { title:'Regional Specialties & Warfare', sub:'Terrain strengths, climate mastery and warfare styles across all six regions' }
     };
@@ -320,8 +323,13 @@
         b.classList.toggle('active', b.dataset.view === viewId);
       });
       if (viewId === 'kingdom') {
-        if (currentKingdom) renderKingdom(currentKingdom);
-        else showEmpty();
+        if (currentKingdom) {
+          var k = window.KINGDOM_IDENTITY.find(function (x) { return x.id === currentKingdom; });
+          if (k) renderKingdom(k);
+          else showEmpty();
+        } else {
+          showEmpty();
+        }
       } else {
         renderGallery(viewId);
       }
@@ -413,6 +421,8 @@
         '</div>';
 
       // Weapons
+      var ancientWeaponImage = stateAssetHtml(k, 'weapons', 'ancient-weapon.png', 'Ancient Weapon Art');
+      var modernWeaponImage = stateAssetHtml(k, 'weapons', 'modern-weapon.png', 'Modern Weapon Art');
       html +=
         '<div class="ki-card" style="--kp:' + p + '">' +
           '<div class="ki-card-icon">' + CARD_ICONS.weapon + '</div>' +
@@ -420,24 +430,46 @@
           '<div class="ki-weapon-row"><div class="ki-weapon-era">&#9876; Ancient</div>' +
             '<div class="ki-card-title">' + k.weapons.ancient.name + '</div>' +
             '<div class="ki-card-sub">' + k.weapons.ancient.type + '</div>' +
-            '<div class="ki-card-body">' + k.weapons.ancient.ability + '</div></div>' +
+            '<div class="ki-card-body">' + k.weapons.ancient.ability + '</div>' +
+            ancientWeaponImage +
+          '</div>' +
           '<div class="ki-weapon-row"><div class="ki-weapon-era">&#128165; Modern</div>' +
             '<div class="ki-card-title">' + k.weapons.modern.name + '</div>' +
             '<div class="ki-card-sub">' + k.weapons.modern.type + '</div>' +
-            '<div class="ki-card-body">' + k.weapons.modern.ability + '</div></div>' +
+            '<div class="ki-card-body">' + k.weapons.modern.ability + '</div>' +
+            modernWeaponImage +
+          '</div>' +
         '</div>';
 
-      // Vehicles
+      // Vehicles (with SVG illustrations)
+      var ancSVG = (window.renderVehicleSVG ? window.renderVehicleSVG(k.id, p, 'ancient', 280) : '');
+      var modSVG = (window.renderVehicleSVG ? window.renderVehicleSVG(k.id, p, 'modern',  280) : '');
       html +=
         '<div class="ki-card" style="--kp:' + p + '">' +
-          '<div class="ki-card-icon">' + CARD_ICONS.vehicle + '</div>' +
+          '<div class="ki-card-icon">&#128663;</div>' +
           '<div class="ki-card-label">Vehicles</div>' +
           '<div class="ki-weapon-row"><div class="ki-weapon-era">&#128711; Ancient</div>' +
+            (ancSVG ? '<div style="margin:8px 0 10px;">' + ancSVG + '</div>' : '') +
+            stateAssetHtml(k, 'vehicles', 'ancient-vehicle.png', 'Ancient Vehicle Art') +
             '<div class="ki-card-title">' + k.vehicles.ancient.name + '</div>' +
             '<div class="ki-card-body">' + k.vehicles.ancient.desc + '</div></div>' +
           '<div class="ki-weapon-row"><div class="ki-weapon-era">&#128663; Modern</div>' +
+            (modSVG ? '<div style="margin:8px 0 10px;">' + modSVG + '</div>' : '') +
+            stateAssetHtml(k, 'vehicles', 'modern-vehicle.png', 'Modern Vehicle Art') +
             '<div class="ki-card-title">' + k.vehicles.modern.name + '</div>' +
             '<div class="ki-card-body">' + k.vehicles.modern.desc + '</div></div>' +
+        '</div>';
+
+      // Kingdom Emblem
+      var emblemImage = stateAssetHtml(k, '', 'emblem.png', 'Kingdom Emblem');
+      html +=
+        '<div class="ki-card" style="--kp:' + p + '">' +
+          '<div class="ki-card-icon">🛡️</div>' +
+          '<div class="ki-card-label">Kingdom Emblem</div>' +
+          '<div class="ki-card-title">Royal Seal & Badge</div>' +
+          '<div class="ki-card-body" style="text-align:center;margin:12px 0;">' +
+            emblemImage +
+          '</div>' +
         '</div>';
 
       // Regional Specialty
@@ -511,13 +543,15 @@
             inner =
               '<div style="margin-bottom:7px;">' +
                 '<div class="ki-weapon-era" style="font-size:.6em;opacity:.6;">&#9876; Ancient</div>' +
-                '<div style="font-size:.8em;font-weight:bold;color:' + p + ';">' + k.weapons.ancient.name + '</div>' +
+                stateAssetHtml(k, 'weapons', 'ancient-weapon.png', 'Ancient Weapon Art') +
+                '<div style="font-size:.8em;font-weight:bold;color:' + p + ';margin-top:5px;">' + k.weapons.ancient.name + '</div>' +
                 '<div style="font-size:.72em;color:var(--text-dim);font-style:italic;">' + k.weapons.ancient.type + '</div>' +
                 '<div style="font-size:.72em;color:var(--text);margin-top:2px;">' + k.weapons.ancient.ability + '</div>' +
               '</div>' +
               '<div style="border-top:1px solid rgba(255,255,255,.06);padding-top:7px;">' +
                 '<div class="ki-weapon-era" style="font-size:.6em;opacity:.6;">&#128165; Modern</div>' +
-                '<div style="font-size:.8em;font-weight:bold;color:' + p + ';">' + k.weapons.modern.name + '</div>' +
+                stateAssetHtml(k, 'weapons', 'modern-weapon.png', 'Modern Weapon Art') +
+                '<div style="font-size:.8em;font-weight:bold;color:' + p + ';margin-top:5px;">' + k.weapons.modern.name + '</div>' +
                 '<div style="font-size:.72em;color:var(--text-dim);font-style:italic;">' + k.weapons.modern.type + '</div>' +
               '</div>';
             break;
@@ -533,15 +567,25 @@
             '</ul>';
             break;
           case 'vehicles':
+            var _av = window.renderVehicleSVG ? window.renderVehicleSVG(k.id, p, 'ancient', 240) : '';
+            var _mv = window.renderVehicleSVG ? window.renderVehicleSVG(k.id, p, 'modern',  240) : '';
             inner =
-              '<div style="margin-bottom:7px;">' +
-                '<div style="font-size:.6em;opacity:.6;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">&#128711; Ancient</div>' +
-                '<div style="font-size:.78em;font-weight:bold;color:' + p + ';">' + k.vehicles.ancient.name + '</div>' +
+              '<div style="margin-bottom:8px;">' +
+                '<div style="font-size:.6em;opacity:.6;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">&#128711; Ancient</div>' +
+                (_av ? _av : '') +
+                stateAssetHtml(k, 'vehicles', 'ancient-vehicle.png', 'Ancient Vehicle Art') +
+                '<div style="font-size:.78em;font-weight:bold;color:' + p + ';margin-top:4px;">' + k.vehicles.ancient.name + '</div>' +
               '</div>' +
-              '<div style="border-top:1px solid rgba(255,255,255,.06);padding-top:7px;">' +
-                '<div style="font-size:.6em;opacity:.6;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;">&#128663; Modern</div>' +
-                '<div style="font-size:.78em;font-weight:bold;color:' + p + ';">' + k.vehicles.modern.name + '</div>' +
+              '<div style="border-top:1px solid rgba(255,255,255,.06);padding-top:8px;">' +
+                '<div style="font-size:.6em;opacity:.6;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">&#128663; Modern</div>' +
+                (_mv ? _mv : '') +
+                stateAssetHtml(k, 'vehicles', 'modern-vehicle.png', 'Modern Vehicle Art') +
+                '<div style="font-size:.78em;font-weight:bold;color:' + p + ';margin-top:4px;">' + k.vehicles.modern.name + '</div>' +
               '</div>';
+            break;
+          case 'emblems':
+            inner = stateAssetHtml(k, '', 'emblem.png', 'Kingdom Emblem') +
+              '<div style="font-size:.72em;color:var(--text-dim);margin-top:8px;text-align:center;font-style:italic;">' + k.kingdomName + ' royal seal</div>';
             break;
           case 'tattoos':
             inner = '<div class="ki-gcard-stages">';
@@ -593,6 +637,18 @@
           '<div class="ki-empty-title">Select a Kingdom</div>' +
           '<div class="ki-empty-sub">Choose any kingdom from the sidebar, or pick a category above to compare all 28 kingdoms at once.</div>' +
         '</div>';
+    }
+
+    function assetHtml(src, alt) {
+      return '<img src="' + src + '" alt="' + alt + '" style="width:100%;border-radius:10px;margin-top:8px;display:block;" onerror="this.parentNode.style.display=\'none\'">';
+    }
+
+    function stateAssetHtml(k, category, fileName, label) {
+      var src = 'media/states/' + k.region + '/' + k.id + '/' + (category ? category + '/' : '') + fileName;
+      return '<div style="margin-top:8px;">' +
+               '<div style="font-size:.72em;opacity:.75;margin-bottom:5px;">' + label + '</div>' +
+               assetHtml(src, label) +
+             '</div>';
     }
 
     // ── Card helper ──────────────────────────────────────────────────
