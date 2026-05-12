@@ -18,15 +18,27 @@
       "Bash(python3 -)",
       "Bash(read dir *)",
       "Bash(git commit -m ' *)",
-      "Bash(git add *)",
-      "Bash(git push *)",
-      "Bash(gh pr create --title 'Remove SVG placeholder lines from vehicles section' --body ' *)",
-      "Bash(curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/repos/lakshmihulmanestory/hulmane-the-saga/pulls?head=lakshmihulmanestory:claude/determined-euler-ccc8b9')",
-      "Bash(cp /Users/smk/repos/hulmane-the-saga/.claude/worktrees/determined-euler-ccc8b9/com/hulmane/hulmane-the-saga/kingdom-identity.html /Users/smk/repos/hulmane-the-saga/com/hulmane/hulmane-the-saga/kingdom-identity.html)"
+      "Bash(cp '/Users/smk/repos/hulmane-the-saga/com/hulmane/hulmane-the-saga/js/*.js' /Users/smk/repos/hulmane-the-saga/hulmane-the-saga-volume-1/js/)",
+      "Bash(cp '/Users/smk/repos/hulmane-the-saga/com/hulmane/hulmane-the-saga/data/*.csv' /Users/smk/repos/hulmane-the-saga/hulmane-the-saga-volume-1/data/)",
+      "Bash(cp '/Users/smk/repos/hulmane-the-saga/com/hulmane/hulmane-the-saga/data/references/*.csv' /Users/smk/repos/hulmane-the-saga/hulmane-the-saga-volume-1/data/references/)",
+      "Bash(cp '/Users/smk/repos/hulmane-the-saga/com/hulmane/hulmane-the-saga/media/backup/*.png' /Users/smk/repos/hulmane-the-saga/hulmane-the-saga-volume-1/media/shared/tattoo-reference/)",
+      "Bash([ -f \"$K/$f\" ])",
+      "Bash(git -C /Users/smk/repos/hulmane-the-saga ls-files --others --cached)",
+      "Bash(git -C /Users/smk/repos/hulmane-the-saga log --oneline --all -- \"com/hulmane/hulmane-the-saga/media/states/south/karnataka/stories/buried-temple-western-ghats/*\")",
+      "Bash(echo \"exit: $?\")",
+      "Bash(git restore *)",
+      "Bash(SRC=/Users/smk/repos/hulmane-the-saga/com/hulmane/hulmane-the-saga/media/states/south/karnataka/stories/buried-temple-western-ghats/images *)",
+      "Bash(git -C /Users/smk/repos/hulmane-the-saga status --short)",
+      "Bash(git -C /Users/smk/repos/hulmane-the-saga rm \"com/hulmane/hulmane-the-saga/kingdom-identity.html\")",
+      "Bash(git -C /Users/smk/repos/hulmane-the-saga rebase --continue)",
+      "Bash(git -C /Users/smk/repos/hulmane-the-saga diff --name-only --diff-filter=U)",
+      "Bash(git -C /Users/smk/repos/hulmane-the-saga add -u)",
+      "Bash(GIT_EDITOR=true git -C /Users/smk/repos/hulmane-the-saga rebase --continue)"
     ],
     "additionalDirectories": [
       "/Users/smk/repos/MahaHulmane/images",
-      "/Users/smk/repos/MahaHulmane/media/states/south/karnataka/stories/vijayanagara-reborn/images"
+      "/Users/smk/repos/MahaHulmane/media/states/south/karnataka/stories/vijayanagara-reborn/images",
+      "/Users/smk/repos/hulmane-the-saga/com/hulmane/hulmane-the-saga/media/states/south/karnataka/stories/buried-temple-western-ghats/images"
     ]
   }
 }
