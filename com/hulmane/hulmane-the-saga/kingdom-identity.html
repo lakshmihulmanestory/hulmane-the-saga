@@ -441,20 +441,16 @@
           '</div>' +
         '</div>';
 
-      // Vehicles (with SVG illustrations)
-      var ancSVG = (window.renderVehicleSVG ? window.renderVehicleSVG(k.id, p, 'ancient', 280) : '');
-      var modSVG = (window.renderVehicleSVG ? window.renderVehicleSVG(k.id, p, 'modern',  280) : '');
+      // Vehicles
       html +=
         '<div class="ki-card" style="--kp:' + p + '">' +
           '<div class="ki-card-icon">&#128663;</div>' +
           '<div class="ki-card-label">Vehicles</div>' +
           '<div class="ki-weapon-row"><div class="ki-weapon-era">&#128711; Ancient</div>' +
-            (ancSVG ? '<div style="margin:8px 0 10px;">' + ancSVG + '</div>' : '') +
             stateAssetHtml(k, 'vehicles', 'ancient-vehicle.png', 'Ancient Vehicle Art') +
             '<div class="ki-card-title">' + k.vehicles.ancient.name + '</div>' +
             '<div class="ki-card-body">' + k.vehicles.ancient.desc + '</div></div>' +
           '<div class="ki-weapon-row"><div class="ki-weapon-era">&#128663; Modern</div>' +
-            (modSVG ? '<div style="margin:8px 0 10px;">' + modSVG + '</div>' : '') +
             stateAssetHtml(k, 'vehicles', 'modern-vehicle.png', 'Modern Vehicle Art') +
             '<div class="ki-card-title">' + k.vehicles.modern.name + '</div>' +
             '<div class="ki-card-body">' + k.vehicles.modern.desc + '</div></div>' +
@@ -567,18 +563,14 @@
             '</ul>';
             break;
           case 'vehicles':
-            var _av = window.renderVehicleSVG ? window.renderVehicleSVG(k.id, p, 'ancient', 240) : '';
-            var _mv = window.renderVehicleSVG ? window.renderVehicleSVG(k.id, p, 'modern',  240) : '';
             inner =
               '<div style="margin-bottom:8px;">' +
                 '<div style="font-size:.6em;opacity:.6;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">&#128711; Ancient</div>' +
-                (_av ? _av : '') +
                 stateAssetHtml(k, 'vehicles', 'ancient-vehicle.png', 'Ancient Vehicle Art') +
                 '<div style="font-size:.78em;font-weight:bold;color:' + p + ';margin-top:4px;">' + k.vehicles.ancient.name + '</div>' +
               '</div>' +
               '<div style="border-top:1px solid rgba(255,255,255,.06);padding-top:8px;">' +
                 '<div style="font-size:.6em;opacity:.6;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">&#128663; Modern</div>' +
-                (_mv ? _mv : '') +
                 stateAssetHtml(k, 'vehicles', 'modern-vehicle.png', 'Modern Vehicle Art') +
                 '<div style="font-size:.78em;font-weight:bold;color:' + p + ';margin-top:4px;">' + k.vehicles.modern.name + '</div>' +
               '</div>';
