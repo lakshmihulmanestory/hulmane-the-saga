@@ -17,7 +17,12 @@
       "Bash(xargs -I {} find {} -maxdepth 1 -type d)",
       "Bash(python3 -)",
       "Bash(read dir *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(git add *)",
+      "Bash(git push *)",
+      "Bash(gh pr create --title 'Remove SVG placeholder lines from vehicles section' --body ' *)",
+      "Bash(curl -s -H 'Accept: application/vnd.github.v3+json' 'https://api.github.com/repos/lakshmihulmanestory/hulmane-the-saga/pulls?head=lakshmihulmanestory:claude/determined-euler-ccc8b9')",
+      "Bash(cp /Users/smk/repos/hulmane-the-saga/.claude/worktrees/determined-euler-ccc8b9/com/hulmane/hulmane-the-saga/kingdom-identity.html /Users/smk/repos/hulmane-the-saga/com/hulmane/hulmane-the-saga/kingdom-identity.html)"
     ],
     "additionalDirectories": [
       "/Users/smk/repos/MahaHulmane/images",
