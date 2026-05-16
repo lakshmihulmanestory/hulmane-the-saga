@@ -3,44 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hulmane The Saga — The Eternal Assembly</title>
+  <title>Age of Mythos — The Eternal Assembly</title>
   <style>
     :root {
-      --bg:         #120310;
-      --bg-card:    rgba(28, 5, 25, 0.88);
-      --gold:       #ffd700;
-      --gold-dim:   #d4a855;
-      --text:       #ffffff;
-      --text-dim:   #e8cce4;
-      --border-dim: #4a0f44;
+      --bg:         #ffffff;
+      --bg-card:    rgba(250, 244, 255, 0.95);
+      --rv:         #922285;
+      --rv-dim:     #6a1563;
+      --gold:       #b8760a;
+      --gold-dim:   #9a6206;
+      --text:       #0a0808;
+      --text-dim:   #1a1010;
+      --border-dim: #e4d0e4;
     }
     * { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:Georgia,serif; background:var(--bg); color:var(--text); min-height:100vh; }
 
     nav {
       position:fixed; top:0; left:0; right:0; z-index:100;
-      background:rgba(18,3,16,.96); border-bottom:1px solid var(--border-dim);
+      background:rgba(255,255,255,.97); border-bottom:1px solid var(--border-dim);
       display:flex; align-items:center; padding:0 24px; height:60px;
+      box-shadow:0 1px 12px rgba(146,34,133,.06);
     }
-    .nav-logo { font-size:1.1em; letter-spacing:1px; color:var(--gold); text-decoration:none; font-weight:bold; }
+    .nav-logo { font-size:1.1em; letter-spacing:1px; color:var(--rv); text-decoration:none; font-weight:bold; }
 
     .hero {
       padding:120px 24px 40px; text-align:center;
-      background:radial-gradient(ellipse at center, rgba(146,34,133,.22) 0%, transparent 70%);
+      background:radial-gradient(ellipse at center, rgba(146,34,133,.08) 0%, transparent 70%);
     }
     .hero h1 {
-      font-size:clamp(2em,5vw,3.6em); letter-spacing:4px; color:var(--gold);
-      text-shadow:0 0 40px rgba(255,215,0,.35); margin-bottom:12px;
+      font-size:clamp(2em,5vw,3.6em); letter-spacing:4px; color:var(--rv);
+      text-shadow:0 2px 8px rgba(146,34,133,.12); margin-bottom:12px;
     }
     .hero .motto { font-size:.85em; color:var(--text-dim); letter-spacing:2px; font-style:italic; margin-bottom:8px; }
-    .hero .tagline { font-size:.75em; color:var(--gold-dim); letter-spacing:3px; text-transform:uppercase; margin-top:6px; }
+    .hero .tagline { font-size:.75em; color:var(--gold); letter-spacing:3px; text-transform:uppercase; margin-top:6px; }
 
     .section-label {
       text-align:center; font-size:.65em; letter-spacing:4px; text-transform:uppercase;
       color:var(--text-dim); opacity:.7; margin:48px 0 28px;
     }
 
-    /* Volume grid */
     .volumes-grid {
       display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
       gap:24px; max-width:1160px; margin:0 auto; padding:0 24px 80px;
@@ -49,21 +51,20 @@
     .volume-card {
       background:var(--bg-card); border:1px solid var(--border-dim);
       border-radius:14px; overflow:hidden; position:relative;
-      transition:border-color .2s, transform .2s;
+      transition:border-color .2s, transform .2s, box-shadow .2s;
       text-decoration:none; color:inherit; display:flex; flex-direction:column;
+      box-shadow:0 2px 12px rgba(146,34,133,.06);
     }
-    .volume-card.active { border-color:var(--gold-dim); cursor:pointer; }
-    .volume-card.active:hover { border-color:var(--gold); transform:translateY(-3px); }
-    .volume-card.coming-soon { opacity:.5; cursor:default; }
+    .volume-card.active { border-color:rgba(146,34,133,.4); cursor:pointer; }
+    .volume-card.active:hover { border-color:var(--rv); transform:translateY(-3px); box-shadow:0 8px 28px rgba(146,34,133,.14); }
+    .volume-card.coming-soon { opacity:.55; cursor:default; }
 
-    /* Top accent bar */
     .volume-card::before {
       content:''; position:absolute; top:0; left:0; right:0; height:3px;
       background:var(--border-dim); border-radius:14px 14px 0 0;
     }
-    .volume-card.active::before { background:var(--gold); }
+    .volume-card.active::before { background:var(--rv); }
 
-    /* Map image */
     .volume-map {
       width:100%; aspect-ratio:16/9; object-fit:cover;
       display:block; border-bottom:1px solid var(--border-dim);
@@ -77,18 +78,17 @@
       text-transform:uppercase; opacity:.4;
     }
 
-    /* Card body */
     .volume-body { padding:24px 24px 28px; flex:1; display:flex; flex-direction:column; }
 
     .volume-badge {
       display:inline-block; font-size:.58em; letter-spacing:2px; text-transform:uppercase;
       padding:3px 10px; border-radius:20px; margin-bottom:14px;
-      background:rgba(255,215,0,.1); border:1px solid rgba(255,215,0,.25); color:var(--gold-dim);
+      background:rgba(146,34,133,.08); border:1px solid rgba(146,34,133,.2); color:var(--rv-dim);
     }
-    .coming-soon .volume-badge { background:rgba(255,255,255,.04); border-color:rgba(255,255,255,.1); color:var(--text-dim); }
+    .coming-soon .volume-badge { background:rgba(0,0,0,.04); border-color:rgba(0,0,0,.1); color:var(--text-dim); }
 
     .volume-number { font-size:.6em; letter-spacing:3px; text-transform:uppercase; color:var(--text-dim); opacity:.55; margin-bottom:5px; }
-    .volume-title  { font-size:1.3em; color:var(--gold); margin-bottom:6px; letter-spacing:1px; }
+    .volume-title  { font-size:1.3em; color:var(--rv); margin-bottom:6px; letter-spacing:1px; }
     .coming-soon .volume-title { color:var(--text-dim); }
     .volume-subtitle { font-size:.72em; color:var(--text-dim); margin-bottom:12px; opacity:.75; }
     .volume-desc { font-size:.72em; color:var(--text-dim); line-height:1.65; opacity:.75; flex:1; }
@@ -96,126 +96,162 @@
     .volume-enter {
       display:inline-block; margin-top:18px;
       font-size:.68em; letter-spacing:2px; text-transform:uppercase;
-      color:var(--gold); border:1px solid var(--gold-dim); border-radius:20px; padding:5px 16px;
+      color:var(--rv); border:1px solid rgba(146,34,133,.35); border-radius:20px; padding:5px 16px;
     }
     .coming-soon .volume-enter { display:none; }
 
     footer {
       text-align:center; padding:24px; font-size:.65em;
-      color:var(--text-dim); opacity:.4; letter-spacing:1px;
+      color:var(--text-dim); opacity:.6; letter-spacing:1px;
       border-top:1px solid var(--border-dim);
+      background:#faf5fd;
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <span class="nav-logo">Hulmane The Saga</span>
+    <span class="nav-logo">Age of Mythos</span>
   </nav>
 
   <div class="hero">
-    <h1>HULMANE THE SAGA</h1>
+    <h1>AGE OF MYTHOS</h1>
     <p class="motto">Yato Yogyat&#257; Tato Satyam &bull; Yato Ritam Tato Jayah</p>
     <p class="tagline">The Eternal Assembly of Warriors</p>
   </div>
 
   <p class="section-label">Choose Your Volume</p>
 
+  <p style="text-align:center; margin-top:-16px; margin-bottom:32px;">
+    <a href="hierarchy.html" style="font-size:.65em; letter-spacing:2px; color:var(--gold-dim); text-decoration:none; border:1px solid rgba(255,215,0,.2); border-radius:20px; padding:5px 16px; text-transform:uppercase; opacity:.75; transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.75">
+      &#9783; View Full Story Hierarchy
+    </a>
+  </p>
+
   <div class="volumes-grid">
 
     <!-- Volume I — ACTIVE -->
-    <a href="hulmane-the-saga-volume-1/index.html" class="volume-card active">
-      <img src="media/maps/bharatavarsha.png" alt="Bharatavarsha Map" class="volume-map"
-           onerror="this.outerHTML='<div class=\'volume-map-placeholder\'>Bharatavarsha</div>'">
+    <a href="com/hulmane/age-of-mythos/volume-1-rise-of-legends/index.html" class="volume-card active">
+      <img src="media/volumes/volume-1-rise-of-legends.png" alt="Rise of Legends Map" class="volume-map"
+           onerror="this.outerHTML='<div class=\'volume-map-placeholder\'>Rise of Legends</div>'">
       <div class="volume-body">
         <div class="volume-badge">Active &bull; Now Live</div>
         <div class="volume-number">Volume I</div>
-        <div class="volume-title">Bharat Varsha</div>
-        <div class="volume-subtitle">The Indian Subcontinent</div>
+        <div class="volume-title">Rise of Legends</div>
+        <div class="volume-subtitle">The First Heroes Awaken</div>
         <div class="volume-desc">
-          28 kingdoms. 28 heroes. 28 sacred animals. Set across the ancient lands of
-          Bharatavarsha &mdash; from the Himalayan North to the southern seas.
+          Seven continents. Seven chapters. The first legends rise across the ancient world &mdash;
+          from the sacred lands of Bharatavarsha to the frozen shores of Antarctica.
         </div>
-        <span class="volume-enter">Enter the Kingdom &rarr;</span>
+        <span class="volume-enter">Enter Volume I &rarr;</span>
       </div>
     </a>
 
     <!-- Volume II — Coming Soon -->
     <div class="volume-card coming-soon">
-      <img src="media/maps/europa.png" alt="Europa Map" class="volume-map"
-           onerror="this.outerHTML='<div class=\'volume-map-placeholder\'>Europa</div>'">
+      <img src="media/volumes/volume-2-civil-war.png" alt="Civil War Map" class="volume-map"
+           onerror="this.outerHTML='<div class=\'volume-map-placeholder\'>Civil War</div>'">
       <div class="volume-body">
         <div class="volume-badge">Coming Soon</div>
         <div class="volume-number">Volume II</div>
-        <div class="volume-title">Europa Hulmane</div>
-        <div class="volume-subtitle">The European Continent</div>
+        <div class="volume-title">Civil War</div>
+        <div class="volume-subtitle">The World Fractures</div>
         <div class="volume-desc">
-          The saga crosses the seas. Ancient European kingdoms rise, each bound
-          to their own sacred creatures and legendary warriors.
+          Alliances shatter. Kingdoms turn on each other. The greatest war the world
+          has ever known ignites across every continent simultaneously.
         </div>
       </div>
     </div>
 
     <!-- Volume III — Coming Soon -->
     <div class="volume-card coming-soon">
-      <img src="media/maps/asia.png" alt="Asia Map" class="volume-map"
-           onerror="this.outerHTML='<div class=\'volume-map-placeholder\'>Asia</div>'">
+      <img src="media/volumes/volume-3-rise-of-beasts.png" alt="Rise of Beasts Map" class="volume-map"
+           onerror="this.outerHTML='<div class=\'volume-map-placeholder\'>Rise of Beasts</div>'">
       <div class="volume-body">
         <div class="volume-badge">Coming Soon</div>
         <div class="volume-number">Volume III</div>
-        <div class="volume-title">Asia Hulmane</div>
-        <div class="volume-subtitle">The Remaining Asian Continent</div>
+        <div class="volume-title">Rise of Beasts</div>
+        <div class="volume-subtitle">The Sacred Animals Awaken</div>
         <div class="volume-desc">
-          From the steppes of Central Asia to the shores of the Pacific &mdash;
-          the eastern kingdoms join the eternal assembly.
+          The sacred animals are no longer symbols &mdash; they are warriors.
+          Ancient beasts rise to reclaim the world alongside their bonded heroes.
         </div>
       </div>
     </div>
 
-    <!-- Season IV — Coming Soon -->
+    <!-- Volume IV — Coming Soon -->
     <div class="volume-card coming-soon">
-      <img src="media/maps/americas.png" alt="Americas Map" class="volume-map"
-           onerror="this.outerHTML='<div class=\'volume-map-placeholder\'>Americas</div>'">
+      <div class="volume-map-placeholder">Rise of East</div>
       <div class="volume-body">
         <div class="volume-badge">Coming Soon</div>
-        <div class="volume-number">Season IV</div>
-        <div class="volume-title">Americas Hulmane</div>
-        <div class="volume-subtitle">The American Continent</div>
+        <div class="volume-number">Volume IV</div>
+        <div class="volume-title">Rise of East</div>
+        <div class="volume-subtitle">The Eastern Kingdoms Unite</div>
         <div class="volume-desc">
-          Ancient civilizations of the New World &mdash; their warriors, their sacred
-          animals, their unsung epics &mdash; enter the saga.
+          From the Pacific shores to the ancient steppes &mdash; the eastern kingdoms forge
+          a new alliance and reshape the balance of power.
         </div>
       </div>
     </div>
 
-    <!-- Season V — Coming Soon -->
+    <!-- Volume V — Coming Soon -->
     <div class="volume-card coming-soon">
-      <img src="media/maps/australia.png" alt="Australia Map" class="volume-map"
-           onerror="this.outerHTML='<div class=\'volume-map-placeholder\'>Australia</div>'">
+      <div class="volume-map-placeholder">Rise of North</div>
       <div class="volume-body">
         <div class="volume-badge">Coming Soon</div>
-        <div class="volume-number">Season V</div>
-        <div class="volume-title">Australia Hulmane</div>
-        <div class="volume-subtitle">The Australian Continent</div>
+        <div class="volume-number">Volume V</div>
+        <div class="volume-title">Rise of North</div>
+        <div class="volume-subtitle">The Northern Forces March</div>
         <div class="volume-desc">
-          The oldest living culture on earth joins the assembly. Dreamtime warriors
-          awaken for the eternal saga.
+          From the frozen tundra to the Arctic circle &mdash; the northern kingdoms
+          descend upon the world with a fury that shakes the stars.
         </div>
       </div>
     </div>
 
-    <!-- Season VI — Coming Soon -->
+    <!-- Volume VI — Coming Soon -->
     <div class="volume-card coming-soon">
-      <img src="media/maps/africa.png" alt="Africa Map" class="volume-map"
-           onerror="this.outerHTML='<div class=\'volume-map-placeholder\'>Africa</div>'">
+      <div class="volume-map-placeholder">Rise of South</div>
       <div class="volume-body">
         <div class="volume-badge">Coming Soon</div>
-        <div class="volume-number">Season VI</div>
-        <div class="volume-title">Africa Hulmane</div>
-        <div class="volume-subtitle">The African Continent</div>
+        <div class="volume-number">Volume VI</div>
+        <div class="volume-title">Rise of South</div>
+        <div class="volume-subtitle">The Southern Tide Rises</div>
         <div class="volume-desc">
-          The cradle of humanity. Ancient African kingdoms and their legendary
-          heroes complete the grand global assembly.
+          The southern kingdoms &mdash; long silent, long watching &mdash; rise at last
+          to deliver the final verdict of the Age of Mythos.
+        </div>
+      </div>
+    </div>
+
+        <!-- Volume VII — Coming Soon -->
+    <div class="volume-card coming-soon">
+      <img src="media/volumes/volume-7-the-war-with-aliens.png" alt="The War with Aliens Map" class="volume-map"
+           onerror="this.outerHTML='<div class=\'volume-map-placeholder\'>The War with Aliens</div>'">
+      <div class="volume-body">
+        <div class="volume-badge">Coming Soon</div>
+        <div class="volume-number">Volume VII</div>
+        <div class="volume-title">The War with aliens</div>
+        <div class="volume-subtitle">The big clash with human and aliens </div>
+        <div class="volume-desc">
+          The all the kingdoms &mdash; long prepared, long watching &mdash; rise at last
+          to deliver the final war of the Age of Mythos.
+        </div>
+      </div>
+    </div>
+
+            <!-- Volume VIII — Coming Soon -->
+    <div class="volume-card coming-soon">
+      <img src="media/volumes/volume-8-the-peace-treaty.png" alt="The Peace Treaty Map" class="volume-map"
+           onerror="this.outerHTML='<div class=\'volume-map-placeholder\'>The Peace Treaty</div>'">
+      <div class="volume-body">
+        <div class="volume-badge">Coming Soon</div>
+        <div class="volume-number">Volume VIII</div>
+        <div class="volume-title">The peace treaty</div>
+        <div class="volume-subtitle">The agreement between humans and aliens </div>
+        <div class="volume-desc">
+          The final peace &mdash; enterning to peace word &mdash; The peace for next
+          big thing in the Age of Mythos.
         </div>
       </div>
     </div>
@@ -223,7 +259,7 @@
   </div>
 
   <footer>
-    &copy; Hulmane The Saga &mdash; Lakshmi Hulmane &bull; All rights reserved
+    &copy; Age of Mythos &mdash; Lakshmi Hulmane &bull; All rights reserved
   </footer>
 
 </body>
