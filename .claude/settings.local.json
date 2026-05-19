@@ -53,12 +53,26 @@
       "Bash(git -C /Users/smk/repos/hulmane-the-saga status --short)",
       "Bash(git -C /Users/smk/repos/hulmane-the-saga checkout -b feat/rebrand-age-of-mythos-volume-images)",
       "Bash(git -C /Users/smk/repos/hulmane-the-saga add -u)",
-      "Bash(git -C /Users/smk/repos/hulmane-the-saga add backup/ continent-story/ hierarchy.html media/volumes/ com/hulmane/age-of-mythos/vimana-zones.html)"
+      "Bash(git -C /Users/smk/repos/hulmane-the-saga add backup/ continent-story/ hierarchy.html media/volumes/ com/hulmane/age-of-mythos/vimana-zones.html)",
+      "Bash(grep -m3 'href=\"\\\\.\\\\./\\\\|src=\"\\\\.\\\\./\\\\|href=\"../../../../\\\\|src=\"../../../../' /Users/smk/repos/age-of-mythos/com/hulmane/age-of-mythos/volume-1-rise-of-legends/__TRACKED_VAR__)",
+      "Bash(sed -i '' 's|com/hulmane/age-of-mythos/volume-1-rise-of-legends/index.html|com/hulmane/age-of-mythos/volume-1-maha-parva/index.html|g' /Users/smk/repos/age-of-mythos/index.html)",
+      "Bash(sed -i '' 's|com/hulmane/age-of-mythos/volume-1-rise-of-legends/index.html|com/hulmane/age-of-mythos/volume-1-maha-parva/chapter-1-rise-of-legends/index.html|g' /Users/smk/repos/age-of-mythos/index.html)",
+      "Bash(sed -i '' 's|com/hulmane/age-of-mythos/volume-1-rise-of-legends/bharatavarsha|com/hulmane/age-of-mythos/volume-1-maha-parva/chapter-1-rise-of-legends/bharatavarsha|g' /Users/smk/repos/age-of-mythos/hierarchy.html)",
+      "Bash(python3 -c \"from PIL import Image, ImageDraw, ImageFont; print\\('Pillow OK'\\)\")",
+      "Bash(python3 -c \"import cairosvg; print\\('cairosvg OK'\\)\")",
+      "Bash(python3 -c \"import svgwrite; print\\('svgwrite OK'\\)\")",
+      "Bash(find /System/Library/Fonts /Library/Fonts -name \"*.ttf\" -o -name \"*.otf\" 2>/dev/null | grep -i \"georgia\\\\|times\\\\|helvetica\\\\|arial\\\\b\\\\|palatino\\\\|trebuchet\\\\|garamond\\\\|baskerville\\\\|didot\" | head -15)",
+      "Read(//System/Library/Fonts/**)",
+      "Bash(python3 -c \"from PIL import Image, ImageDraw, ImageFont; print\\('PIL OK'\\)\")",
+      "Bash(python3 generate_images.py)",
+      "Bash(mkdir -p /Users/smk/repos/age-of-mythos/com/hulmane/age-of-mythos/volume-1-maha-parva/_planning && ls /Users/smk/repos/age-of-mythos/com/hulmane/age-of-mythos/volume-1-maha-parva/)",
+      "Bash(awk 'NR==1 || NR==2' /Users/smk/repos/age-of-mythos/com/hulmane/age-of-mythos/volume-1-maha-parva/chapter-1-rise-of-legends/data/villains.csv)"
     ],
     "additionalDirectories": [
       "/Users/smk/repos/MahaHulmane/images",
       "/Users/smk/repos/MahaHulmane/media/states/south/karnataka/stories/vijayanagara-reborn/images",
-      "/Users/smk/repos/hulmane-the-saga/com/hulmane/hulmane-the-saga/media/states/south/karnataka/stories/buried-temple-western-ghats/images"
+      "/Users/smk/repos/hulmane-the-saga/com/hulmane/hulmane-the-saga/media/states/south/karnataka/stories/buried-temple-western-ghats/images",
+      "/Users/smk/repos/age-of-mythos/com/hulmane/age-of-mythos/volume-1-maha-parva"
     ]
   }
 }
